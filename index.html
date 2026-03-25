@@ -2,116 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yan Wang | Personal Website</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, Arial;
-      max-width: 850px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.8;
-      color: #222;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      margin-top: 40px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-    }
-
-    nav {
-      margin: 20px 0;
-    }
-
-    nav a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #0366d6;
-    }
-
-    .subtitle {
-      color: #666;
-      margin-bottom: 20px;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    ul {
-      padding-left: 18px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>Yan Wang</h1>
-<p class="subtitle">
-Undergraduate, Biological Sciences | Wuhan University (Hongyi Program)
-</p>
+<header>
+  <div class="container nav">
+    <div class="nav-left">Yan Wang</div>
+    <div class="nav-right">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#honors">Honors</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#education">Education</a>
-  <a href="#honors">Honors</a>
-  <a href="#contact">Contact</a>
-</nav>
+<section class="hero">
+  <div class="container hero-box">
+    <div class="avatar"></div>
+    <div class="hero-text">
+      <h1>Yan Wang</h1>
+      <p>Undergraduate in Biological Sciences, Wuhan University</p>
+      <p>Interested in neuroscience, synthetic biology, and induced hypometabolic states</p>
+      <div class="hero-links">
+        <a href="#research">View Research</a>
+        <a href="#contact">Contact Me</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="section" id="about">
-<h2>About</h2>
-<p>
-I am an undergraduate student in Biological Sciences at Wuhan University, enrolled in the Hongyi Honors Program. 
-My research interests lie at the intersection of neuroscience, synthetic biology, and induced hypometabolic states (human hibernation).
-I am particularly interested in understanding how biological systems can be engineered or regulated to achieve novel physiological states.
-</p>
-</div>
+<section id="about">
+  <div class="container">
+    <div class="section-card">
+      <h2>About</h2>
+      <p>
+        Welcome to my personal website. I am an undergraduate student at Wuhan University.
+        This site presents my academic background, research experience, and future interests.
+      </p>
+    </div>
+  </div>
+</section>
 
-<div class="section" id="research">
-<h2>Research Experience</h2>
+<section id="research">
+  <div class="container">
+    <div class="section-card">
+      <h2>Research Experience</h2>
 
-<p><strong>Yu-Jin Lab, Wuhan University</strong></p>
-<p>
-Investigated neural mechanisms underlying behavioral regulation in <em>C. elegans</em>, focusing on how the neuropeptide ins-1 modulates alcohol chemotaxis under high-salt conditions.
-</p>
+      <div class="item">
+        <div class="item-title">Yu-Jin Lab, Wuhan University</div>
+        <div class="item-subtitle">Neuroscience / C. elegans / Behavioral regulation</div>
+      </div>
 
-<p><strong>iGEM Project – LOGIC</strong></p>
-<p>
-Designed a multicellular biocomputation system using quorum sensing-based genetic circuits. 
-Developed high-pass and band-pass biological logic gates and implemented spatially distributed computation on agar plates.
-</p>
+      <div class="item">
+        <div class="item-title">iGEM Project – LOGIC</div>
+        <div class="item-subtitle">Synthetic biology / Quorum sensing / Biological computation</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-</div>
+<section id="education">
+  <div class="container">
+    <div class="section-card">
+      <h2>Education</h2>
+      <div class="item">
+        <div class="item-title">Wuhan University</div>
+        <div class="item-subtitle">B.S. in Biological Sciences, Hongyi Honors Program</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="section" id="education">
-<h2>Education</h2>
+<section id="honors">
+  <div class="container">
+    <div class="section-card">
+      <h2>Honors & Awards</h2>
+      <div class="item">
+        <div class="item-title">Gold Medal, iGEM</div>
+      </div>
+      <div class="item">
+        <div class="item-title">Top Ten Scientific Progress Award</div>
+      </div>
+      <div class="item">
+        <div class="item-title">Liu Daoyu Scholarship</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p><strong>Wuhan University</strong><br>
-B.S. in Biological Sciences<br>
-Hongyi Honors Program</p>
+<section id="contact">
+  <div class="container">
+    <div class="section-card">
+      <h2>Contact</h2>
+      <p>Email: your_email@example.com</p>
+      <p>GitHub: github.com/YanWang-whu</p>
+    </div>
+  </div>
+</section>
 
-</div>
-
-<div class="section" id="honors">
-<h2>Honors & Awards</h2>
-<ul>
-<li>Gold Medal, International Genetically Engineered Machine (iGEM)</li>
-<li>Top Ten Scientific Progress Award, Wuhan University</li>
-<li>Liu Daoyu Scholarship</li>
-</ul>
-</div>
-
-<div class="section" id="contact">
-<h2>Contact</h2>
-<p>Email: your_email@example.com</p>
-<p>GitHub: https://github.com/YanWang-whu</p>
-</div>
+<footer>
+  <div class="container">
+    © 2026 Yan Wang
+  </div>
+</footer>
 
 </body>
 </html>
