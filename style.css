@@ -405,3 +405,37 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.edu-divider {
+  height: 1px;
+  background: rgba(120, 140, 180, 0.2);
+  margin: 36px 0;
+}
+
+.highschool .edu-school {
+  font-size: 26px;
+}
+
+.edu-time-block {
+  text-align: right;
+}
+
+.edu-location {
+  font-size: 18px;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.gaokao-block {
+  margin-top: 20px;
+}
+
+.gaokao-fill {
+  width: 100%;
+  background: linear-gradient(90deg, #ff9a9e, #ff7a59);
+}
+
+@media (max-width: 640px) {
+  .edu-time-block {
+    text-align: left;
+  }
+}
