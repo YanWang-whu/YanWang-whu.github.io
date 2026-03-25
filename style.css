@@ -293,7 +293,7 @@ footer {
 
 .edu-school {
   margin: 0;
-  font-size: 30px;
+  font-size: 28px;
   color: #111827;
 }
 
@@ -412,11 +412,15 @@ footer {
 }
 
 .highschool .edu-school {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .edu-time-block {
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 4px;
 }
 
 .edu-location {
@@ -438,4 +442,7 @@ footer {
   .edu-time-block {
     text-align: left;
   }
+}
+.whu-school {
+  font-size: 32px;
 }
