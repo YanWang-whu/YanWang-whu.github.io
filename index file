@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Personal Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.7;
+      color: #222;
+    }
+    h1, h2 {
+      color: #1a1a1a;
+    }
+    nav {
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    nav a {
+      margin-right: 16px;
+      text-decoration: none;
+      color: #0066cc;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    .small {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Your Name</h1>
+  <p class="small">Undergraduate in Biological Sciences | Wuhan University</p>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#education">Education</a>
+    <a href="#honors">Honors</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Hi, I’m Your Name. I am an undergraduate student majoring in Biological Sciences at Wuhan University.
+      My research interests include neuroscience, synthetic biology, and induced hypometabolic states.
+    </p>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <p><strong>Yu-Jin Lab, Wuhan University</strong></p>
+    <p>
+      Worked on C. elegans neuroscience and behavioral regulation, with a focus on ins-1 and alcohol chemotaxis under high-salt conditions.
+    </p>
+
+    <p><strong>iGEM Project: LOGIC</strong></p>
+    <p>
+      Designed quorum-sensing-based biological logic gate systems for multicellular biocomputation.
+    </p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>Wuhan University</strong><br>
+    B.S. in Biological Sciences<br>
+    Hongyi Honor Class</p>
+  </section>
+
+  <section id="honors">
+    <h2>Honors & Awards</h2>
+    <ul>
+      <li>Gold Medal, iGEM Competition</li>
+      <li>Top Ten Technology Progress Award, Wuhan University Hongyi College</li>
+      <li>Liu Daoyu Scholarship</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your_email@example.com</p>
+  </section>
+
+</body>
+</html>
