@@ -484,3 +484,67 @@ footer {
   font-weight: 600;
   margin-left: 6px;
 }
+/* 教育卡片容器 */
+.education-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 28px; /* 每个卡片间距 */
+}
+
+/* 每个小卡片 */
+.edu-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* 卡片头部 */
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.edu-school {
+  font-size: 28px;
+  color: #111827;
+}
+
+.edu-time {
+  font-size: 16px;
+  color: #a0a7b4;
+}
+
+/* 课程进度条 */
+.stats-grid, .lang-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin-top: 12px;
+}
+
+/* Language 进度条 */
+.reading-fill { width: 96.7%; background: #38bdf8; }
+.listening-fill { width: 93.3%; background: #f87171; }
+.speaking-fill { width: 80%; background: #fbbf24; }
+.writing-fill { width: 83.3%; background: #a78bfa; }
+
+/* 蓝色箭头 */
+.score-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.lang-note {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #5d6d85;
+}
+
+@media (max-width: 700px) {
+  .stats-grid, .lang-grid { grid-template-columns: 1fr; }
+}
