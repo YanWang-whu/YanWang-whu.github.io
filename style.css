@@ -447,3 +447,63 @@ footer {
 .whu-school {
   font-size: 32px;
 }
+.language-card {
+  padding: 28px;
+}
+
+.lang-totals p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.score-link a {
+  text-decoration: none;
+  color: #3b82f6;
+  margin-left: 8px;
+}
+
+.lang-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin-top: 20px;
+}
+
+.lang-item {
+  margin-bottom: 14px;
+}
+
+.lang-label {
+  font-size: 16px;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.reading-fill {
+  width: 96.7%;
+  background: #38bdf8;
+}
+.listening-fill {
+  width: 93.3%;
+  background: #f87171;
+}
+.speaking-fill {
+  width: 80%;
+  background: #fbbf24;
+}
+.writing-fill {
+  width: 83.3%;
+  background: #a78bfa;
+}
+
+.lang-note {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #5d6d85;
+}
+
+@media (max-width: 700px) {
+  .lang-grid {
+    grid-template-columns: 1fr;
+  }
+}
