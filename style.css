@@ -447,54 +447,29 @@ footer {
 .whu-school {
   font-size: 32px;
 }
-.language-card {
-  padding: 28px;
+/* Language 小卡片在 Education 卡片里，和学校经历同级 */
+.language {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(120,140,180,0.2);
 }
 
-.lang-totals p {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.score-link a {
-  text-decoration: none;
-  color: #3b82f6;
-  margin-left: 8px;
-}
-
+/* 进度条网格 */
 .lang-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 40px;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 
-.lang-item {
-  margin-bottom: 14px;
-}
+.lang-item { margin-bottom: 14px; }
 
-.lang-label {
-  font-size: 16px;
-  color: #111827;
-  margin-bottom: 6px;
-}
+.lang-label { font-size: 16px; color: #111827; margin-bottom: 6px; }
 
-.reading-fill {
-  width: 96.7%;
-  background: #38bdf8;
-}
-.listening-fill {
-  width: 93.3%;
-  background: #f87171;
-}
-.speaking-fill {
-  width: 80%;
-  background: #fbbf24;
-}
-.writing-fill {
-  width: 83.3%;
-  background: #a78bfa;
-}
+.reading-fill { width: 96.7%; background: #38bdf8; }
+.listening-fill { width: 93.3%; background: #f87171; }
+.speaking-fill { width: 80%; background: #fbbf24; }
+.writing-fill { width: 83.3%; background: #a78bfa; }
 
 .lang-note {
   margin-top: 16px;
@@ -502,8 +477,10 @@ footer {
   color: #5d6d85;
 }
 
-@media (max-width: 700px) {
-  .lang-grid {
-    grid-template-columns: 1fr;
-  }
+/* 蓝色箭头靠右 */
+.score-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 6px;
 }
