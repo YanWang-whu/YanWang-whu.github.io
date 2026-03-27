@@ -471,11 +471,7 @@ footer {
 .speaking-fill { width: 80%; background: #fbbf24; }
 .writing-fill { width: 83.3%; background: #a78bfa; }
 
-.lang-note {
-  margin-top: 5px;
-  font-size: 18px;
-  color: #5d6d85;
-}
+
 
 
 /* 教育卡片容器 */
@@ -534,8 +530,8 @@ footer {
 }
 
 .lang-note {
-  margin-top: 16px;
-  font-size: 15px;
+  margin-top: 5px;
+  font-size: 18px;
   color: #5d6d85;
 }
 
