@@ -163,25 +163,104 @@
 <section class="section" id="research">
   <div class="container">
     <h2 class="section-title">Selected Research</h2>
-    <div class="grid-two">
-      <div class="card">
-        <h3>Neuroscience Research</h3>
-        <p>
-          Studied how the neuropeptide ins-1 influences alcohol chemotaxis behavior in C. elegans
-          under high-salt conditions, with a focus on neural mechanisms and functional sites.
-        </p>
+
+    <div class="research-list">
+
+      <!-- Research 1 -->
+      <div class="research-card">
+        <button class="research-header" onclick="toggleActivity(this)">
+          <div class="research-left">
+            <span class="research-name">
+              Analysis of the Functional Sites of INS-1 Neuropeptide in the Alcohol Perception Neural Circuit of <em>C. elegans</em>
+            </span>
+            <span class="research-location">
+              Medical Research Institute, Wuhan University · Joint Lab of Prof. Yanxun Yu and Prof. Youngnam Jin · Wuhan, China
+            </span>
+          </div>
+
+          <div class="research-right">
+            <span class="research-date-inline">Jan. 2025 – Present</span>
+            <span class="research-arrow">&#9662;</span>
+          </div>
+        </button>
+
+        <div class="research-content">
+          <div class="research-inner">
+            <ul class="research-bullets">
+              <li>Identified that loss of INS-1 neuropeptide reverses ethanol avoidance behavior under high-salt conditions.</li>
+              <li>Construct neuron-specific knockout/rescue <em>ins-1</em> worm strains and conduct behavioral analysis.</li>
+              <li>Perform neuronal calcium imaging analysis to investigate the effect of <em>ins-1</em> on neural circuit function.</li>
+              <li>Identified ASEL as an important target neuron of INS-1 through my research.</li>
+              <li>Conduct imaging, image processing, and data analysis.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Synthetic Biology</h3>
-        <p>
-          Worked on LOGIC, an iGEM project that builds spatial genetic circuits and multicellular logic gates
-          using quorum sensing, with the goal of enabling biological computation.
-        </p>
+
+      <!-- Research 2 -->
+      <div class="research-card">
+        <button class="research-header" onclick="toggleActivity(this)">
+          <div class="research-left">
+            <span class="research-name">
+              Performance Optimization of the Non-Diffusive Proximity Tagging System POST-IT Based on Directed Evolution
+            </span>
+            <span class="research-location">
+              Medical Research Institute, Wuhan University · Joint Lab of Prof. Yanxun Yu and Prof. Youngnam Jin · Wuhan, China
+            </span>
+          </div>
+
+          <div class="research-right">
+            <span class="research-date-inline">Jan. 2025 – Present</span>
+            <span class="research-arrow">&#9662;</span>
+          </div>
+        </button>
+
+        <div class="research-content">
+          <div class="research-inner">
+            <ul class="research-bullets">
+              <li>The POST-IT system developed in the laboratory uses PafA ligase to label small drug target proteins.</li>
+              <li>Use yeast display technology with random mutation to obtain a PafA mutant library.</li>
+              <li>Obtain highly performing mutants through FACS.</li>
+              <li>Initially obtained a mutant that significantly reduced the required labeling time and substrate concentration.</li>
+              <li>Evaluate the efficacy of PafA mutants in recognizing small-molecule targets.</li>
+            </ul>
+          </div>
+        </div>
       </div>
+
+      <!-- Research 3 -->
+      <div class="research-card">
+        <button class="research-header" onclick="toggleActivity(this)">
+          <div class="research-left">
+            <span class="research-name">
+              LOGIC – Lasting Optimized Genetic Input Calculator
+            </span>
+            <span class="research-location">
+              College of Life Sciences, Wuhan University · Project for iGEM Competition · Wuhan, China
+            </span>
+          </div>
+
+          <div class="research-right">
+            <span class="research-date-inline">Nov. 2024 – Oct. 2025</span>
+            <span class="research-arrow">&#9662;</span>
+          </div>
+        </button>
+
+        <div class="research-content">
+          <div class="research-inner">
+            <ul class="research-bullets">
+              <li>The core concepts, prototype design, and technical roadmap were proposed by me.</li>
+              <li>Construct colony-level logic gates using spatial diffusion together with high-pass and band-pass circuits.</li>
+              <li>Build a serial addition calculator using selected orthogonal quorum-sensing systems.</li>
+              <li>Separate the functional domain of the degradation enzyme and introduce a light-controlled degradation tag.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
  <section class="section" id="activities">
   <div class="container">
     <h2 class="section-title">Academic Activities</h2>
@@ -317,7 +396,7 @@
 <script>
   function toggleActivity(button) {
     const card = button.parentElement;
-    const content = card.querySelector('.activity-content');
+    const content = card.querySelector('.activity-content, .research-content');
 
     card.classList.toggle('active');
 
