@@ -703,3 +703,133 @@ footer.is-visible {
     transition: none !important;
   }
 }
+/* ===== Research Accordion ===== */
+
+.research-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 12px;
+}
+
+.research-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(130, 150, 180, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 10px 28px rgba(60, 80, 120, 0.07);
+  overflow: hidden;
+}
+
+.research-header {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
+.research-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.research-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 20px;
+  flex-shrink: 0;
+}
+
+.research-name {
+  font-size: 21px;
+  font-weight: 700;
+  color: #2f436e;
+  line-height: 1.45;
+}
+
+.research-location {
+  font-size: 15px;
+  color: #7a879b;
+  line-height: 1.6;
+}
+
+.research-date-inline {
+  font-size: 14px;
+  color: #9aa3b2;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.research-arrow {
+  font-size: 18px;
+  color: #5d6d85;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.research-card.active .research-arrow {
+  transform: rotate(180deg);
+}
+
+.research-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.research-inner {
+  padding: 0 28px 24px 28px;
+  border-top: 1px solid rgba(120, 140, 180, 0.15);
+}
+
+.research-bullets {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: #5d6d85;
+}
+
+.research-bullets li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.research-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+  .research-header {
+    padding: 20px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .research-right {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+
+  .research-inner {
+    padding: 0 20px 20px;
+  }
+
+  .research-name {
+    font-size: 18px;
+  }
+
+  .research-location,
+  .research-bullets li {
+    font-size: 15px;
+  }
+}
