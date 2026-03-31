@@ -15,6 +15,7 @@
       <a href="#about">About</a>
       <a href="#journey">Education</a>
       <a href="#research">Research</a>
+       <a href="#activities">Academic Activities</a>
       <a href="#life">Life</a>
       <a href="#contact">Contact</a>
     </div>
@@ -154,15 +155,6 @@
           I have research experience in the Yu-Yanxun & Youngnam Jin joint lab, where all group meetings, Journal Club discussions, and academic communications are conducted in English, which guarantees my academic English proficiency.
         </div>
       </div>
-
-    </div> <!-- /education-cards -->
-
-  </div> <!-- /container -->
-</section>
-
-    </div> <!-- /education-card -->
-  </div> <!-- /container -->
-</section>
      
     </div>
   </div>
@@ -189,7 +181,75 @@
     </div>
   </div>
 </section>
+<section class="section" id="activities">
+  <div class="container">
+    <h2 class="section-title">Academic Activities</h2>
 
+    <div class="activities-list">
+
+      <div class="activity-card">
+        <button class="activity-header" onclick="toggleActivity(this)">
+          <div class="activity-main">
+            <span class="activity-name">National Forum on China’s “Top-Tier Talent Program 2.0” in Biology</span>
+            <span class="activity-location">Tsinghua University · Beijing, China</span>
+          </div>
+          <span class="activity-arrow">&#9662;</span>
+        </button>
+        <div class="activity-content">
+          <div class="activity-inner">
+            <p class="activity-date">May 2025</p>
+            <p class="activity-description">
+              Selected as one of two delegates from Wuhan University to participate in this national forum.
+              The event gathered outstanding students and educators from leading universities in China to discuss
+              frontier issues in biology education, interdisciplinary training, and the future development of top-tier talent programs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <button class="activity-header" onclick="toggleActivity(this)">
+          <div class="activity-main">
+            <span class="activity-name">“Frontiers of Life Science” International Undergraduate Summer School</span>
+            <span class="activity-location">Westlake University · Hangzhou, China</span>
+          </div>
+          <span class="activity-arrow">&#9662;</span>
+        </button>
+        <div class="activity-content">
+          <div class="activity-inner">
+            <p class="activity-date">Jul. 2025 – Aug. 2025</p>
+            <p class="activity-description">
+              Participated in an international summer program featuring lectures, academic exchanges, and discussions
+              on cutting-edge topics in life science. The program provided intensive exposure to emerging biological research
+              directions and strengthened my interest in interdisciplinary scientific exploration.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <button class="activity-header" onclick="toggleActivity(this)">
+          <div class="activity-main">
+            <span class="activity-name">Internship in AI-Driven Biological Research</span>
+            <span class="activity-location">Beijing Bioaz Data Technology Co., Ltd. · Beijing, China</span>
+          </div>
+          <span class="activity-arrow">&#9662;</span>
+        </button>
+        <div class="activity-content">
+          <div class="activity-inner">
+            <p class="activity-date">Jan. 2026</p>
+            <p class="activity-description">
+              Completed an internship focused on the integration of artificial intelligence and biological research.
+              This experience introduced me to practical data-driven workflows in life science and deepened my understanding
+              of how computational methods can support biological discovery.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <section class="section" id="life">
   <div class="container">
     <h2 class="section-title">Beyond the Lab</h2>
@@ -224,6 +284,20 @@
     © 2026 Yan Wang
   </div>
 </footer>
+<script>
+  function toggleActivity(button) {
+    const card = button.parentElement;
+    const content = card.querySelector('.activity-content');
+
+    card.classList.toggle('active');
+
+    if (card.classList.contains('active')) {
+      content.style.maxHeight = content.scrollHeight + 'px';
+    } else {
+      content.style.maxHeight = null;
+    }
+  }
+</script>
 
 </body>
 </html>
