@@ -538,6 +538,8 @@ footer {
 @media (max-width: 700px) {
   .stats-grid, .lang-grid { grid-template-columns: 1fr; }
 }
+/* ===== Academic Activities ===== */
+
 .activities-list {
   display: flex;
   flex-direction: column;
@@ -566,12 +568,21 @@ footer {
   font: inherit;
 }
 
-.activity-main {
+/* 左侧 */
+.activity-left {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
+/* 右侧 */
+.activity-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 标题 */
 .activity-name {
   font-size: 22px;
   font-weight: 700;
@@ -579,16 +590,25 @@ footer {
   line-height: 1.4;
 }
 
+/* 地点 */
 .activity-location {
   font-size: 16px;
   color: #7a879b;
 }
 
+/* 时间（右侧 inline） */
+.activity-date-inline {
+  font-size: 14px;
+  color: #9aa3b2;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* 箭头 */
 .activity-arrow {
   font-size: 18px;
   color: #5d6d85;
   transition: transform 0.3s ease;
-  margin-left: 18px;
   flex-shrink: 0;
 }
 
@@ -596,6 +616,7 @@ footer {
   transform: rotate(180deg);
 }
 
+/* 折叠内容 */
 .activity-content {
   max-height: 0;
   overflow: hidden;
@@ -607,28 +628,23 @@ footer {
   border-top: 1px solid rgba(120, 140, 180, 0.15);
 }
 
-.activity-date {
-  margin: 18px 0 10px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #294172;
-}
-
+/* 描述 */
 .activity-description {
-  margin: 0;
+  margin: 18px 0 0;
   font-size: 16px;
   color: #5d6d85;
   line-height: 1.8;
 }
 
+/* 移动端 */
 @media (max-width: 640px) {
   .activity-header {
-    padding: 20px 20px;
+    padding: 20px;
     align-items: flex-start;
   }
 
   .activity-inner {
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 20px;
   }
 
   .activity-name {
@@ -636,7 +652,6 @@ footer {
   }
 
   .activity-location,
-  .activity-date,
   .activity-description {
     font-size: 15px;
   }
