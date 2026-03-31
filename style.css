@@ -656,3 +656,50 @@ footer {
     font-size: 15px;
   }
 }
+/* ===== Scroll Reveal Animation ===== */
+
+.hero,
+.section,
+footer {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.hero.is-visible,
+.section.is-visible,
+footer.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 稍微做一点层次感：标题和卡片进入更柔和 */
+.section .section-title,
+.section .card,
+.section .edu-card,
+.section .activity-card,
+.section .contact-box {
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    box-shadow 0.25s ease;
+}
+
+/* 尊重系统“减少动态效果”设置 */
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .section,
+  footer,
+  .section .section-title,
+  .section .card,
+  .section .edu-card,
+  .section .activity-card,
+  .section .contact-box {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
