@@ -339,12 +339,12 @@ footer {
 }
 
 .gpa-fill {
-  width: 97.75%;
+  --target-width: 97.75%;
   background: linear-gradient(90deg, #6aa9ff, #5b8ee0);
 }
 
 .rank-fill {
-  width: 97%;
+  --target-width: 97%;
   background: linear-gradient(90deg, #5b62c8, #4e57b7);
 }
 
@@ -447,14 +447,14 @@ footer {
 .whu-school {
   font-size: 32px;
 }
-/* Language 小卡片在 Education 卡片里，和学校经历同级 */
+
 .language {
   margin-top: 28px;
   padding-top: 20px;
   border-top: 1px solid rgba(120,140,180,0.2);
 }
 
-/* 进度条网格 */
+
 .lang-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -466,22 +466,22 @@ footer {
 
 .lang-label { font-size: 16px; color: #111827; margin-bottom: 6px; }
 
-.reading-fill { width: 96.7%; background: #38bdf8; }
-.listening-fill { width: 93.3%; background: #f87171; }
-.speaking-fill { width: 80%; background: #fbbf24; }
-.writing-fill { width: 83.3%; background: #a78bfa; }
+.reading-fill { --target-width: 96.7%; background: #38bdf8; }
+.listening-fill { --target-width: 93.3%; background: #f87171; }
+.speaking-fill { --target-width: 80%; background: #fbbf24; }
+.writing-fill { --target-width: 83.3%; background: #a78bfa; }
 
 
 
 
-/* 教育卡片容器 */
+
 .education-cards {
   display: flex;
   flex-direction: column;
-  gap: 28px; /* 每个卡片间距 */
+  gap: 28px; 
 }
 
-/* 每个小卡片 */
+
 .edu-card {
   background: #fff;
   border-radius: 12px;
@@ -489,7 +489,7 @@ footer {
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
-/* 卡片头部 */
+
 .edu-header {
   display: flex;
   justify-content: space-between;
@@ -507,7 +507,7 @@ footer {
   color: #a0a7b4;
 }
 
-/* 课程进度条 */
+
 .stats-grid, .lang-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -515,13 +515,8 @@ footer {
   margin-top: 12px;
 }
 
-/* Language 进度条 */
-.reading-fill { width: 96.7%; background: #38bdf8; }
-.listening-fill { width: 93.3%; background: #f87171; }
-.speaking-fill { width: 80%; background: #fbbf24; }
-.writing-fill { width: 83.3%; background: #a78bfa; }
 
-/* 蓝色箭头 */
+
 .score-link {
   color: #3b82f6;
   text-decoration: none;
@@ -538,7 +533,7 @@ footer {
 @media (max-width: 700px) {
   .stats-grid, .lang-grid { grid-template-columns: 1fr; }
 }
-/* ===== Academic Activities ===== */
+
 
 .activities-list {
   display: flex;
@@ -568,21 +563,21 @@ footer {
   font: inherit;
 }
 
-/* 左侧 */
+
 .activity-left {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-/* 右侧 */
+
 .activity-right {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-/* 标题 */
+
 .activity-name {
   font-size: 22px;
   font-weight: 700;
@@ -590,13 +585,13 @@ footer {
   line-height: 1.4;
 }
 
-/* 地点 */
+
 .activity-location {
   font-size: 16px;
   color: #7a879b;
 }
 
-/* 时间（右侧 inline） */
+
 .activity-date-inline {
   font-size: 14px;
   color: #9aa3b2;
@@ -604,7 +599,7 @@ footer {
   white-space: nowrap;
 }
 
-/* 箭头 */
+
 .activity-arrow {
   font-size: 18px;
   color: #5d6d85;
@@ -616,7 +611,7 @@ footer {
   transform: rotate(180deg);
 }
 
-/* 折叠内容 */
+
 .activity-content {
   max-height: 0;
   overflow: hidden;
@@ -628,7 +623,7 @@ footer {
   border-top: 1px solid rgba(120, 140, 180, 0.15);
 }
 
-/* 描述 */
+
 .activity-description {
   margin: 18px 0 0;
   font-size: 16px;
@@ -636,7 +631,7 @@ footer {
   line-height: 1.8;
 }
 
-/* 移动端 */
+
 @media (max-width: 640px) {
   .activity-header {
     padding: 20px;
@@ -656,7 +651,7 @@ footer {
     font-size: 15px;
   }
 }
-/* ===== Scroll Reveal Animation ===== */
+
 
 .hero,
 .section,
@@ -676,7 +671,7 @@ footer.is-visible {
   transform: translateY(0);
 }
 
-/* 稍微做一点层次感：标题和卡片进入更柔和 */
+
 .section .section-title,
 .section .card,
 .section .edu-card,
@@ -688,7 +683,6 @@ footer.is-visible {
     box-shadow 0.25s ease;
 }
 
-/* 尊重系统“减少动态效果”设置 */
 @media (prefers-reduced-motion: reduce) {
   .hero,
   .section,
@@ -703,7 +697,7 @@ footer.is-visible {
     transition: none !important;
   }
 }
-/* ===== Research Accordion ===== */
+
 
 .research-list {
   display: flex;
@@ -832,4 +826,33 @@ footer.is-visible {
   .research-bullets li {
     font-size: 15px;
   }
+}
+
+
+.contact-text {
+  font-size: 17px;
+  color: #5d6d85;
+  line-height: 1.8;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.contact-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-phone {
+  font-weight: 600;
+  color: #294172;
+}
+
+.progress-fill {
+  width: 0 !important;
+  transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
