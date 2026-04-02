@@ -339,12 +339,12 @@ footer {
 }
 
 .gpa-fill {
-  --target-width: 97.75%;
+  target-width: 97.75%;
   background: linear-gradient(90deg, #6aa9ff, #5b8ee0);
 }
 
 .rank-fill {
-  --target-width: 97%;
+  target-width: 97%;
   background: linear-gradient(90deg, #5b62c8, #4e57b7);
 }
 
@@ -466,10 +466,10 @@ footer {
 
 .lang-label { font-size: 16px; color: #111827; margin-bottom: 6px; }
 
-.reading-fill { --target-width: 96.7%; background: #38bdf8; }
-.listening-fill { --target-width: 93.3%; background: #f87171; }
-.speaking-fill { --target-width: 80%; background: #fbbf24; }
-.writing-fill { --target-width: 83.3%; background: #a78bfa; }
+.reading-fill { target-width: 96.7%; background: #38bdf8; }
+.listening-fill { target-width: 93.3%; background: #f87171; }
+.speaking-fill { target-width: 80%; background: #fbbf24; }
+.writing-fill { target-width: 83.3%; background: #a78bfa; }
 
 
 
