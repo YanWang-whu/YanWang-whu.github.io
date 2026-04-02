@@ -109,27 +109,6 @@ header {
   transform: translateY(-2px);
 }
 
-.hero-card {
-  background: linear-gradient(135deg, #fff1eb 0%, #dff9fb 100%);
-  border-radius: 28px;
-  padding: 32px;
-  box-shadow: 0 16px 40px rgba(70, 90, 130, 0.12);
-}
-
-.photo-placeholder {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #ffd6a5, #fdffb6, #caffbf, #a0c4ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #3d4b66;
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-  padding: 20px;
-}
 
 .section {
   padding: 28px 0;
@@ -853,9 +832,7 @@ footer.is-visible {
   width: 0 ;
   transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-/* ===== Honors & Awards ===== */
 
-/* ===== Awards (Compact CV Style) ===== */
 
 .awards-card {
   padding: 26px 28px;
@@ -894,4 +871,29 @@ footer.is-visible {
   font-size: 14px;
   color: #9aa3b2;
   line-height: 1.6;
+}
+.hero-side-card {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.hero-side-card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 22px;
+  color: #2f436e;
+}
+
+.hero-side-card p {
+  margin: 0;
+  color: #5d6d85;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-side-card .tag-list {
+  margin-top: 18px;
 }
