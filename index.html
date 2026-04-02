@@ -466,20 +466,9 @@
     © 2026 Yan Wang
   </div>
 </footer>
-<script>
-  function toggleActivity(button) {
-    const card = button.parentElement;
-    const content = card.querySelector('.activity-content');
-
-    card.classList.toggle('active');
-
-    if (card.classList.contains('active')) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-    } else {
-      content.style.maxHeight = null;
-    }
-  }
-</script>
+  <button id="backToTopBtn">
+  ↑
+</button>
 <script>
   function toggleActivity(button) {
     const card = button.parentElement;
@@ -487,22 +476,57 @@
 
     card.classList.toggle('active');
 
-    if (card.classList.contains('active')) {
-      content.style.maxHeight = content.scrollHeight + 'px';
-    } else {
-      content.style.maxHeight = null;
+    if (content) {
+      if (card.classList.contains('active')) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = null;
+      }
     }
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     const revealItems = document.querySelectorAll('.hero, .section, footer');
     const progressBars = document.querySelectorAll('.progress-fill');
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section[id]');
 
     function animateProgressBars() {
       progressBars.forEach(bar => {
         const targetWidth = getComputedStyle(bar).getPropertyValue('--target-width').trim();
         if (targetWidth) {
-          bar.style.width = targetWidth;
+          requestAnimationFrame(() => {
+            bar.style.width = targetWidth;
+          });
+        }
+      });
+    }
+
+    function updateActiveNav() {
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const scrollPosition = window.scrollY + headerHeight + 120;
+
+      let currentId = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          currentId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        const target = link.getAttribute('href');
+        if (target === '#' + currentId) {
+          link.classList.add('active');
         }
       });
     }
@@ -530,6 +554,29 @@
       revealItems.forEach(item => item.classList.add('is-visible'));
       animateProgressBars();
     }
+
+    window.addEventListener('scroll', () => {
+      if (backToTopBtn) {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      }
+
+      updateActiveNav();
+    });
+
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    updateActiveNav();
   });
 </script>
 </body>
