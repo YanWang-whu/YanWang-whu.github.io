@@ -853,3 +853,45 @@ footer.is-visible {
   width: 0 ;
   transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
+/* ===== Honors & Awards ===== */
+
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.award-item {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(130, 150, 180, 0.12);
+}
+
+.award-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.award-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #2f436e;
+  line-height: 1.5;
+}
+
+.award-date {
+  font-size: 14px;
+  color: #9aa3b2;
+  white-space: nowrap;
+}
+
+.award-desc {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #9aa3b2;
+  line-height: 1.6;
+}
