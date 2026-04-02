@@ -437,12 +437,27 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     const revealItems = document.querySelectorAll('.hero, .section, footer');
+    const progressBars = document.querySelectorAll('.progress-fill');
+
+    function animateProgressBars() {
+      progressBars.forEach(bar => {
+        const targetWidth = getComputedStyle(bar).getPropertyValue('--target-width').trim();
+        if (targetWidth) {
+          bar.style.width = targetWidth;
+        }
+      });
+    }
 
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
+
+            if (entry.target.id === 'journey') {
+              animateProgressBars();
+            }
+
             observer.unobserve(entry.target);
           }
         });
@@ -454,6 +469,7 @@
       revealItems.forEach(item => observer.observe(item));
     } else {
       revealItems.forEach(item => item.classList.add('is-visible'));
+      animateProgressBars();
     }
   });
 </script>
