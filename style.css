@@ -855,18 +855,18 @@ footer.is-visible {
 }
 /* ===== Honors & Awards ===== */
 
-.awards-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 10px;
+/* ===== Awards (Compact CV Style) ===== */
+
+.awards-card {
+  padding: 26px 28px;
 }
 
-.award-item {
-  padding: 14px 18px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(130, 150, 180, 0.12);
+.award-row {
+  margin-bottom: 16px;
+}
+
+.award-row:last-child {
+  margin-bottom: 0;
 }
 
 .award-main {
@@ -890,7 +890,7 @@ footer.is-visible {
 }
 
 .award-desc {
-  margin-top: 6px;
+  margin-top: 4px;
   font-size: 14px;
   color: #9aa3b2;
   line-height: 1.6;
