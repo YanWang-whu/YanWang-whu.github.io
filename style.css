@@ -897,3 +897,38 @@ footer.is-visible {
 .hero-side-card .tag-list {
   margin-top: 18px;
 }
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #5b8ee0, #6aa9ff);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+
+  box-shadow: 0 8px 20px rgba(60, 80, 120, 0.25);
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+
+  transition: all 0.3s ease;
+}
+
+#backToTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+#backToTopBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(60, 80, 120, 0.35);
+}
