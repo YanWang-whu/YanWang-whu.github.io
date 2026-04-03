@@ -518,7 +518,8 @@
   <button id="backToTopBtn">
   ↑
 </button>
-<script>
+
+ <script>
   function toggleActivity(button) {
     const card = button.parentElement;
     const content = card.querySelector('.activity-content, .research-content');
@@ -527,6 +528,27 @@
 
     if (content) {
       if (card.classList.contains('active')) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = null;
+      }
+    }
+
+    const parentFoldContent = card.closest('.section-fold-content');
+    if (parentFoldContent) {
+      requestAnimationFrame(() => {
+        parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 'px';
+      });
+    }
+  }
+
+  function toggleSectionFold(button) {
+    const content = button.nextElementSibling;
+
+    button.classList.toggle('active');
+
+    if (content) {
+      if (button.classList.contains('active')) {
         content.style.maxHeight = content.scrollHeight + 'px';
       } else {
         content.style.maxHeight = null;
