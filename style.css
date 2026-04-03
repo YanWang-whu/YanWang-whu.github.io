@@ -1000,3 +1000,50 @@ footer.is-visible {
     border-radius: 14px;
   }
 }
+/* ===== Plain Folded Activities Section ===== */
+
+.section-fold-plain {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.fold-title {
+  margin: 0;
+}
+
+.section-fold-arrow {
+  font-size: 20px;
+  color: #5d6d85;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.section-fold-plain.active .section-fold-arrow {
+  transform: rotate(180deg);
+}
+
+.section-fold-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.section-fold-content .activities-list {
+  padding-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .section-fold-plain {
+    align-items: center;
+  }
+}
