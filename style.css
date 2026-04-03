@@ -934,7 +934,7 @@ footer.is-visible {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(60, 80, 120, 0.35);
 }
-/* ===== Active Nav Link (Scroll Spy) ===== */
+
 
 .nav-links a.active {
   color: #294172;
@@ -969,4 +969,34 @@ footer.is-visible {
 .skill-item strong {
   color: #2f436e;
   font-weight: 600;
+}
+
+.resume-card {
+  padding: 18px;
+  overflow: hidden;
+}
+
+.resume-frame {
+  width: 100%;
+  height: 900px;
+  border: none;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .resume-frame {
+    height: 700px;
+  }
+}
+
+@media (max-width: 640px) {
+  .resume-card {
+    padding: 12px;
+  }
+
+  .resume-frame {
+    height: 520px;
+    border-radius: 14px;
+  }
 }
