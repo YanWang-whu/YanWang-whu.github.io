@@ -951,3 +951,22 @@ footer.is-visible {
   border-radius: 999px;
   background: linear-gradient(90deg, #ff7a59, #ff5f6d);
 }
+.skills-card {
+  padding: 26px 28px;
+}
+
+.skill-item {
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #5d6d85;
+  line-height: 1.8;
+}
+
+.skill-item:last-child {
+  margin-bottom: 0;
+}
+
+.skill-item strong {
+  color: #2f436e;
+  font-weight: 600;
+}
