@@ -117,6 +117,7 @@ header {
 .section-title {
   font-size: 30px;
   margin-bottom: 18px;
+  margin-top: 0px;
   color: #294172;
 }
 
@@ -204,7 +205,7 @@ header {
 
 .contact-box {
   text-align: center;
-  padding: 1px 24px;
+  padding: 12px 24px;
   background: linear-gradient(135deg, #edf6ff, #fff1f2);
   border-radius: 28px;
   box-shadow: 0 12px 30px rgba(80, 100, 140, 0.08);
