@@ -1084,11 +1084,15 @@ footer.is-visible {
 }
 .cv-contact-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px; 
+  grid-template-columns: 2fr 1.1fr;
+  gap: 32px; 
   align-items: start;
 }
 
+.contact-side {
+  display: flex;
+  align-items: center;
+}
 .resume-side .resume-frame {
   height: 600px;
 }
