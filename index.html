@@ -567,7 +567,8 @@
 
     function animateProgressBarsInCard(card) {
   const bars = card.querySelectorAll('.progress-fill');
-
+      
+ setTimeout(() => { 
   bars.forEach(bar => {
     const targetWidth = getComputedStyle(bar).getPropertyValue('--target-width').trim();
     if (targetWidth && !bar.dataset.animated) {
@@ -577,6 +578,7 @@
       });
     }
   });
+    }, 500);
 }
 
     function updateActiveNav() {
