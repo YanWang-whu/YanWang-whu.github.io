@@ -1063,3 +1063,28 @@ footer.is-visible {
 .section-fold-content .activities-list {
     padding-bottom: 24px;
 }
+.section-fold-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 8px;
+  width: 100%;
+}
+
+.fold-title {
+  margin: 0;
+}
+
+.fold-hint {
+  font-size: 14px;
+  color: rgba(93, 109, 133, 0.5);
+  font-weight: 400;
+
+}
+
+.section-fold-arrow {
+  margin-left: auto; 
+  font-size: 20px;
+  color: #5d6d85;
+  transition: transform 0.3s ease;
+}
