@@ -1082,3 +1082,29 @@ footer.is-visible {
   color: #5d6d85;
   transition: transform 0.3s ease;
 }
+.cv-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px; 
+  align-items: start;
+}
+
+.resume-side .resume-frame {
+  height: 600px;
+}
+
+.contact-side .contact-box {
+  padding: 20px;
+}
+
+
+@media (max-width: 900px) {
+  .cv-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .resume-side .resume-frame {
+    height: 500px;
+  }
+}
