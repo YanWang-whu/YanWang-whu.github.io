@@ -497,18 +497,40 @@
   <section class="section" id="life">
   <div class="container">
     <h2 class="section-title">Beyond the Lab</h2>
-    <div class="card">
-      <h3>Life Moments & Stories</h3>
-      <p>
-        This space will later include selected snapshots from my life — moments that represent
-        my values, experiences, and growth beyond academics.
-      </p>
 
-      <div class="gallery-preview">
-        <div class="gallery-box">Photo 1</div>
-        <div class="gallery-box">Photo 2</div>
-        <div class="gallery-box">Photo 3</div>
+    <div class="life-carousel card">
+      <button class="life-nav life-nav-prev" aria-label="Previous photo">&#10094;</button>
+
+      <div class="life-stage">
+        <div class="life-track">
+          <div class="life-slide">
+            <img src="images/life1.jpg" alt="Life moment 1">
+            <p class="life-caption">Moment 1 · A glimpse of my life beyond research and coursework.</p>
+          </div>
+
+          <div class="life-slide">
+            <img src="images/life2.jpg" alt="Life moment 2">
+            <p class="life-caption">Moment 2 · A memorable experience that reflects curiosity and growth.</p>
+          </div>
+
+          <div class="life-slide">
+            <img src="images/life3.jpg" alt="Life moment 3">
+            <p class="life-caption">Moment 3 · A personal snapshot that shows another side of who I am.</p>
+          </div>
+
+          <div class="life-slide">
+            <img src="images/life4.jpg" alt="Life moment 4">
+            <p class="life-caption">Moment 4 · An experience outside the lab that shaped my perspective.</p>
+          </div>
+
+          <div class="life-slide">
+            <img src="images/life5.jpg" alt="Life moment 5">
+            <p class="life-caption">Moment 5 · A small but meaningful story from everyday life.</p>
+          </div>
+        </div>
       </div>
+
+      <button class="life-nav life-nav-next" aria-label="Next photo">&#10095;</button>
     </div>
   </div>
 </section>
@@ -578,7 +600,7 @@
       });
     }
   });
-    }, 1000);
+    }, 700);
 }
 
     function updateActiveNav() {
@@ -640,7 +662,78 @@
           backToTopBtn.classList.remove('show');
         }
       }
+const lifeSlides = document.querySelectorAll('.life-slide');
+const prevBtn = document.querySelector('.life-nav-prev');
+const nextBtn = document.querySelector('.life-nav-next');
 
+let lifeCurrent = 0;
+let lifeAutoPlay;
+let lifeResumeTimeout;
+
+function updateLifeCarousel() {
+  const total = lifeSlides.length;
+
+  lifeSlides.forEach((slide, index) => {
+    slide.classList.remove('is-left', 'is-center', 'is-right', 'is-hidden');
+
+    const offset = (index - lifeCurrent + total) % total;
+
+    if (offset === 0) {
+      slide.classList.add('is-center');
+    } else if (offset === 1) {
+      slide.classList.add('is-right');
+    } else if (offset === total - 1) {
+      slide.classList.add('is-left');
+    } else {
+      slide.classList.add('is-hidden');
+    }
+  });
+}
+
+function goToNextLifeSlide() {
+  lifeCurrent = (lifeCurrent + 1) % lifeSlides.length;
+  updateLifeCarousel();
+}
+
+function goToPrevLifeSlide() {
+  lifeCurrent = (lifeCurrent - 1 + lifeSlides.length) % lifeSlides.length;
+  updateLifeCarousel();
+}
+
+function startLifeAutoplay() {
+  clearInterval(lifeAutoPlay);
+  lifeAutoPlay = setInterval(() => {
+    goToNextLifeSlide();
+  }, 3200);
+}
+
+function pauseAndResumeLifeAutoplay() {
+  clearInterval(lifeAutoPlay);
+  clearTimeout(lifeResumeTimeout);
+
+  lifeResumeTimeout = setTimeout(() => {
+    startLifeAutoplay();
+  }, 5000);
+}
+
+if (lifeSlides.length) {
+  updateLifeCarousel();
+  startLifeAutoplay();
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      goToPrevLifeSlide();
+      pauseAndResumeLifeAutoplay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      goToNextLifeSlide();
+      pauseAndResumeLifeAutoplay();
+    });
+  }
+}
       updateActiveNav();
     });
 
