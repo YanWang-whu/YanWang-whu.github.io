@@ -521,41 +521,42 @@
 </button>
 
  <script>
-  function toggleActivity(button) {
+function toggleActivity(button) {
     const card = button.parentElement;
     const content = card.querySelector('.activity-content, .research-content');
 
     card.classList.toggle('active');
 
     if (content) {
-      if (card.classList.contains('active')) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      } else {
-        content.style.maxHeight = null;
-      }
+        if (card.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+            content.style.maxHeight = null;
+        }
     }
 
-     /*const parentFoldContent = card.closest('.section-fold-content');
-    if (parentFoldContent) {
-      requestAnimationFrame(() => {
-        parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 'px';
-      });
-    }*/
-  }
+    // ⚠️ 不要更新父容器 maxHeight
+    // const parentFoldContent = card.closest('.section-fold-content');
+    // if (parentFoldContent) {
+    //   requestAnimationFrame(() => {
+    //     parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 'px';
+    //   });
+    // }
+}
 
-  function toggleSectionFold(button) {
+function toggleSectionFold(button) {
     const content = button.nextElementSibling;
 
     button.classList.toggle('active');
 
     if (content) {
-      if (button.classList.contains('active')) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-      } else {
-        content.style.maxHeight = null;
-      }
+        if (button.classList.contains('active')) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+            content.style.maxHeight = null;
+        }
     }
-  }
+}
 
   document.addEventListener('DOMContentLoaded', function () {
     const revealItems = document.querySelectorAll('.hero, .section, footer');
