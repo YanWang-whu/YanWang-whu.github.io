@@ -1047,3 +1047,16 @@ footer.is-visible {
     align-items: center;
   }
 }
+.fold-hint {
+  font-size: 14px;
+  color: rgba(93, 109, 133, 0.5); 
+  margin-left: 8px;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+.section-fold-header {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+}
