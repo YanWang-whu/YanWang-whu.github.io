@@ -1060,3 +1060,6 @@ footer.is-visible {
   align-items: center;
   gap: 6px; 
 }
+.section-fold-content .activities-list {
+    padding-bottom: 24px;
+}
