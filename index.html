@@ -63,7 +63,7 @@
 
     <div class="education-cards">
 
-      <div class="edu-card">
+      <div class="edu-card progress-card">
         <div class="edu-header">
           <h3 class="edu-school whu-school">Wuhan University, China</h3>
           <div class="edu-time">Sept. 2023–Present</div>
@@ -108,7 +108,7 @@
       </div>
  
    
-      <div class="edu-card">
+      <div class="edu-card progress-card">
         <div class="edu-header">
           <h3 class="edu-school">Language</h3>
           <a href="https://YanWang-whu.github.io/TOEFL_Yan%20Wang.pdf" target="_blank" class="score-link">&#8594;</a>
@@ -560,21 +560,24 @@
    
   document.addEventListener('DOMContentLoaded', function () {
     const revealItems = document.querySelectorAll('.hero, footer, .section-title, .fold-hint .edu-card, .research-card, .activity-card, .skills-card, .awards-card, .resume-side, .gallery-box, .contact-box');
-    const progressBars = document.querySelectorAll('.progress-fill');
+    
     const backToTopBtn = document.getElementById('backToTopBtn');
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section[id]');
 
-    function animateProgressBars() {
-      progressBars.forEach(bar => {
-        const targetWidth = getComputedStyle(bar).getPropertyValue('--target-width').trim();
-        if (targetWidth) {
-          requestAnimationFrame(() => {
-            bar.style.width = targetWidth;
-          });
-        }
+    function animateProgressBarsInCard(card) {
+  const bars = card.querySelectorAll('.progress-fill');
+
+  bars.forEach(bar => {
+    const targetWidth = getComputedStyle(bar).getPropertyValue('--target-width').trim();
+    if (targetWidth && !bar.dataset.animated) {
+      requestAnimationFrame(() => {
+        bar.style.width = targetWidth;
+        bar.dataset.animated = 'true';
       });
     }
+  });
+}
 
     function updateActiveNav() {
       const header = document.querySelector('header');
@@ -610,10 +613,9 @@
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
 
-          if (entry.target.closest('#journey')) {
-  animateProgressBars();
+         if (entry.target.classList.contains('progress-card')) {
+  animateProgressBarsInCard(entry.target);
 }
-
             observer.unobserve(entry.target);
           }
         });
