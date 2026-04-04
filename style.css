@@ -1390,7 +1390,7 @@ footer.is-visible {
 .life-image-shell {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   border-radius: 24px;
   overflow: hidden;
   background: #eef3f8;
@@ -1402,9 +1402,9 @@ footer.is-visible {
   inset: 0;
   background-size: cover;
   background-position: center;
-  transform: scale(1.18);
-  filter: blur(22px);
-  opacity: 0.8;
+  transform: scale(1.2);
+  filter: blur(28px);
+  opacity: 0.9;
 }
 
 .life-image-main {
@@ -1427,7 +1427,6 @@ footer.is-visible {
   transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-/* 中间 */
 .life-slide.is-center {
   transform: translate(-50%, -50%) translateX(0) scale(1);
   opacity: 1;
@@ -1436,7 +1435,7 @@ footer.is-visible {
   pointer-events: auto;
 }
 
-/* 左边 */
+
 .life-slide.is-left {
   transform: translate(-50%, -50%) translateX(-115%) scale(0.82);
   opacity: 0.45;
@@ -1444,7 +1443,7 @@ footer.is-visible {
   filter: blur(1px);
 }
 
-/* 右边 */
+
 .life-slide.is-right {
   transform: translate(-50%, -50%) translateX(115%) scale(0.82);
   opacity: 0.45;
@@ -1452,7 +1451,7 @@ footer.is-visible {
   filter: blur(1px);
 }
 
-/* 其他隐藏 */
+
 .life-slide.is-hidden {
   transform: translate(-50%, -50%) scale(0.6);
   opacity: 0;
@@ -1460,7 +1459,6 @@ footer.is-visible {
   filter: blur(2px);
 }
 
-/* 悬停中间图时 */
 .life-slide.is-center .life-image-shell {
   cursor: zoom-in;
 }
