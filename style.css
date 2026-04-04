@@ -1347,3 +1347,223 @@ footer.is-visible {
     right: calc(50% - 58px);
   }
 }
+
+/* ===== Beyond the Lab Carousel ===== */
+
+.life-carousel {
+  position: relative;
+  padding: 36px 72px;
+  overflow: hidden;
+}
+
+.life-stage {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.life-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.life-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30%;
+  transform: translate(-50%, -50%) scale(0.72);
+  opacity: 0.32;
+  pointer-events: none;
+  text-align: center;
+}
+
+.life-carousel.is-ready .life-slide {
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.8s ease,
+    filter 0.8s ease;
+}
+
+.life-image-shell {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #eef3f8;
+  box-shadow: 0 14px 36px rgba(60, 80, 120, 0.16);
+}
+
+.life-image-blur {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.18);
+  filter: blur(22px);
+  opacity: 0.8;
+}
+
+.life-image-main {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  z-index: 2;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.life-caption {
+  margin: 14px auto 0;
+  max-width: 92%;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5d6d85;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+/* 中间 */
+.life-slide.is-center {
+  transform: translate(-50%, -50%) translateX(0) scale(1);
+  opacity: 1;
+  z-index: 3;
+  filter: blur(0);
+  pointer-events: auto;
+}
+
+/* 左边 */
+.life-slide.is-left {
+  transform: translate(-50%, -50%) translateX(-115%) scale(0.82);
+  opacity: 0.45;
+  z-index: 2;
+  filter: blur(1px);
+}
+
+/* 右边 */
+.life-slide.is-right {
+  transform: translate(-50%, -50%) translateX(115%) scale(0.82);
+  opacity: 0.45;
+  z-index: 2;
+  filter: blur(1px);
+}
+
+/* 其他隐藏 */
+.life-slide.is-hidden {
+  transform: translate(-50%, -50%) scale(0.6);
+  opacity: 0;
+  z-index: 1;
+  filter: blur(2px);
+}
+
+/* 悬停中间图时 */
+.life-slide.is-center .life-image-shell {
+  cursor: zoom-in;
+}
+
+.life-slide.is-center:hover {
+  z-index: 6;
+}
+
+.life-slide.is-center:hover .life-image-main {
+  transform: scale(1.08);
+}
+
+.life-slide.is-center:hover .life-caption {
+  color: #42526e;
+}
+
+.life-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.92);
+  color: #294172;
+  font-size: 22px;
+  box-shadow: 0 8px 22px rgba(60, 80, 120, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  z-index: 5;
+}
+
+.life-nav:hover {
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 12px 28px rgba(60, 80, 120, 0.2);
+  background: #ffffff;
+}
+
+.life-nav-prev {
+  left: 18px;
+}
+
+.life-nav-next {
+  right: 18px;
+}
+
+@media (max-width: 900px) {
+  .life-carousel {
+    padding: 28px 56px;
+  }
+
+  .life-stage {
+    height: 430px;
+  }
+
+  .life-slide {
+    width: 42%;
+  }
+
+  .life-slide.is-left {
+    transform: translate(-50%, -50%) translateX(-88%) scale(0.78);
+  }
+
+  .life-slide.is-right {
+    transform: translate(-50%, -50%) translateX(88%) scale(0.78);
+  }
+}
+
+@media (max-width: 640px) {
+  .life-carousel {
+    padding: 22px 18px 70px;
+  }
+
+  .life-stage {
+    height: 400px;
+  }
+
+  .life-slide {
+    width: 76%;
+  }
+
+  .life-slide.is-left,
+  .life-slide.is-right {
+    opacity: 0.18;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
+
+  .life-nav {
+    top: auto;
+    bottom: 18px;
+    transform: none;
+  }
+
+  .life-nav:hover {
+    transform: scale(1.04);
+  }
+
+  .life-nav-prev {
+    left: calc(50% - 58px);
+  }
+
+  .life-nav-next {
+    right: calc(50% - 58px);
+  }
+}
