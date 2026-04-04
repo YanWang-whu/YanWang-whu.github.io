@@ -143,7 +143,7 @@ header {
 }
 
 .card p {
-  margin: 0;
+  margin: 10px;
   color: #5d6d85;
 }
 
@@ -1210,7 +1210,7 @@ footer.is-visible {
 
 .life-slide img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 24px;
   display: block;
@@ -1227,7 +1227,7 @@ footer.is-visible {
 
 
 .life-slide.is-center {
-  transform: translate(-50%, -50%) translateX(0) scale(1);
+  transform: translate(-50%, -50%) translateX(0) scale(1.2);
   opacity: 1;
   z-index: 3;
   filter: blur(0);
@@ -1235,7 +1235,7 @@ footer.is-visible {
 
 
 .life-slide.is-left {
-  transform: translate(-50%, -50%) translateX(-115%) scale(0.82);
+  transform: translate(-50%, -50%) translateX(-115%) scale(0.7);
   opacity: 0.45;
   z-index: 2;
   filter: blur(1px);
@@ -1243,7 +1243,7 @@ footer.is-visible {
 
 
 .life-slide.is-right {
-  transform: translate(-50%, -50%) translateX(115%) scale(0.82);
+  transform: translate(-50%, -50%) translateX(115%) scale(0.7);
   opacity: 0.45;
   z-index: 2;
   filter: blur(1px);
@@ -1373,7 +1373,7 @@ footer.is-visible {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 30%;
+  width: 35%;
   transform: translate(-50%, -50%) scale(0.72);
   opacity: 0.32;
   pointer-events: none;
