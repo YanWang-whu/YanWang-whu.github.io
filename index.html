@@ -503,30 +503,57 @@
 
       <div class="life-stage">
         <div class="life-track">
+
           <div class="life-slide">
-            <img src="images/life1.jpg" alt="Life moment 1">
-            <p class="life-caption">Moment 1 · A glimpse of my life beyond research and coursework.</p>
+            <div class="life-image-shell">
+              <div class="life-image-blur" style="background-image: url('images/life1.jpg');"></div>
+              <img src="images/life1.jpg" alt="Life moment 1" class="life-image-main">
+            </div>
+            <p class="life-caption">
+              Moment 1 · A glimpse of my life beyond research and coursework.
+            </p>
           </div>
 
           <div class="life-slide">
-            <img src="images/life2.jpg" alt="Life moment 2">
-            <p class="life-caption">Moment 2 · A memorable experience that reflects curiosity and growth.</p>
+            <div class="life-image-shell">
+              <div class="life-image-blur" style="background-image: url('images/life2.jpg');"></div>
+              <img src="images/life2.jpg" alt="Life moment 2" class="life-image-main">
+            </div>
+            <p class="life-caption">
+              Moment 2 · A memorable experience that reflects curiosity and growth.
+            </p>
           </div>
 
           <div class="life-slide">
-            <img src="images/life3.jpg" alt="Life moment 3">
-            <p class="life-caption">Moment 3 · A personal snapshot that shows another side of who I am.</p>
+            <div class="life-image-shell">
+              <div class="life-image-blur" style="background-image: url('images/life3.jpg');"></div>
+              <img src="images/life3.jpg" alt="Life moment 3" class="life-image-main">
+            </div>
+            <p class="life-caption">
+              Moment 3 · A personal snapshot that shows another side of who I am.
+            </p>
           </div>
 
           <div class="life-slide">
-            <img src="images/life4.jpg" alt="Life moment 4">
-            <p class="life-caption">Moment 4 · An experience outside the lab that shaped my perspective.</p>
+            <div class="life-image-shell">
+              <div class="life-image-blur" style="background-image: url('images/life4.jpg');"></div>
+              <img src="images/life4.jpg" alt="Life moment 4" class="life-image-main">
+            </div>
+            <p class="life-caption">
+              Moment 4 · An experience outside the lab that shaped my perspective.
+            </p>
           </div>
 
           <div class="life-slide">
-            <img src="images/life5.jpg" alt="Life moment 5">
-            <p class="life-caption">Moment 5 · A small but meaningful story from everyday life.</p>
+            <div class="life-image-shell">
+              <div class="life-image-blur" style="background-image: url('images/life5.jpg');"></div>
+              <img src="images/life5.jpg" alt="Life moment 5" class="life-image-main">
+            </div>
+            <p class="life-caption">
+              Moment 5 · A small but meaningful story from everyday life.
+            </p>
           </div>
+
         </div>
       </div>
 
@@ -534,6 +561,7 @@
     </div>
   </div>
 </section>
+  
 <footer>
   <div class="container">
     © 2026 Yan Wang
@@ -657,88 +685,103 @@
     }
 
     const lifeSlides = document.querySelectorAll('.life-slide');
-    const prevBtn = document.querySelector('.life-nav-prev');
-    const nextBtn = document.querySelector('.life-nav-next');
-    const lifeCarousel = document.querySelector('.life-carousel');
+const prevBtn = document.querySelector('.life-nav-prev');
+const nextBtn = document.querySelector('.life-nav-next');
+const lifeCarousel = document.querySelector('.life-carousel');
 
-    let lifeCurrent = 0;
-    let lifeAutoPlay;
-    let lifeResumeTimeout;
+let lifeCurrent = 0;
+let lifeAutoPlay;
+let lifeResumeTimeout;
 
-    function updateLifeCarousel() {
-      const total = lifeSlides.length;
+function updateLifeCarousel() {
+  const total = lifeSlides.length;
 
-      lifeSlides.forEach((slide, index) => {
-        slide.classList.remove('is-left', 'is-center', 'is-right', 'is-hidden');
+  lifeSlides.forEach((slide, index) => {
+    slide.classList.remove('is-left', 'is-center', 'is-right', 'is-hidden');
 
-        const offset = (index - lifeCurrent + total) % total;
+    const offset = (index - lifeCurrent + total) % total;
 
-        if (offset === 0) {
-          slide.classList.add('is-center');
-        } else if (offset === 1) {
-          slide.classList.add('is-right');
-        } else if (offset === total - 1) {
-          slide.classList.add('is-left');
-        } else {
-          slide.classList.add('is-hidden');
-        }
-      });
+    if (offset === 0) {
+      slide.classList.add('is-center');
+    } else if (offset === 1) {
+      slide.classList.add('is-right');
+    } else if (offset === total - 1) {
+      slide.classList.add('is-left');
+    } else {
+      slide.classList.add('is-hidden');
     }
+  });
+}
 
-    function goToNextLifeSlide() {
-      lifeCurrent = (lifeCurrent + 1) % lifeSlides.length;
-      updateLifeCarousel();
-    }
+function goToNextLifeSlide() {
+  lifeCurrent = (lifeCurrent + 1) % lifeSlides.length;
+  updateLifeCarousel();
+}
 
-    function goToPrevLifeSlide() {
-      lifeCurrent = (lifeCurrent - 1 + lifeSlides.length) % lifeSlides.length;
-      updateLifeCarousel();
-    }
+function goToPrevLifeSlide() {
+  lifeCurrent = (lifeCurrent - 1 + lifeSlides.length) % lifeSlides.length;
+  updateLifeCarousel();
+}
 
-    function startLifeAutoplay() {
-      clearInterval(lifeAutoPlay);
-      lifeAutoPlay = setInterval(() => {
-        goToNextLifeSlide();
-      }, 3200);
-    }
+function startLifeAutoplay() {
+  clearInterval(lifeAutoPlay);
+  lifeAutoPlay = setInterval(() => {
+    goToNextLifeSlide();
+  }, 3200);
+}
 
-    function pauseAndResumeLifeAutoplay() {
-      clearInterval(lifeAutoPlay);
-      clearTimeout(lifeResumeTimeout);
+function pauseAndResumeLifeAutoplay(delay = 5000) {
+  clearInterval(lifeAutoPlay);
+  clearTimeout(lifeResumeTimeout);
 
-      lifeResumeTimeout = setTimeout(() => {
+  lifeResumeTimeout = setTimeout(() => {
+    startLifeAutoplay();
+  }, delay);
+}
+
+if (lifeSlides.length) {
+  updateLifeCarousel();
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (lifeCarousel) {
+        lifeCarousel.classList.add('is-ready');
+      }
+      setTimeout(() => {
         startLifeAutoplay();
-      }, 5000);
-    }
+      }, 800);
+    });
+  });
 
-    if (lifeSlides.length) {
-      updateLifeCarousel();
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      goToPrevLifeSlide();
+      pauseAndResumeLifeAutoplay(5000);
+    });
+  }
 
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          if (lifeCarousel) {
-            lifeCarousel.classList.add('is-ready');
-          }
-          setTimeout(() => {
-            startLifeAutoplay();
-          }, 800);
-        });
-      });
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      goToNextLifeSlide();
+      pauseAndResumeLifeAutoplay(5000);
+    });
+  }
 
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-          goToPrevLifeSlide();
-          pauseAndResumeLifeAutoplay();
-        });
+  lifeSlides.forEach(slide => {
+    slide.addEventListener('mouseenter', () => {
+      if (slide.classList.contains('is-center')) {
+        clearInterval(lifeAutoPlay);
+        clearTimeout(lifeResumeTimeout);
       }
+    });
 
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-          goToNextLifeSlide();
-          pauseAndResumeLifeAutoplay();
-        });
+    slide.addEventListener('mouseleave', () => {
+      if (slide.classList.contains('is-center')) {
+        pauseAndResumeLifeAutoplay(1200);
       }
-    }
+    });
+  });
+}
 
     window.addEventListener('scroll', () => {
       if (backToTopBtn) {
