@@ -247,6 +247,7 @@
   <div class="container">
     <button class="section-fold-header section-fold-plain" onclick="toggleSectionFold(this)">
     <h2 class="section-title fold-title">Academic Activities</h2>
+      <span class="fold-hint">(Click to expand)</span>
   <span class="section-fold-arrow">&#9662;</span>
     </button>
       <div class="section-fold-content">
@@ -534,12 +535,12 @@
       }
     }
 
-    const parentFoldContent = card.closest('.section-fold-content');
+     /*const parentFoldContent = card.closest('.section-fold-content');
     if (parentFoldContent) {
       requestAnimationFrame(() => {
         parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 'px';
       });
-    }
+    }*/
   }
 
   function toggleSectionFold(button) {
