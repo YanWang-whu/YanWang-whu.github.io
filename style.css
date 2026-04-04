@@ -1086,13 +1086,10 @@ footer.is-visible {
   display: grid;
   grid-template-columns: 2fr 1.1fr;
   gap: 32px; 
-  align-items: start;
-}
-
-.contact-side {
-  display: flex;
   align-items: center;
 }
+
+
 .resume-side .resume-frame {
   height: 600px;
 }
@@ -1124,16 +1121,16 @@ footer.is-visible {
 }
 
 .contact-box.is-visible .reveal-line:nth-child(1) { transition-delay: 0.25s; }
-.contact-box.is-visible .reveal-line:nth-child(2) { transition-delay: 0.32s; }
-.contact-box.is-visible .reveal-line:nth-child(3) { transition-delay: 0.49s; }
-.contact-box.is-visible .reveal-line:nth-child(4) { transition-delay: 0.66s; }
-.contact-box.is-visible .reveal-line:nth-child(5) { transition-delay: 0.63s; }
-.contact-box.is-visible .reveal-line:nth-child(6) { transition-delay: 0.80s; }
-.contact-box.is-visible .reveal-line:nth-child(7) { transition-delay: 0.77s; }
-.contact-box.is-visible .reveal-line:nth-child(8) { transition-delay: 0.84s; }
-.contact-box.is-visible .reveal-line:nth-child(9) { transition-delay: 0.71s; }
-.contact-box.is-visible .reveal-line:nth-child(10) { transition-delay: 0.88s; }
-.contact-box.is-visible .reveal-line:nth-child(11) { transition-delay: 0.78s; }
+.contact-box.is-visible .reveal-line:nth-child(2) { transition-delay: 0.42s; }
+.contact-box.is-visible .reveal-line:nth-child(3) { transition-delay: 0.69s; }
+.contact-box.is-visible .reveal-line:nth-child(4) { transition-delay: 0.86s; }
+.contact-box.is-visible .reveal-line:nth-child(5) { transition-delay: 0.99s; }
+.contact-box.is-visible .reveal-line:nth-child(6) { transition-delay: 1.12s; }
+.contact-box.is-visible .reveal-line:nth-child(7) { transition-delay: 1.27s; }
+.contact-box.is-visible .reveal-line:nth-child(8) { transition-delay: 1.44s; }
+.contact-box.is-visible .reveal-line:nth-child(9) { transition-delay: 1.61s; }
+.contact-box.is-visible .reveal-line:nth-child(10) { transition-delay: 1.78s; }
+.contact-box.is-visible .reveal-line:nth-child(11) { transition-delay: 1.95s; }
 
 @media (prefers-reduced-motion: reduce) {
   .contact-box .reveal-line {
