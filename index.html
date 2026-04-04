@@ -535,23 +535,22 @@ function toggleActivity(button) {
         }
     }
 
-    // ⚠️ 不要更新父容器 maxHeight
-    // const parentFoldContent = card.closest('.section-fold-content');
-    // if (parentFoldContent) {
-    //   requestAnimationFrame(() => {
-    //     parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 'px';
-    //   });
-    // }
+    
+     const parentFoldContent = card.closest('.section-fold-content');
+     if (parentFoldContent) {
+      requestAnimationFrame(() => {
+       parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 'px';
+      });
+    }
 }
 
 function toggleSectionFold(button) {
     const content = button.nextElementSibling;
-
     button.classList.toggle('active');
 
     if (content) {
         if (button.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.maxHeight = content.scrollHeight + 50 + 'px';
         } else {
             content.style.maxHeight = null;
         }
