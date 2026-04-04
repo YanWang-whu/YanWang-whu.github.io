@@ -1197,12 +1197,15 @@ footer.is-visible {
   width: 30%;
   transform: translate(-50%, -50%) scale(0.72);
   opacity: 0.32;
+  pointer-events: none;
+  text-align: center;
+}
+
+.life-carousel.is-ready .life-slide {
   transition:
     transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.8s ease,
     filter 0.8s ease;
-  pointer-events: none;
-  text-align: center;
 }
 
 .life-slide img {
