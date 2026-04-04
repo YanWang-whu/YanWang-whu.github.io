@@ -610,9 +610,9 @@
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
 
-            if (entry.target.id === 'journey') {
-              animateProgressBars();
-            }
+          if (entry.target.closest('#journey')) {
+  animateProgressBars();
+}
 
             observer.unobserve(entry.target);
           }
