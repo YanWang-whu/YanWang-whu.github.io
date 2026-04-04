@@ -538,7 +538,7 @@
     const parentFoldContent = card.closest('.section-fold-content');
     if (parentFoldContent) {
       requestAnimationFrame(() => {
-        parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 'px';
+        parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 150 + 'px';
       });
     }
   }
