@@ -646,11 +646,12 @@ footer.is-visible {
   transform: translateY(0);
 }
 
-/* 各个标题和卡片单独出现 */
+
 .section-title,
 .edu-card,
 .research-card,
 .activity-card,
+.fold-hint, 
 .skills-card,
 .awards-card,
 .resume-side,
@@ -669,6 +670,7 @@ footer.is-visible {
 .edu-card.is-visible,
 .research-card.is-visible,
 .activity-card.is-visible,
+.fold-hint.is-visible,
 .skills-card.is-visible,
 .awards-card.is-visible,
 .resume-side.is-visible,
@@ -1220,7 +1222,7 @@ footer.is-visible {
   color: #5d6d85;
 }
 
-/* 中间 */
+
 .life-slide.is-center {
   transform: translate(-50%, -50%) translateX(0) scale(1);
   opacity: 1;
@@ -1228,7 +1230,7 @@ footer.is-visible {
   filter: blur(0);
 }
 
-/* 左边 */
+
 .life-slide.is-left {
   transform: translate(-50%, -50%) translateX(-115%) scale(0.82);
   opacity: 0.45;
@@ -1236,7 +1238,7 @@ footer.is-visible {
   filter: blur(1px);
 }
 
-/* 右边 */
+
 .life-slide.is-right {
   transform: translate(-50%, -50%) translateX(115%) scale(0.82);
   opacity: 0.45;
@@ -1244,7 +1246,7 @@ footer.is-visible {
   filter: blur(1px);
 }
 
-/* 其他隐藏但保留动画逻辑 */
+
 .life-slide.is-hidden {
   transform: translate(-50%, -50%) scale(0.6);
   opacity: 0;
