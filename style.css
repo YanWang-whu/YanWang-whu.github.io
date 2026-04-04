@@ -1275,7 +1275,7 @@ footer.is-visible {
 }
 
 .life-nav:hover {
-  transform: translateY(-50%) scale(1.06);
+  transform: translateY(-50%) scale(1.1);
   box-shadow: 0 12px 28px rgba(60, 80, 120, 0.2);
   background: #ffffff;
 }
@@ -1336,7 +1336,7 @@ footer.is-visible {
   }
 
   .life-nav:hover {
-    transform: scale(1.04);
+    transform: scale(1.1);
   }
 
   .life-nav-prev {
@@ -1373,7 +1373,7 @@ footer.is-visible {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 35%;
+  width: 40%;
   transform: translate(-50%, -50%) scale(0.72);
   opacity: 0.32;
   pointer-events: none;
@@ -1428,7 +1428,7 @@ footer.is-visible {
 }
 
 .life-slide.is-center {
-  transform: translate(-50%, -50%) translateX(0) scale(1);
+  transform: translate(-50%, -50%) translateX(0) scale(1.1);
   opacity: 1;
   z-index: 3;
   filter: blur(0);
