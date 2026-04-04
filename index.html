@@ -536,14 +536,18 @@ function toggleActivity(button) {
     }
 
     
-     const parentFoldContent = card.closest('.section-fold-content');
-     if (parentFoldContent) {
-      requestAnimationFrame(() => {
-       parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 'px';
-      });
+    const foldContent = card.closest('.section-fold-content');
+    if (foldContent) {
+        let totalHeight = 0;
+        foldContent.querySelectorAll('.activity-content').forEach(c => {
+            if (c.parentElement.classList.contains('active')) {
+                totalHeight += c.scrollHeight;
+            }
+        });
+        foldContent.style.maxHeight = totalHeight + 40 + 'px'; 
     }
 }
-
+   
 function toggleSectionFold(button) {
     const content = button.nextElementSibling;
     button.classList.toggle('active');
