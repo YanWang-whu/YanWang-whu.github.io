@@ -716,9 +716,21 @@ function pauseAndResumeLifeAutoplay() {
   }, 5000);
 }
 
+const lifeCarousel = document.querySelector('.life-carousel');
+
 if (lifeSlides.length) {
   updateLifeCarousel();
-  startLifeAutoplay();
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (lifeCarousel) {
+        lifeCarousel.classList.add('is-ready');
+      }
+      setTimeout(() => {
+        startLifeAutoplay();
+      }, 800);
+    });
+  });
 
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
