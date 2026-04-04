@@ -521,46 +521,42 @@
 </button>
 
  <script>
-function toggleActivity(button) {
+ function toggleActivity(button) {
     const card = button.parentElement;
     const content = card.querySelector('.activity-content, .research-content');
 
     card.classList.toggle('active');
 
     if (content) {
-        if (card.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-            content.style.maxHeight = null;
-        }
+      if (card.classList.contains('active')) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = null;
+      }
     }
 
-    
-    const foldContent = card.closest('.section-fold-content');
-    if (foldContent) {
-        let totalHeight = 0;
-        foldContent.querySelectorAll('.activity-content').forEach(c => {
-            if (c.parentElement.classList.contains('active')) {
-                totalHeight += c.scrollHeight;
-            }
-        });
-        foldContent.style.maxHeight = totalHeight + 40 + 'px'; 
+    const parentFoldContent = card.closest('.section-fold-content');
+    if (parentFoldContent) {
+      requestAnimationFrame(() => {
+        parentFoldContent.style.maxHeight = parentFoldContent.scrollHeight + 'px';
+      });
     }
-}
-   
-function toggleSectionFold(button) {
+  }
+
+  function toggleSectionFold(button) {
     const content = button.nextElementSibling;
+
     button.classList.toggle('active');
 
     if (content) {
-        if (button.classList.contains('active')) {
-            content.style.maxHeight = content.scrollHeight + 50 + 'px';
-        } else {
-            content.style.maxHeight = null;
-        }
+      if (button.classList.contains('active')) {
+        content.style.maxHeight = content.scrollHeight + 150 + 'px';
+      } else {
+        content.style.maxHeight = null;
+      }
     }
-}
-
+  }
+   
   document.addEventListener('DOMContentLoaded', function () {
     const revealItems = document.querySelectorAll('.hero, .section, footer');
     const progressBars = document.querySelectorAll('.progress-fill');
