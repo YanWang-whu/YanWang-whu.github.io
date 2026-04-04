@@ -1133,6 +1133,7 @@ footer.is-visible {
 .contact-box.is-visible .reveal-line:nth-child(8) { transition-delay: 0.84s; }
 .contact-box.is-visible .reveal-line:nth-child(9) { transition-delay: 0.71s; }
 .contact-box.is-visible .reveal-line:nth-child(10) { transition-delay: 0.88s; }
+.contact-box.is-visible .reveal-line:nth-child(11) { transition-delay: 0.78s; }
 
 @media (prefers-reduced-motion: reduce) {
   .contact-box .reveal-line {
