@@ -559,7 +559,7 @@
   }
    
   document.addEventListener('DOMContentLoaded', function () {
-    const revealItems = document.querySelectorAll('.hero, footer, .section-title, .fold-hint .edu-card, .research-card, .activity-card, .skills-card, .awards-card, .resume-side, .gallery-box, .contact-box');
+    const revealItems = document.querySelectorAll('.hero, footer, .section-title, .fold-hint, .edu-card, .research-card, .activity-card, .skills-card, .awards-card, .resume-side, .gallery-box, .contact-box');
     
     const backToTopBtn = document.getElementById('backToTopBtn');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -627,7 +627,7 @@
       revealItems.forEach(item => observer.observe(item));
     } else {
       revealItems.forEach(item => item.classList.add('is-visible'));
-      animateProgressBars();
+      animateProgressBars(card);
     }
 
     window.addEventListener('scroll', () => {
