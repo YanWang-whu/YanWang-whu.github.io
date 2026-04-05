@@ -257,12 +257,13 @@
             <div class="research-section">
   <div class="research-subtitle">Background</div>
   <p class="research-text">
-        Neuropeptides are small signaling molecules secreted by neurons in <em>C. elegans</em>. With its simple nervous system and fully mapped connectome,
-    <em>C. elegans</em> is an ideal model to study how neuropeptides regulate neural circuits. Among them, the insulin-like peptide (ILP) family is evolutionarily conserved and of particular interest.
+        Identifying target proteins of small-molecule drugs is important for understanding their mechanisms, discovering new targets, and guiding drug optimization. 
+    Proximity labeling methods link the drug to an enzyme as a bait to label nearby proteins. Existing methods such as APEX2 and TurboID have their limitations.
   </p>
     <p class="research-text">
-        Previous studies have shown that insulin-like peptide-1 (INS-1) is involved in integrating environmental cues to regulate behavior. 
-      In our preliminary work, we found that while wild-type worms avoid ethanol under high-salt conditions, <em>ins-1</em> mutants instead show strong attraction. This leads to our key question: how does INS-1 modulate neural circuits to reverse chemotactic behavior?
+       Our lab previously developed POST-IT (Pup-On-target for Small molecule Target Identification Technology), based on a prokaryotic ubiquitin-like system. 
+      In this system, the small molecule is linked via HaloTag, and the enzyme <strong>PafA</strong> attaches a small protein (<strong>SBP–Pup</strong>) to nearby proteins. It can be used in living cells under mild conditions, 
+      is highly orthogonal to eukaryotic systems, and shows low diffusion. However, it still has some limitations, such as relatively slow labeling in cells and high substrate demand.
   </p>
 </div>
 
@@ -270,28 +271,28 @@
   <div class="research-subtitle">Research</div>
 
   <p class="research-text">
-    We plan to combine neuron-specific knockout and rescue of <em>ins-1</em> 
-    with behavioral assays to identify key neurons, and further use calcium imaging, optogenetics, and visualization of INS-1 release to study its mechanism.
+    To address these limitations, we focused on the PafA enzyme and used yeast surface display combined with error-prone PCR to build a mutant library. 
+    Through directed evolution, we aimed to obtain PafA variants that require less time and lower substrate concentration to reach effective labeling.
   </p>
 
   <p class="research-text">
-     Using a strain with loxP sites flanking <em>ins-1</em> and Cre-mediated recombination, I constructed neuron-specific knockouts in ASEL, AIY, and muscle. 
-    Knockout in ASEL and muscle both reduced ethanol preference, but did not fully restore wild-type avoidance, possibly due to residual INS-1 from other sources.
+     We expressed and purified PafA, and SBP–Pup as the enzyme and the substrate for in vivo & vitro reactions. Based on error-prone PCR, we constructed a PafA mutant library with a size of ~10<sup>6</sup>. 
+    Using flow cytometry sorting, we performed nine rounds of directed evolution with gradually reduced labeling time, and successfully obtained the R9 library with significantly improved catalytic efficiency.
   </p>
 
   <p class="research-text">
-     I then constructed neuron-specific rescue of <em>ins-1</em> in the mutant background (ASEL, ASER, AWC, AIZ, etc.). 
-    Rescue in ASEL and AIZ significantly restored ethanol avoidance, helping us identify key neurons.
+    We then applied NGS to sequence the enriched PafA genes. From the results, we identified 9 meaningful mutation sites. By combining these sites, we constructed five multi-mutant PafA variants. 
+    Both flow cytometry and confocal imaging showed that the 9mt-L1 variant, containing all nine mutations, had the highest catalytic efficiency. 
+    We further performed evolution under lower substrate conditions, optimizing the reaction from 18 h, 40 μM to 2 h, 10 μM.
   </p>
 
    <p class="research-text">
-     Calcium imaging shows that <em>ins-1</em> mutation does not significantly affect ASER (Core Salt Sensor) activity. Under high salt, ASEL shows strong activation upon ethanol removal, suggesting its role in this behavior. 
-     Optogenetic inhibition of ASEL in wild-type worms reduces ethanol avoidance, consistent with the ASEL-specific knockout, suggesting INS-1 may mediate signaling from ASEL to downstream neurons.
+     We also used structural tools such as AlphaFold3 to analyze how these mutations affect the homodimer interface, ATP-binding site, and catalytic regions, which may support future rational design.
   </p>
 
   <p class="research-text">
-     In the future, based on the status of ASEL–AIY–AIZ circuit in the connectome, we will further conduct behavioral test on AIY-related strains and perform calcium imaging on key nuerons in the <em>ins-1</em> mutant background. 
-    We have also fused INS-1 with a fluorescent tag and expect to visualize its stimulus-dependent release in key neurons using confocal imaging.
+     In the future, we plan to further improve PafA efficiency and move toward applications. We will first test POST-IT using dasatinib, and then apply it to Hino, which is a Parkinson’s disease-related compound studied by our lab, whose mechanism is still unclear. 
+    By synthesizing a Hino-linker–chloroalkane and integrating it into POST-IT via click chemistry, we aim to identify its target proteins.
   </p>
 </div>
 
@@ -299,14 +300,16 @@
   <div class="research-subtitle">My Participation</div>
 
   <p class="research-text">
-        This is the first project I have carried out <strong>independently</strong>, from plasmid design and microinjection to behavioral assays and optogenetic experiments. 
-    I also discussed with my supervisor to refine the research direction along the way.
+        This project was initially guided by a senior student together with another undergraduate labmate and me. Since last summer, we two undergraduates have been working on it independently. 
+    We made equal contributions in many experiments. I did experiments like constructing mutant PafA plasmids, 
+    preparing competent yeast, protein purification, in vitro assays (validated by SDS–PAGE), in vivo labeling and flow cytometry analysis, as well as basic structural analysis.
   </p>
 
   <p class="research-text">
-       Through this project, I learned not only the full workflow of C. elegans experiments, but also how to design experiments and improve them based on results. 
-    For example, when using blue light to activate ACR2, I encountered overheating that killed the worms. I solved this by using a simple timer socket to intermittently power the light source. 
-    The behavioral assays also made me realize the importance of careful control, as factors like humidity and temperature can affect ethanol evaporation and lead to variability in results.
+       What impressed me most during this project was actually “failure.” When we first took over, our priority was to prepare enough protein. 
+    While PafA purification went smoothly, the small protein SBP–Pup failed to be expressed at a usable level after five attempts. We tried different columns, IPTG gradient induction, and Western blot to troubleshoot. 
+    In the end, we switched to ArcticExpress cells carrying cold-shock chaperones and successfully expressed Pup at low temperature. 
+    We think the issue was due to its small size, as high expression may lead to inclusion body formation. This experience gave me a much deeper understanding of how to debug experiments in practice.
   </p>
 </div>
           </div>
