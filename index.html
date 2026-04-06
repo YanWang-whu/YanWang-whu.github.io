@@ -338,35 +338,82 @@
            <div class="research-section">
   <div class="research-subtitle">Background</div>
   <p class="research-text">
-        This project investigates how the neuropeptide INS-1 regulates alcohol perception under high-salt conditions in <em>C. elegans</em>, aiming to understand how neuromodulatory signals reshape behavioral responses under environmental stress.
-  </p>
-</div>
+        Bio-computing is a promising field with potential applications in bio-security, environmental monitoring, and personalized medicine. 
+    However, there has always been a significant gap between successfully constructing logic gates and actually achieving computation. 
+    Previous designs were always limited to within a single cell, constrained by available orthogonal components and cellular metabolic pressures, 
+    making it difficult to construct complex adders.
+     </p>
 
+  <p class="research-text">
+       Fedorec, A. J. H. et al. developed a new method to build logic gates at the colony level. 
+    Using simple gene circuits such as high-pass and band-pass filters, along with spatial diffusion of inducers on solid media, 
+    colonies can generate outputs of classical logic gates like AND, OR, and XOR. 
+    This approach not only uses simple circuits but also allows easy tuning of logic functions by adjusting physical parameters.
+     </p>
+
+      <p class="research-text">
+      Building on this, we creatively developed a toolkit for constructing logic gates by combining orthogonal quorum sensing and light-controll eddegradation. 
+        Using this toolkit, we built a reproducible binary adder, showcasing the most intuitive aspect of biological computation.
+     </p>
+</div>
+          
 <div class="research-section">
   <div class="research-subtitle">Research</div>
 
   <p class="research-text">
-     Through behavioral assays, we examined ethanol chemotaxis under different salt conditions and identified a reversal of avoidance behavior in <em>ins-1</em> mutants.
+    We constructed fluorescent reporters from six different quorum-sensing systems and tested their orthogonality, 
+    obtaining two sets of three orthogonal systems each to support inputs, outputs, and carry signals for the adder.
   </p>
 
   <p class="research-text">
-      We constructed neuron-specific knockout and rescue strains to localize the functional site of INS-1 within the neural circuit.
+     For each quorum-sensing system, we measured the diffusion–response curves on solid media and built high-pass and band-pass circuits, 
+    allowing engineered cells to perform basic logic gates like AND, OR, and XOR. 
+    We further designed and implemented cascaded logic gate experiments to simulate multi-input logic, serial calculation and addition computation.
   </p>
 
   <p class="research-text">
-       Calcium imaging experiments were performed to analyze neuronal activity changes and investigate how INS-1 modulates circuit-level responses.
+    To enable repeated operation, we inserted light-sensitive domains into the AHL-degrading enzyme AiiA for light-controlled degradation and 
+    developed light-inducible fluorescent proteins. 
+    This involved functional validation of the enzyme, molecular dynamics simulations of AiiA, and functional validation of the protein degradation tag.
   </p>
+
+  <p class="research-text">
+     For accurate and automated quantification of fluorescent colonies, 
+    we developed a colony quantification program. We also modeled wet-lab data for different quorum-sensing systems, 
+    creating simulation software to predict system responses to AHLs, and an educational platform to simulate colonies forming an adder.
+  </p>
+  <p class="research-text">
+       The resulting tools, including <em>orthogonal AHL biosensors and diffusion–response mapping</em>, <em>logic gate modules</em>, 
+    <em>light-induced degradation</em>, <em>modeling methods for spatial computation</em>, <em>visualization and debugging software</em>, 
+    and <em>hardware for easier colony localization</em>, 
+    were integrated into the LOGIC toolbox to provide a foundation for future contributions to the iGEM community.
 </div>
 
 <div class="research-section">
   <div class="research-subtitle">My Participation</div>
 
   <p class="research-text">
-        I independently designed and conducted behavioral assays and participated in strain construction and validation.
+       During the project proposal phase, I independently proposed the LOGIC design concept, 
+    which uses multiple quorum-sensing systems and spatial diffusion to implement logic inputs and addition computation. 
+    I also drew the early modular blueprint for the project.
   </p>
 
   <p class="research-text">
-       I performed calcium imaging experiments, image processing, and data analysis, and identified ASEL as a key neuron involved in INS-1 signaling.
+        In the lab, I was a core wet-lab member involved in establishing the technical approach, designing experiments, developing tools, 
+    and visualizing results. My specific contributions include screening orthogonal systems, validating logic gates, 
+    implementing multi-input and cascaded logic gates, quantifying and visualizing all logic-related data, and integrating the LOGIC toolbox.
+  </p>
+
+  <p class="research-text">
+        During project selection, both LOGIC and CLEANSE, which I designed, were chosen from over 20 proposals to enter the final four. 
+    In LOGIC, I applied interdisciplinary thinking, combining the orthogonality concept and quorum-sensing systems I had just learned in microbiology to build spatial diffusion logic gates, 
+    using bacterial communication as “wires,” and applied programming knowledge to design colonies performing binary computation.
+  </p>
+  
+  <p class="research-text">
+       For LOGIC experimental results, we needed to quantify fluorescence for different colonies (logic gates) under varying inducer concentrations, distances, and durations. To handle this large dataset, 
+    I learned ImageJ macros and developed batch-processing scripts to quickly and accurately identify, 
+    select, and quantify colonies, allowing us to process over 6,000 colonies and more than 20,000 quantifications.
   </p>
 </div>
           </div>
