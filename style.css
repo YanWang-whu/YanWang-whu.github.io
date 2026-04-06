@@ -1631,3 +1631,16 @@ footer.is-visible {
   visibility: visible;
   transform: translateY(0);
 }
+.wiki-link {
+  margin-left: 8px;
+  font-size: 0.9em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: inherit;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+.wiki-link:hover {
+  opacity: 1;
+}
