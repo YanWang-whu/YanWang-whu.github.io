@@ -324,7 +324,7 @@ footer {
 }
 
 .rank-fill {
-  --target-width: 97%;
+  --target-width: 100%;
   background: linear-gradient(90deg, #5b62c8, #4e57b7);
 }
 
