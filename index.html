@@ -23,7 +23,8 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
+  <div class="hero-home" id="hero-home">
   <div class="container hero-grid">
     <div class="hero-text">
       <h1>
@@ -37,6 +38,33 @@
       <div class="hero-buttons">
         <a href="#research" class="btn-primary">Explore My Research</a>
         <a href="#life" class="btn-secondary">See My Life Moments</a>
+      </div>
+
+      <div class="interest-map-launcher" aria-label="Research interest maps">
+        <div class="interest-map-copy">
+          <span class="interest-map-eyebrow">Interest Maps</span>
+          <strong>Trace the papers behind my questions</strong>
+          <span class="interest-map-slogan">Start from a frontier question, then follow evidence across time.</span>
+        </div>
+        <div class="interest-map-graphic" aria-hidden="true">
+          <span class="route-line"></span>
+          <span class="route-dot route-dot-one"></span>
+          <span class="route-dot route-dot-two"></span>
+          <span class="route-dot route-dot-three"></span>
+          <span class="route-question">?</span>
+        </div>
+        <div class="interest-map-actions">
+          <button type="button" class="interest-map-button torpor" onclick="openInterestMap('torpor')">
+            <span class="button-title">Torpor / Hibernation</span>
+            <span class="button-subtitle">Neural induction to protection</span>
+            <span class="click-hand" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="interest-map-button cognition" onclick="openInterestMap('cognition')">
+            <span class="button-title">Cognition</span>
+            <span class="button-subtitle">Circuits to higher functions</span>
+            <span class="click-hand" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -58,9 +86,414 @@
       </div>
     </div>
   </div>
+  </div>
+
+  <section class="interest-map-workspace" id="interest-map-workspace" hidden>
+  <div class="container">
+    <div class="interest-map-shell">
+      <div class="interest-map-topbar">
+        <div>
+          <span class="interest-map-eyebrow">Research Interest Map</span>
+          <h2 id="interest-map-title">Artificial Induction of Torpor / Hibernation</h2>
+        </div>
+        <button type="button" class="interest-map-close" onclick="closeInterestMap()" aria-label="Close interest map">
+          Close
+        </button>
+      </div>
+
+      <div class="interest-map-panel active" data-interest-panel="torpor">
+        <div class="torpor-v3-map">
+          <div class="map-intro">
+            <p>
+              A working roadmap for reading how natural torpor is understood, how its mechanisms are maintained, and how artificial neural induction may produce protective physiological states. Hover over each coordinate for notes; click a publication node to open its PubMed page.
+            </p>
+          </div>
+
+          <div class="map-area-tabs" role="tablist" aria-label="Torpor map areas">
+            <button type="button" class="map-area-tab active" data-area-tab="neural-route" onclick="switchTorporArea('neural-route')">
+              <span>Area 1</span>
+              Neural torpor route
+            </button>
+            <button type="button" class="map-area-tab" data-area-tab="cryonics-route" onclick="switchTorporArea('cryonics-route')">
+              <span>Area 2</span>
+              Human cryopreservation route
+            </button>
+          </div>
+
+          <div class="torpor-area-panel active" data-torpor-area="neural-route">
+            <div class="map-region primary-route">
+              <div class="map-region-header">
+                <span class="map-region-kicker">Area 1</span>
+                <h3>Main Technical Route: Neural Induction of Torpor</h3>
+              </div>
+
+              <div class="paper-legend" aria-label="Research team color legend">
+                <span class="legend-chip team-wangtf">Tongfei Wang</span>
+                <span class="legend-chip team-wangsq">Shiqiang Wang</span>
+                <span class="legend-chip team-sunagawa">Genshiro Sunagawa</span>
+                <span class="legend-chip team-hrvatin">Hrvatin / Senmiao Sun</span>
+                <span class="legend-chip team-machado">Natalia Machado</span>
+                <span class="legend-chip team-gracheva">Elena Gracheva</span>
+              </div>
+
+              <div class="roadmap-scroll" aria-label="Torpor research roadmap">
+                <div class="roadmap-grid torpor-grid-v3">
+                  <div class="roadmap-corner">Time</div>
+                  <div class="roadmap-question">How do hibernators enter torpor?</div>
+                  <div class="roadmap-question">What mechanisms maintain torpor?</div>
+                  <div class="roadmap-question">How are organs protected?</div>
+                  <div class="roadmap-question">Which neural / metabolic switches matter?</div>
+                  <div class="roadmap-question">Can torpor be induced?</div>
+                  <div class="roadmap-question">What protective effects emerge?</div>
+                  <div class="roadmap-question">In higher animals?</div>
+
+                  <div class="roadmap-year">2026</div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell node-cell">
+                    <a class="paper-node team-wangtf" href="https://pubmed.ncbi.nlm.nih.gov/41495223/" target="_blank" rel="noopener" aria-describedby="paper-wangtf-2026">
+                      <span class="paper-node-dot"></span>
+                      <span class="paper-node-label">Wu et al., Wang lab</span>
+                      <span class="paper-link-cue">PubMed</span>
+                      <span class="paper-tooltip" id="paper-wangtf-2026">
+                        <strong>Photo-cross-linking-assisted deorphanization deciphers GPR50-L-LEN pairing in metabolism</strong>
+                        <span class="paper-citation">Wu, R., Li, N., Wen, Z., Wang, Y. et al. <em>Nature Chemical Biology</em> (2026).</span>
+                        <span>This is not a direct hibernation-induction paper, but it maps a receptor-ligand metabolic axis that helps frame targetable switches for hypometabolism.</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+
+                  <div class="roadmap-year">2025</div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell node-cell">
+                    <a class="paper-node team-machado" href="https://pubmed.ncbi.nlm.nih.gov/40437091/" target="_blank" rel="noopener" aria-describedby="paper-machado-2025">
+                      <span class="paper-node-dot"></span>
+                      <span class="paper-node-label">Machado et al.</span>
+                      <span class="paper-link-cue">PubMed</span>
+                      <span class="paper-tooltip" id="paper-machado-2025">
+                        <strong>Preoptic EP3R neurons constitute a two-way switch for fever and torpor</strong>
+                        <span class="paper-citation">Machado, N. L. S., Lynch, N., Costa, L. H. A. et al. <em>Nature</em> (2025).</span>
+                        <span>Places preoptic EP3R neurons as a bidirectional thermoregulatory switch, directly connecting fever and torpor-like hypothermic responses.</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell node-cell">
+                    <a class="paper-node team-hrvatin" href="https://pubmed.ncbi.nlm.nih.gov/40055478/" target="_blank" rel="noopener" aria-describedby="paper-hrvatin-2025">
+                      <span class="paper-node-dot"></span>
+                      <span class="paper-node-label">Jayne et al.</span>
+                      <span class="paper-link-cue">PubMed</span>
+                      <span class="paper-tooltip" id="paper-hrvatin-2025">
+                        <strong>A torpor-like state in mice slows blood epigenetic aging and prolongs healthspan</strong>
+                        <span class="paper-citation">Jayne, L., Lavin-Peter, A., Roessler, J. et al.; Hrvatin / Senmiao Sun line. <em>Nature Aging</em> 5, 437-449 (2025).</span>
+                        <span>Shows that prolonged artificial torpor-like states can slow blood epigenetic aging and improve healthspan, making the protective-effects question concrete.</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="roadmap-cell"></div>
+
+                  <div class="roadmap-year">2024</div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell node-cell">
+                    <div class="node-stack">
+                      <a class="paper-node team-gracheva" href="https://pubmed.ncbi.nlm.nih.gov/38325375/" target="_blank" rel="noopener" aria-describedby="paper-gracheva-2024-fluid">
+                        <span class="paper-node-dot"></span>
+                        <span class="paper-node-label">Junkins et al.</span>
+                        <span class="paper-link-cue">PubMed</span>
+                        <span class="paper-tooltip" id="paper-gracheva-2024-fluid">
+                          <strong>Neural control of fluid homeostasis is engaged below 10°C in hibernation</strong>
+                          <span class="paper-citation">Junkins, M. S., Feng, N. Y., Murphy, L. A. et al. <em>Current Biology</em> (2024).</span>
+                          <span>Explains how hibernators defend water and osmotic balance at extremely low body temperatures, a key part of maintaining deep torpor.</span>
+                        </span>
+                      </a>
+                      <a class="paper-node team-gracheva" href="https://pubmed.ncbi.nlm.nih.gov/41775915/" target="_blank" rel="noopener" aria-describedby="paper-gracheva-2024-timer">
+                        <span class="paper-node-dot"></span>
+                        <span class="paper-node-label">Gibo et al.</span>
+                        <span class="paper-link-cue">PubMed</span>
+                        <span class="paper-tooltip" id="paper-gracheva-2024-timer">
+                          <strong>Frequency-modulated timer regulates torpor-arousal cycles during hibernation</strong>
+                          <span class="paper-citation">Gibo, S., Yamaguchi, Y., Gracheva, E. O., Bagriantsev, S. N. et al. <em>npj Biological Timing and Sleep</em> (2024).</span>
+                          <span>Frames torpor-arousal cycling as a timed, regulated process rather than passive cooling.</span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+
+                  <div class="roadmap-year">2021</div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell node-cell">
+                    <a class="paper-node team-wangsq" href="https://pubmed.ncbi.nlm.nih.gov/33785600/" target="_blank" rel="noopener" aria-describedby="paper-wangsq-2021">
+                      <span class="paper-node-dot"></span>
+                      <span class="paper-node-label">Yang et al.</span>
+                      <span class="paper-link-cue">PubMed</span>
+                      <span class="paper-tooltip" id="paper-wangsq-2021">
+                        <strong>Transcriptional regulation of intermolecular Ca2+ signaling in hibernating ground squirrel cardiomyocytes: The myocardin-junctophilin axis</strong>
+                        <span class="paper-citation">Yang, L., Li, R. C., Xiang, B., Li, Y. C. et al. <em>PNAS</em> (2021).</span>
+                        <span>Shiqiang Wang's line shows how hibernating ground-squirrel cardiomyocytes preserve calcium handling, answering the organ-protection side of hibernation.</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+
+                  <div class="roadmap-year">2020</div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell node-cell">
+                    <div class="node-stack">
+                      <a class="paper-node team-sunagawa" href="https://pubmed.ncbi.nlm.nih.gov/32528181/" target="_blank" rel="noopener" aria-describedby="paper-sunagawa-2020">
+                        <span class="paper-node-dot"></span>
+                        <span class="paper-node-label">Takahashi et al.</span>
+                        <span class="paper-link-cue">PubMed</span>
+                        <span class="paper-tooltip" id="paper-sunagawa-2020">
+                          <strong>A discrete neuronal circuit induces a hibernation-like state in rodents</strong>
+                          <span class="paper-citation">Takahashi, T. M., Sunagawa, G. A., Soya, S. et al. <em>Nature</em> (2020).</span>
+                          <span>Identifies Q neurons whose activation can induce a hibernation-like hypometabolic state in non-hibernating rodents.</span>
+                        </span>
+                      </a>
+                      <a class="paper-node team-hrvatin" href="https://pubmed.ncbi.nlm.nih.gov/32528180/" target="_blank" rel="noopener" aria-describedby="paper-hrvatin-2020">
+                        <span class="paper-node-dot"></span>
+                        <span class="paper-node-label">Hrvatin et al.</span>
+                        <span class="paper-link-cue">PubMed</span>
+                        <span class="paper-tooltip" id="paper-hrvatin-2020">
+                          <strong>Neurons that regulate mouse torpor</strong>
+                          <span class="paper-citation">Hrvatin, S., Sun, S., Wilcox, O. F. et al. <em>Nature</em> (2020).</span>
+                          <span>Defines preoptic neurons that regulate fasting-induced mouse torpor, making artificial access to natural torpor circuitry experimentally tractable.</span>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+
+                  <div class="roadmap-year">2019</div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell node-cell">
+                    <a class="paper-node team-gracheva" href="https://pubmed.ncbi.nlm.nih.gov/31495581/" target="_blank" rel="noopener" aria-describedby="paper-gracheva-2019">
+                      <span class="paper-node-dot"></span>
+                      <span class="paper-node-label">Feng et al.</span>
+                      <span class="paper-link-cue">PubMed</span>
+                      <span class="paper-tooltip" id="paper-gracheva-2019">
+                        <strong>Osmolyte depletion and thirst suppression allow hibernators to survive for months without water</strong>
+                        <span class="paper-citation">Feng, N. Y., Junkins, M. S., Merriman, D. K. et al. <em>Current Biology</em> (2019).</span>
+                        <span>Shows how hibernators avoid dehydration and thirst during long torpor bouts, one of the less obvious requirements for maintaining the state.</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell node-cell">
+                    <a class="paper-node team-wangtf" href="https://pubmed.ncbi.nlm.nih.gov/31319050/" target="_blank" rel="noopener" aria-describedby="paper-wangtf-2019">
+                      <span class="paper-node-dot"></span>
+                      <span class="paper-node-label">Wang et al.</span>
+                      <span class="paper-link-cue">PubMed</span>
+                      <span class="paper-tooltip" id="paper-wangtf-2019">
+                        <strong>Thermoregulation via temperature-dependent PGD2 production in mouse preoptic area</strong>
+                        <span class="paper-citation">Wang, T. A., Teo, C. F., Akerblom, M. et al. <em>Neuron</em> (2019).</span>
+                        <span>Tongfei Wang's preoptic-area work helps place thermoregulatory set-point control as a neural switch that artificial torpor research can exploit.</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+
+                  <div class="roadmap-year">2016</div>
+                  <div class="roadmap-cell node-cell">
+                    <a class="paper-node team-sunagawa" href="https://pubmed.ncbi.nlm.nih.gov/27845399/" target="_blank" rel="noopener" aria-describedby="paper-sunagawa-2016">
+                      <span class="paper-node-dot"></span>
+                      <span class="paper-node-label">Sunagawa &amp; Takahashi</span>
+                      <span class="paper-link-cue">PubMed</span>
+                      <span class="paper-tooltip" id="paper-sunagawa-2016">
+                        <strong>Hypometabolism during daily torpor in mice is dominated by reduction in the sensitivity of the thermoregulatory system</strong>
+                        <span class="paper-citation">Sunagawa, G. A. &amp; Takahashi, M. <em>Scientific Reports</em> (2016).</span>
+                        <span>Shows that daily torpor can be understood through a change in thermoregulatory-system sensitivity, a bridge from natural torpor to engineered control.</span>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                  <div class="roadmap-cell"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="torpor-area-panel" data-torpor-area="cryonics-route">
+            <div class="map-region cryonics-route">
+              <div class="map-region-header">
+                <span class="map-region-kicker">Area 2</span>
+                <h3>Secondary Technical Route: Human Cryopreservation</h3>
+              </div>
+              <p class="cryo-route-intro">
+                This route is not the same as neural torpor: it focuses on ultra-low-temperature preservation after legal death or in organ-level cryobiology. Hover over each institute card for context; press My Visit on Yinfeng to show my notes and photo.
+              </p>
+
+              <div class="cryo-company-grid" aria-label="Human cryopreservation organizations">
+                <article class="cryo-card alcor-card" tabindex="0">
+                  <div class="cryo-logo">AL</div>
+                  <h4>Alcor Life Extension Foundation</h4>
+                  <p>Arizona-based cryonics organization focused on whole-body and neuro cryopreservation.</p>
+                  <span class="cryo-card-tooltip">A long-running public cryonics reference point for patient-care framing, protocols, and long-term storage.</span>
+                </article>
+                <article class="cryo-card ci-card" tabindex="0">
+                  <div class="cryo-logo">CI</div>
+                  <h4>Cryonics Institute</h4>
+                  <p>Michigan-based organization offering cryonic suspension and long-term patient storage.</p>
+                  <span class="cryo-card-tooltip">A major nonprofit comparison case for lower-cost cryonics models and member-centered operations.</span>
+                </article>
+                <article class="cryo-card tb-card" tabindex="0">
+                  <div class="cryo-logo">TB</div>
+                  <h4>Tomorrow Bio</h4>
+                  <p>European cryonics provider emphasizing standby, stabilization, and transport logistics.</p>
+                  <span class="cryo-card-tooltip">Highlights the practical chain between death declaration, rapid response, perfusion, cooling, and storage.</span>
+                </article>
+                <article class="cryo-card yinfeng-card" tabindex="0">
+                  <div class="cryo-logo">YF</div>
+                  <h4>Shandong Yinfeng Life Science Research Institute</h4>
+                  <p>Chinese institute working on low-temperature preservation, organ cryobiology, and body donation-linked research.</p>
+                  <button type="button" class="visit-toggle" onclick="toggleVisitPanel(event)">My Visit</button>
+                  <span class="cryo-card-tooltip">Press My Visit to see my field note from the institute visit and the photo I took there.</span>
+                </article>
+              </div>
+
+              <div class="visit-panel" id="yinfeng-visit-panel">
+                <div class="visit-photo-wrap">
+                  <img src="life/yinfeng-visit.jpg" alt="Yan Wang visiting Shandong Yinfeng Life Science Research Institute">
+                </div>
+                <div class="visit-note">
+                  <span class="interest-map-eyebrow">My Visit</span>
+                  <h4>Shandong Yinfeng Life Science Research Institute</h4>
+                  <p>
+                    During my visit, the director of the institute described their work on cryopreservation and rewarming of rabbit hearts, including experiments in which <strong>a small proportion (200/3000) of cryopreserved hearts recovered beating activity after rewarming</strong>.
+                  </p>
+                  <p>
+                    These efforts convinced me that cryobiology has enormous potential for preserving organs and tissues. Even relatively simple organisms such as <em>Caenorhabditis elegans</em>, which I currently use in my research, can survive long-term cryopreservation under appropriate conditions.
+                  </p>
+                  <p>
+                    However, I remain concerned that translating ultra-low-temperature preservation to an intact human body would be extraordinarily difficult. In a highly complex organism, even a small amount of irreversible damage may be unacceptable. For this reason, I increasingly feel that <strong>the neural and physiological approach pursued by researchers in torpor and hibernation</strong> may offer a more biologically integrated path toward reversible human hypometabolism.
+                  </p>
+                  <p>
+                    I also learned that 34 remarkable volunteers from different walks of life had already been cryopreserved in tanks. Their participation was framed more like body donation: puncture sampling at different time points can help researchers study how cryopreservation affects the human body.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="map-intro">
+          <p>
+            A working roadmap for reading how natural torpor is understood, how its mechanisms are maintained, and how artificial neural induction may produce protective physiological states. Hover over each coordinate for notes; click a publication node to open its PubMed page.
+          </p>
+        </div>
+
+        <div class="map-region primary-route">
+          <div class="map-region-header">
+            <span class="map-region-kicker">Area 1</span>
+            <h3>Main Technical Route: Neural Induction of Torpor</h3>
+          </div>
+
+          <div class="roadmap-scroll" aria-label="Torpor research roadmap">
+            <div class="roadmap-grid">
+              <div class="roadmap-corner">Time</div>
+              <div class="roadmap-question">How do hibernators enter torpor?</div>
+              <div class="roadmap-question">What mechanisms maintain torpor?</div>
+              <div class="roadmap-question">Can torpor be induced?</div>
+              <div class="roadmap-question">What protective effects emerge?</div>
+              <div class="roadmap-question">In higher animals?</div>
+
+              <div class="roadmap-year">2026</div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+
+              <div class="roadmap-year">2025</div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell node-cell">
+                <a class="paper-node" href="https://pubmed.ncbi.nlm.nih.gov/40055478/" target="_blank" rel="noopener" aria-describedby="torpor-paper-2025" aria-label="Open PubMed page for A torpor-like state in mice slows blood epigenetic aging and prolongs healthspan">
+                  <span class="paper-node-dot"></span>
+                  <span class="paper-node-label">Jayne et al., Hrvatin lab</span>
+                  <span class="paper-link-cue">PubMed</span>
+                  <span class="paper-tooltip" id="torpor-paper-2025">
+                    <strong>A torpor-like state in mice slows blood epigenetic aging and prolongs healthspan</strong>
+                    <span>Jayne, L., Lavin-Peter, A., Roessler, J. et al.; Siniša Hrvatin. <em>Nature Aging</em> 5, 437-449 (2025).</span>
+                    <span class="paper-citation">Jayne, L., Lavin-Peter, A., Roessler, J. et al.; Sinisa Hrvatin. <em>Nature Aging</em> 5, 437-449 (2025).</span>
+                    <span>This study shows that activating a defined preoptic-area neuronal population can induce a torpor-like state in mice. Prolonged induction slows epigenetic aging and improves healthspan, linking the protective effect mainly to reduced body temperature.</span>
+                  </span>
+                </a>
+              </div>
+              <div class="roadmap-cell"></div>
+
+              <div class="roadmap-year">2023</div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+
+              <div class="roadmap-year">2020</div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+
+              <div class="roadmap-year">Before</div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+              <div class="roadmap-cell"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-region secondary-route">
+          <div class="map-region-header">
+            <span class="map-region-kicker">Area 2</span>
+            <h3>Mechanistic and Translational Branches</h3>
+          </div>
+          <p>
+            Reserved for the next layer of the map: molecular protection, metabolic remodeling, organ-specific outcomes, and possible translational constraints.
+          </p>
+        </div>
+      </div>
+
+      <div class="interest-map-panel" data-interest-panel="cognition">
+        <div class="map-placeholder">
+          <span class="interest-map-eyebrow">Coming next</span>
+          <h3>Cognition Interest Map</h3>
+          <p>
+            This panel will map higher-order neurocognitive functions such as learning, memory, decision-making, and consciousness across mechanisms, circuits, and computational frameworks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-
-
+</section>
 
 <section class="section" id="journey">
   <div class="container">
@@ -181,6 +614,15 @@
             <span class="research-arrow">&#9662;</span>
           </div>
         </button>
+
+        <div class="research-publication">
+          <span class="publication-label">Scientific Abstract</span>
+          <p>
+            <strong>Wang, Y.*</strong>, Zhang, J., Huang, X., &amp; Yu, Y.
+            <span class="publication-title">Distributed INS-1 signaling through the candidate noncanonical receptor NTR-1 tunes the ASER-AIY axis to drive high-salt ethanol avoidance in <em>Caenorhabditis elegans</em>.</span>
+            <em>Neuroscience 2026, Society for Neuroscience</em>.
+          </p>
+        </div>
 
         <div class="research-content">
           <div class="research-inner">
@@ -793,6 +1235,117 @@
 </button>
 
  <script>
+  function switchTorporArea(areaName) {
+    const panels = document.querySelectorAll('[data-torpor-area]');
+    const tabs = document.querySelectorAll('[data-area-tab]');
+
+    panels.forEach(panel => {
+      panel.classList.toggle('active', panel.dataset.torporArea === areaName);
+    });
+
+    tabs.forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.areaTab === areaName);
+    });
+  }
+
+  function toggleVisitPanel(event) {
+    if (event) {
+      event.stopPropagation();
+    }
+
+    const panel = document.getElementById('yinfeng-visit-panel');
+    if (panel) {
+      panel.classList.toggle('active');
+    }
+  }
+
+  function openInterestMap(mapName, options = {}) {
+    const workspace = document.getElementById('interest-map-workspace');
+    const heroHome = document.getElementById('hero-home');
+    const hero = document.querySelector('.hero');
+    const title = document.getElementById('interest-map-title');
+    const panels = document.querySelectorAll('[data-interest-panel]');
+    const buttons = document.querySelectorAll('.interest-map-button');
+
+    if (!workspace) return;
+
+    workspace.hidden = false;
+
+    if (heroHome) {
+      heroHome.hidden = true;
+    }
+
+    if (hero) {
+      hero.classList.add('map-active');
+    }
+
+    document.body.classList.add('interest-map-open');
+
+    panels.forEach(panel => {
+      panel.classList.toggle('active', panel.dataset.interestPanel === mapName);
+    });
+
+    buttons.forEach(button => {
+      button.classList.toggle('active', button.classList.contains(mapName));
+    });
+
+    if (title) {
+      title.textContent = mapName === 'cognition'
+        ? 'Cognition and Higher-Order Neural Functions'
+        : 'Artificial Induction of Torpor / Hibernation';
+    }
+
+    if (options.updateHash !== false) {
+      history.replaceState(null, '', mapName === 'cognition' ? '#cognition-map' : '#torpor-map');
+    }
+
+    if (options.scroll !== false) {
+      const header = document.querySelector('header');
+      const offset = header ? header.offsetHeight + 18 : 80;
+      const target = hero || workspace;
+      window.scrollTo({
+        top: Math.max(target.offsetTop - offset, 0),
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  function closeInterestMap() {
+    const workspace = document.getElementById('interest-map-workspace');
+    const heroHome = document.getElementById('hero-home');
+    const hero = document.querySelector('.hero');
+    const buttons = document.querySelectorAll('.interest-map-button');
+
+    if (workspace) {
+      workspace.hidden = true;
+    }
+
+    if (heroHome) {
+      heroHome.hidden = false;
+    }
+
+    if (hero) {
+      hero.classList.remove('map-active');
+    }
+
+    document.body.classList.remove('interest-map-open');
+
+    buttons.forEach(button => button.classList.remove('active'));
+
+    if (window.location.hash === '#torpor-map' || window.location.hash === '#cognition-map') {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+
+    if (hero) {
+      const header = document.querySelector('header');
+      const offset = header ? header.offsetHeight + 18 : 80;
+      window.scrollTo({
+        top: Math.max(hero.offsetTop - offset, 0),
+        behavior: 'smooth'
+      });
+    }
+  }
+
   function toggleActivity(button) {
     const card = button.parentElement;
     const content = card.querySelector('.activity-content, .research-content');
@@ -837,6 +1390,12 @@
     const backToTopBtn = document.getElementById('backToTopBtn');
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section[id]');
+
+    if (window.location.hash === '#torpor-map') {
+      openInterestMap('torpor', { updateHash: false });
+    } else if (window.location.hash === '#cognition-map') {
+      openInterestMap('cognition', { updateHash: false });
+    }
 
     function animateProgressBarsInCard(card) {
       const bars = card.querySelectorAll('.progress-fill');
