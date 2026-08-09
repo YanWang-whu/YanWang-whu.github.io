@@ -41,7 +41,7 @@
     </div>
 
     <div class="hero-interest-stage" id="research-interests">
-    <div class="hero-map-panel" id="interest-maps-home">
+    <div class="hero-map-panel scroll-reveal-card scroll-reveal-map" id="interest-maps-home">
       <div class="interest-map-launcher" aria-label="Research interest maps">
         <div class="interest-map-copy">
           <span class="interest-map-eyebrow">Interest Maps</span>
@@ -67,14 +67,14 @@
             <span class="map-button-cue" aria-hidden="true">&#8594;</span>
           </button>
         </div>
-        <div class="hero-buttons hero-buttons-relocated">
-          <a href="#research" class="btn-primary">Explore My Research</a>
-          <a href="#life" class="btn-secondary">See My Life Moments</a>
-        </div>
+      </div>
+      <div class="hero-buttons hero-buttons-relocated">
+        <a href="#research" class="btn-primary">Explore My Research</a>
+        <a href="#life" class="btn-secondary">See My Life Moments</a>
       </div>
     </div>
 
-    <div class="hero-side-card card" id="what-drives">
+    <div class="hero-side-card card scroll-reveal-card" id="what-drives">
       <span class="interest-map-eyebrow">Research Direction</span>
       <h3>What Drives Me</h3>
       <p>
@@ -641,13 +641,6 @@
           </p>
         </div>
 
-        <div class="research-snapshot" aria-label="Key mechanistic findings">
-          <div><span>Release network</span><strong>ASEL · AIY · AIZ · AIB</strong></div>
-          <div><span>ASER response peak</span><strong>~0.5% → ~1.5% ethanol</strong></div>
-          <div><span>ASEL rescue</span><strong>Partial recovery to ~1.0%</strong></div>
-          <div><span>Candidate receptor</span><strong>NTR-1, not canonical IIS</strong></div>
-        </div>
-
         <div class="research-content">
           <div class="research-inner">
             <div class="research-section">
@@ -727,6 +720,16 @@
             <span class="research-arrow">&#9662;</span>
           </div>
         </button>
+
+        <div class="research-publication research-achievement research-funding">
+          <div class="achievement-copy">
+            <span class="publication-label">2025 Candidate Project</span>
+            <p>
+              <span class="publication-title">National Natural Science Foundation of China (NSFC) Young Student Basic Research Program (Undergraduate Track)</span>
+              <span class="achievement-meta"><strong>Applicant:</strong> Wang, Y. <span aria-hidden="true">&middot;</span> <strong>Project contributors:</strong> Zhang, J., Wang, Y.</span>
+            </p>
+          </div>
+        </div>
 
         <div class="research-content">
           <div class="research-inner">
@@ -809,6 +812,14 @@
             <span class="research-arrow">&#9662;</span>
           </div>
         </button>
+
+        <div class="research-publication research-achievement research-medal">
+          <img class="achievement-medal-icon" src="life/igem-gold-medal-icon.png" alt="Gold science competition medal">
+          <div class="achievement-copy">
+            <span class="publication-label">2025 iGEM Gold Medal</span>
+            <p>Awarded a <strong>Gold Medal</strong> at the 2025 International Genetically Engineered Machine (iGEM) Competition.</p>
+          </div>
+        </div>
 
         <div class="research-content">
           <div class="research-inner">
@@ -2177,7 +2188,7 @@
     renderResearchMaps();
 
     const revealItems = document.querySelectorAll(
-      '.hero, footer, .section-title, .fold-hint, .edu-card, .research-card, .activity-card, .skills-card, .awards-card, .resume-side, .gallery-box, .contact-box'
+      '.hero, footer, .scroll-reveal-card, .section-title, .fold-hint, .edu-card, .research-card, .activity-card, .skills-card, .awards-card, .resume-side, .gallery-box, .contact-box'
     );
 
     const backToTopBtn = document.getElementById('backToTopBtn');

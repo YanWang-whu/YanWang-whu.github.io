@@ -1783,6 +1783,56 @@ footer.is-visible {
   line-height: 1.65;
 }
 
+.research-achievement {
+  align-items: center;
+}
+
+.achievement-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.achievement-copy .publication-label {
+  display: inline-flex;
+  margin-bottom: 7px;
+}
+
+.achievement-meta {
+  display: block;
+  margin-top: 5px;
+  color: #6b7890;
+}
+
+.research-funding {
+  border-color: rgba(60, 91, 145, 0.18);
+  background: linear-gradient(135deg, rgba(239, 245, 255, 0.94), rgba(248, 250, 255, 0.94));
+}
+
+.research-funding .publication-label {
+  color: #455f96;
+  background: rgba(69, 95, 150, 0.12);
+}
+
+.research-medal {
+  border-color: rgba(183, 132, 28, 0.23);
+  background: linear-gradient(135deg, rgba(255, 250, 235, 0.97), rgba(255, 247, 224, 0.92));
+}
+
+.research-medal .publication-label {
+  color: #8c6418;
+  background: rgba(188, 139, 34, 0.15);
+}
+
+.achievement-medal-icon {
+  width: 66px;
+  height: 66px;
+  flex: 0 0 66px;
+  object-fit: cover;
+  border: 1px solid rgba(181, 130, 25, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 9px 22px rgba(129, 91, 21, 0.13);
+}
+
 .publication-title {
   color: #2f436e;
   font-weight: 700;
@@ -3500,6 +3550,25 @@ footer.is-visible {
   margin: 0;
 }
 
+.hero-interest-stage .scroll-reveal-card {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease,
+    box-shadow 0.25s ease;
+  will-change: opacity, transform;
+}
+
+.hero-interest-stage .scroll-reveal-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-interest-stage .scroll-reveal-map {
+  transition-delay: 0.14s;
+}
+
 .hero-interest-stage .hero-side-card {
   grid-area: drive;
   justify-content: flex-start;
@@ -3529,12 +3598,16 @@ footer.is-visible {
 
 .hero-interest-stage .hero-map-panel {
   grid-area: map;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
   padding: 0;
 }
 
 .hero-interest-stage .interest-map-launcher {
-  min-height: 100%;
+  min-height: 0;
+  flex: 0 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 150px;
   align-content: start;
@@ -3555,23 +3628,22 @@ footer.is-visible {
 }
 
 .hero-buttons-relocated {
-  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 18px 0 0;
-  padding-top: 18px;
-  border-top: 1px solid rgba(74, 106, 119, 0.14);
+  gap: 14px;
+  margin: auto 0 0;
 }
 
 .hero-buttons-relocated a {
-  min-height: 44px;
+  min-height: 58px;
+  flex: 1 1 210px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 10px 17px;
-  font-size: 13px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 800;
 }
 
 .map-button-cue {
@@ -3610,42 +3682,6 @@ footer.is-visible {
 
 .stage-scroll-cue {
   bottom: 24px;
-}
-
-.research-snapshot {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid rgba(64, 89, 117, 0.12);
-  border-bottom: 1px solid rgba(64, 89, 117, 0.12);
-  background: linear-gradient(90deg, rgba(235, 247, 244, 0.82), rgba(255, 248, 233, 0.76));
-}
-
-.research-snapshot > div {
-  min-width: 0;
-  padding: 15px 17px;
-}
-
-.research-snapshot > div + div {
-  border-left: 1px solid rgba(64, 89, 117, 0.12);
-}
-
-.research-snapshot span,
-.research-snapshot strong {
-  display: block;
-}
-
-.research-snapshot span {
-  margin-bottom: 5px;
-  color: #718097;
-  font-size: 10px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.research-snapshot strong {
-  color: #2f405b;
-  font-size: 13px;
-  line-height: 1.4;
 }
 
 .research-method-chain {
@@ -3967,17 +4003,8 @@ footer.is-visible {
     width: 150px;
   }
 
-  .research-snapshot,
   .research-findings {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .research-snapshot > div:nth-child(3) {
-    border-left: 0;
-  }
-
-  .research-snapshot > div:nth-child(n + 3) {
-    border-top: 1px solid rgba(64, 89, 117, 0.12);
   }
 }
 
@@ -4012,15 +4039,8 @@ footer.is-visible {
     white-space: normal;
   }
 
-  .research-snapshot,
   .research-findings {
     grid-template-columns: 1fr;
-  }
-
-  .research-snapshot > div + div,
-  .research-snapshot > div:nth-child(3) {
-    border-left: 0;
-    border-top: 1px solid rgba(64, 89, 117, 0.12);
   }
 
   .cognition-detail {
@@ -4034,7 +4054,11 @@ footer.is-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .map-button-cue {
+  .map-button-cue,
+  .hero-interest-stage .scroll-reveal-card {
     animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
