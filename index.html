@@ -35,22 +35,18 @@
         I used to work in <strong>WHU-iGEM</strong>. I am currently working in <strong>Prof. Yanxun Yu</strong>'s lab, and I am also a <strong>visiting undergraduate researcher</strong> in the <strong>Clemens Scherzer Lab</strong> at <strong>Yale University</strong>.
         I plan to pursue a <strong>PhD</strong> in the future.
       </p>
-      <div class="hero-buttons">
-        <a href="#research" class="btn-primary">Explore My Research</a>
-        <a href="#life" class="btn-secondary">See My Life Moments</a>
-      </div>
-
-      <a class="hero-scroll-cue" href="#what-drives" aria-label="Continue to What Drives Me">
+      <a class="hero-scroll-cue" href="#research-interests" aria-label="Continue to my research interests">
         <span aria-hidden="true">&#8595;</span>
       </a>
     </div>
 
+    <div class="hero-interest-stage" id="research-interests">
     <div class="hero-map-panel" id="interest-maps-home">
       <div class="interest-map-launcher" aria-label="Research interest maps">
         <div class="interest-map-copy">
           <span class="interest-map-eyebrow">Interest Maps</span>
-          <strong>Trace the papers behind my questions</strong>
-          <span class="interest-map-slogan">Start from a frontier question, then follow evidence across time.</span>
+          <strong>How I Understand My Research Interests</strong>
+          <span class="interest-map-slogan">I begin with a question, then follow mechanisms, evidence, and the frontier that remains unresolved.</span>
         </div>
         <div class="interest-map-graphic" aria-hidden="true">
           <span class="route-line"></span>
@@ -63,21 +59,26 @@
           <button type="button" class="interest-map-button torpor" onclick="openInterestMap('torpor', { trigger: this })">
             <span class="button-title">Torpor / Hibernation</span>
             <span class="button-subtitle">Neural induction to protection</span>
-            <span class="click-hand" aria-hidden="true"></span>
+            <span class="map-button-cue" aria-hidden="true">&#8594;</span>
           </button>
           <button type="button" class="interest-map-button cognition" onclick="openInterestMap('cognition', { trigger: this })">
             <span class="button-title">Cognition</span>
             <span class="button-subtitle">Circuits to higher functions</span>
-            <span class="click-hand" aria-hidden="true"></span>
+            <span class="map-button-cue" aria-hidden="true">&#8594;</span>
           </button>
+        </div>
+        <div class="hero-buttons hero-buttons-relocated">
+          <a href="#research" class="btn-primary">Explore My Research</a>
+          <a href="#life" class="btn-secondary">See My Life Moments</a>
         </div>
       </div>
     </div>
 
     <div class="hero-side-card card" id="what-drives">
+      <span class="interest-map-eyebrow">Research Direction</span>
       <h3>What Drives Me</h3>
       <p>
-        My previous research involves <strong><em>C. elegans</em></strong><br> <strong>neuroscience</strong>, <strong>synthetic biology</strong>, <strong>Parkinson's disease</strong>, and <strong>biochemistry</strong>.
+        My previous research involves <strong><em>C. elegans</em></strong>, <strong>neuroscience</strong>, <strong>synthetic biology</strong>, <strong>Parkinson's disease</strong>, and <strong>biochemistry</strong>.
         My future research interests include, but are not limited to, <strong>neuroscience</strong>. More specifically, I am interested in <strong>higher-order neurocognitive functions</strong> such as learning, memory, and consciousness,
         as well as cutting-edge directions such as <strong>artificial induction of torpor/hibernation</strong>.
       </p>
@@ -90,10 +91,11 @@
         <span class="tag">Torpor/Hibernation</span>
         <span class="tag">Learning, memory and consciousness</span>
       </div>
-      <a class="hero-scroll-cue" href="#interest-maps-home" aria-label="Continue to Interest Maps">
-        <span aria-hidden="true">&#8595;</span>
-      </a>
     </div>
+    <a class="hero-scroll-cue stage-scroll-cue" href="#journey" aria-label="Continue to Education">
+      <span aria-hidden="true">&#8595;</span>
+    </a>
+  </div>
   </div>
   </div>
 
@@ -617,7 +619,7 @@
         <button class="research-header" onclick="toggleActivity(this)">
           <div class="research-left">
             <span class="research-name">
-              Analysis of the Functional Sites of INS-1 Neuropeptide in the Alcohol Perception Neural Circuit of <em>C. elegans</em>
+              Distributed INS-1 Signaling Through the Candidate Noncanonical Receptor NTR-1 Tunes the ASER-AIY Axis to Drive High-Salt Ethanol Avoidance in <em>C. elegans</em>
             </span>
             <span class="research-location">
               Medical Research Institute, Wuhan University · Joint Lab of Prof. Yanxun Yu and Prof. Youngnam Jin · Wuhan, China
@@ -639,63 +641,71 @@
           </p>
         </div>
 
+        <div class="research-snapshot" aria-label="Key mechanistic findings">
+          <div><span>Release network</span><strong>ASEL · AIY · AIZ · AIB</strong></div>
+          <div><span>ASER response peak</span><strong>~0.5% → ~1.5% ethanol</strong></div>
+          <div><span>ASEL rescue</span><strong>Partial recovery to ~1.0%</strong></div>
+          <div><span>Candidate receptor</span><strong>NTR-1, not canonical IIS</strong></div>
+        </div>
+
         <div class="research-content">
           <div class="research-inner">
             <div class="research-section">
-<div class="research-subtitle">Background</div>
-  <p class="research-text">
-        Neuropeptides are small signaling molecules secreted by neurons in <em>C. elegans</em>. With its simple nervous system and fully mapped connectome,
-    <em>C. elegans</em> is an ideal model to study how neuropeptides regulate neural circuits. Among them, the insulin-like peptide (ILP) family is evolutionarily conserved and of particular interest.
-  </p>
-    <p class="research-text">
-        Previous studies have shown that insulin-like peptide-1 (INS-1) is involved in integrating environmental cues to regulate behavior. 
-      In our preliminary work, we found that while <strong>wild-type worms avoid ethanol under high-salt conditions</strong>, <strong><em>ins-1</em> mutants instead show strong attraction</strong>. This leads to our key question: how does INS-1 modulate neural circuits to reverse chemotactic behavior?
-  </p>
-</div>
+              <div class="research-subtitle">Scientific Context and Central Question</div>
+              <p class="research-text">
+                Neuropeptides modulate neural computation slowly and across broader spatial scales than classical fast synaptic transmission. The compact, invariant nervous system and complete connectome of <em>C. elegans</em> therefore offer an unusually tractable setting in which to connect peptide release, circuit state, and behavior.
+              </p>
+              <p class="research-text">
+                Ethanol valence in the worm is context dependent: it is attractive under low salt but aversive under high salt. We found that <strong>loss of the insulin-like neuropeptide INS-1 completely reverses high-salt ethanol avoidance into attraction</strong>. I therefore asked which neurons release INS-1, which circuit it reconfigures, and whether this effect is mediated by canonical insulin signaling or an alternative receptor pathway.
+              </p>
+            </div>
 
-<div class="research-section">
-  <div class="research-subtitle">Research</div>
+            <div class="research-section">
+              <div class="research-subtitle">Independent Experimental Program</div>
+              <p class="research-text">
+                This is the <strong>first research project I have advanced independently</strong>. With mentorship at key decision points, I designed and iteratively revised a three-level strategy spanning behavior, circuit dynamics, and receptor mechanism.
+              </p>
+              <ol class="research-method-chain">
+                <li><strong>Localize INS-1 release.</strong> I generated cell-specific <em>ins-1</em> knockouts using loxP/Cre and complementary rescue lines in ASEL, ASER, AWC, AIY, AIZ, and other candidate cells, then quantified high-salt ethanol chemotaxis across genotypes.</li>
+                <li><strong>Resolve circuit computation.</strong> I established ethanol-gradient calcium imaging in ASEL, ASER, and AIY, and combined optogenetic manipulation with PH-miniSOG-mediated neuronal ablation to test the functional contribution of upstream and downstream nodes.</li>
+                <li><strong>Interrogate receptor logic.</strong> I phenotyped canonical insulin-pathway mutants (<em>daf-2</em>, <em>age-1</em>, <em>akt-1/2</em>, <em>daf-16</em>, and <em>daf-18</em>), tested the candidate neurotensin-like GPCR <em>ntr-1</em>, and integrated behavioral genetics with structure prediction and protein docking.</li>
+              </ol>
+            </div>
 
-  <p class="research-text">
-    We plan to combine neuron-specific knockout and rescue of <em>ins-1</em> 
-    with behavioral assays to identify key neurons, and further use calcium imaging, optogenetics, and visualization of INS-1 release to study its mechanism.
-  </p>
+            <div class="research-section">
+              <div class="research-subtitle">Mechanistic Findings</div>
+              <div class="research-findings">
+                <div class="research-finding">
+                  <span>01 · Distributed peptide source</span>
+                  <p>Cell-specific deletion, rescue, and ablation converge on <strong>ASEL, AIY, AIZ, and AIB as candidate INS-1-regulated nodes</strong>. ASEL is supported by both deletion and rescue; AIY by deletion, rescue, and ablation; AIZ by rescue; and AIB by ablation. The emerging architecture is distributed rather than a single dedicated peptide source.</p>
+                </div>
+                <div class="research-finding">
+                  <span>02 · Sensory threshold reconfiguration</span>
+                  <p>In <em>ins-1</em> mutants, the ASER ethanol-response profile shifts rightward: its peak moves from approximately <strong>0.5% ethanol in wild-type N2 to approximately 1.5%</strong>, while ethanol-evoked negative calcium transients in AIY are reduced. Raising ethanol concentration partially restores avoidance, indicating an elevated aversive-detection threshold rather than complete sensory loss.</p>
+                </div>
+                <div class="research-finding">
+                  <span>03 · ASEL-to-ASER causal support</span>
+                  <p>Restoring <em>ins-1</em> only in ASEL partially shifts the ASER response peak back toward wild type, from approximately 1.5% to <strong>approximately 1.0% ethanol</strong>. This rescue links ASEL-derived INS-1 to the tuning of ASER sensitivity.</p>
+                </div>
+                <div class="research-finding">
+                  <span>04 · Candidate noncanonical receptor</span>
+                  <p>Canonical insulin-pathway mutants fail to reproduce the <em>ins-1</em> phenotype, whereas <strong><em>ntr-1</em> mutants show a similar behavioral defect</strong>. A favorable predicted INS-1-NTR-1 interaction further supports NTR-1 as a candidate noncanonical receptor.</p>
+                </div>
+              </div>
+              <p class="research-text research-working-model">
+                <strong>Working model:</strong> under high-salt conditions, distributed INS-1 release - prominently from ASEL - may signal through NTR-1 to tune the ethanol-response range of ASER and the downstream state of AIY, thereby assigning negative valence to ethanol and driving avoidance.
+              </p>
+            </div>
 
-  <p class="research-text">
-     Using a strain with loxP sites flanking <em>ins-1</em> and Cre-mediated recombination, I <strong>constructed neuron-specific knockouts in ASEL, AIY, and muscle</strong>.
-    <strong>Knockout in ASEL and muscle both reduced ethanol preference</strong>, but did not fully restore wild-type avoidance, possibly due to residual INS-1 from other sources.
-  </p>
-
-  <p class="research-text">
-     I then constructed neuron-specific rescue of <em>ins-1</em> in the mutant background (ASEL, ASER, AWC, AIZ, etc.). 
-    <strong>Rescue in ASEL and AIZ significantly restored ethanol avoidance</strong>, helping us identify key neurons.
-  </p>
-
-   <p class="research-text">
-     Calcium imaging shows that <em>ins-1</em> mutation does not significantly affect ASER (Core Salt Sensor) activity. Under high salt, <strong>ASEL shows strong activation upon ethanol removal</strong>, suggesting its role in this behavior.
-     <strong>Optogenetic inhibition of ASEL in wild-type worms reduces ethanol avoidance</strong>, consistent with the ASEL-specific knockout, suggesting INS-1 may mediate signaling from ASEL to downstream neurons.
-  </p>
-
-  <p class="research-text">
-     In the future, based on the status of ASEL–AIY–AIZ circuit in the connectome, we will further conduct behavioral test on AIY-related strains and perform calcium imaging on key neurons in the <em>ins-1</em> mutant background. 
-    We have also fused INS-1 with a fluorescent tag and expect to visualize its stimulus-dependent release in key neurons using confocal imaging.
-  </p>
-</div>
-
-<div class="research-section">
-  <div class="research-subtitle">My Participation</div>
-
-  <p class="research-text">
-        This is the first project I have carried out <strong>independently</strong>, from <strong>plasmid design and microinjection to behavioral assays and optogenetic experiments</strong>.
-    I also discussed with my supervisor to refine the research direction along the way.
-  </p>
-
-  <p class="research-text">
-       Through this project, I learned not only the full workflow of C. elegans experiments, but also how to design experiments and improve them based on results. 
-    For example, when using blue light to activate ACR2, I encountered overheating that killed the worms. I solved this by using a simple timer socket to intermittently power the light source. 
-    The behavioral assays also made me realize the importance of careful control, as factors like humidity and temperature can affect ethanol evaporation and lead to variability in results.
-  </p>
-</div>
+            <div class="research-section">
+              <div class="research-subtitle">Independent Contribution and Research Maturity</div>
+              <p class="research-text">
+                I carried the project from plasmid design, microinjection, strain construction, and controlled chemotaxis assays through calcium imaging, optogenetics, neuronal ablation, mutant analysis, and molecular modeling. I also developed experimental safeguards: intermittent illumination reduced blue-light heating during optogenetics, while strict control of ethanol evaporation, humidity, temperature, and assay timing improved behavioral reproducibility.
+              </p>
+              <p class="research-text">
+                More importantly, I learned to let results reshape the question. What began as a behavioral phenotype became a progressively testable model linking <strong>distributed peptide release, sensory-range tuning, downstream circuit state, and a candidate receptor</strong>. This process taught me how to integrate incomplete observations into a mechanistic framework that can be challenged by the next experiment.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1092,43 +1102,53 @@
 
       <div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>4.</strong>Liu Daoyu Creative Learning Scholarship</span>
-          <span class="award-date">Jan. 2026</span>
+          <span class="award-title"><strong>4.</strong> Westlake University <strong>Rising Star Award</strong></span>
+          <span class="award-date">Aug. 2026</span>
         </div>
         <div class="award-desc">
-          Awarded to only <strong>36</strong> students across the entire university.
+          <strong>RMB 30,000 award.</strong> Selected among the <strong>top three finalists from more than 300 candidates</strong>.
         </div>
       </div>
 
       <div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>5.</strong>Hongyi Honors College’s Annual Top Ten Scientific and Technological Advances Award</span>
+          <span class="award-title"><strong>5.</strong> Liu Daoyu Creative Learning Scholarship</span>
+          <span class="award-date">Jan. 2026</span>
+        </div>
+        <div class="award-desc">
+          <strong>RMB 8,000 scholarship.</strong> Awarded to only <strong>36</strong> students across the entire university.
+        </div>
+      </div>
+
+      <div class="award-row">
+        <div class="award-main">
+          <span class="award-title"><strong>6.</strong> Hongyi Honors College’s Annual Top Ten Scientific and Technological Advances Award</span>
           <span class="award-date">Oct. 2025</span>
         </div>
       </div>
 
       <div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>6.</strong>First-Class Outstanding Freshman Scholarship</span>
+          <span class="award-title"><strong>7.</strong> First-Class Outstanding Freshman Scholarship</span>
           <span class="award-date">Sep. 2023</span>
         </div>
       </div>
 
       <div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>7.</strong>Outstanding Student Scholarship (Top 5%) – Two Years</span>
+          <span class="award-title"><strong>8.</strong> Outstanding Student Scholarship (Top 5%) – Two Years</span>
         </div>
       </div>
 
       <div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>8.</strong>Outstanding Student (Top 5%) – Two Years</span>
+          <span class="award-title"><strong>9.</strong> Outstanding Student (Top 5%) – Two Years</span>
         </div>
       </div>
 
       <div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>9.</strong>Outstanding Student Leader – Two Years</span>
+          <span class="award-title"><strong>10.</strong> Outstanding Student Leader – Two Years</span>
         </div>
       </div>
 
@@ -1510,50 +1530,156 @@
       {
         title: 'Why can one episode of vomiting make a taste memorable for years?',
         eyebrow: 'Memory 01 / Delayed credit assignment',
-        evidence: 'Conditioned taste aversion can bridge a long delay between flavor and illness. Recent mouse work suggests that delayed postingestive danger signals selectively reactivate and stabilize recent flavor representations in amygdala networks.',
-        frontier: 'How sparse is causal control? Could manipulating only a few high-weight cells change memory allocation, strength, or recall - and how does that trace remain stable for years?',
-        source: 'Zimmerman et al., Nature (2025)',
-        url: 'https://doi.org/10.1038/s41586-025-08828-z'
+        status: 'Circuit-level explanation emerging; sparse causal control and lifelong stability remain unresolved.',
+        origin: 'As a child, I vomited after eating food containing coriander and then avoided coriander for years. The experience does not prove that coriander caused the illness; it suggests that the brain attached the most salient flavor cue to later visceral distress. What fascinates me is how one coincidence can produce such durable behavioral change.',
+        thesis: 'Conditioned taste aversion is a special credit-assignment problem: the brain can connect a flavor to illness hours later. Current evidence explains how a recent flavor is selected and reinforced, but not why some aversions remain stable for decades.',
+        evidence: [
+          { certainty: 'Established phenomenon', title: 'Long-delay associative learning', text: 'Unlike most associative learning, conditioned taste aversion tolerates a long gap between flavor and illness. The nervous system must identify which recent sensory event deserves biological blame.' },
+          { certainty: 'Causal circuit evidence', title: 'A visceral danger gate', text: 'CGRP-expressing parabrachial neurons provide a major bodily danger signal. In mice they are necessary and sufficient for strong aversive taste memory, project toward amygdala circuits, and undergo learning-related plasticity.' },
+          { certainty: '2025 advance', title: 'Delayed feedback reactivates the relevant flavor', text: 'Delayed postingestive danger signals selectively reactivate recent flavor representations in the amygdala. Cells more strongly reactivated by illness are more likely to be strengthened when the flavor is encountered again.' },
+          { certainty: 'Distributed representation', title: 'Cortex-amygdala networks are reorganized', text: 'Taste identity is also represented in insular cortex. Conditioned aversion reshapes cortical population coding and recruits neurons projecting toward the basolateral amygdala; memory strength cannot be reduced to the total number of c-Fos-positive cells.' },
+          { certainty: 'Testable hypothesis', title: 'A few cells may carry disproportionate causal weight', text: 'My discussion with Dr. Tao Yang sharpened a hypothesis: memory is distributed, yet a very small number of upstream cells may have unusually high leverage over allocation or recall. Single-cell stimulation can influence behavior, and modern all-optical systems can test 1, 2, 5, or 10 candidate cells. What is not established is that one neuron stores a complete taste memory.' }
+        ],
+        frontiers: [
+          { question: 'How sparse is causal control?', note: 'Manipulate only 1-10 learning-selected cells and ask whether aversion formation, strength, or recall changes nonlinearly. A threshold number would reveal whether causal weight is strongly unequal.' },
+          { question: 'How does the brain choose among several recent foods?', note: 'Novelty, salience, ingestion time, and visceral-signal strength may each influence credit assignment, but their relative weights are unknown.' },
+          { question: 'How does a one-trial trace persist for years?', note: 'Experiments now explain selection and early stabilization better than very-long-term maintenance. Longitudinal single-cell tracking is still missing.' },
+          { question: 'How are amygdala reactivation and insular storage coordinated?', note: 'The relationship between delayed reactivation in amygdala networks and durable cortical representation is a central next step.' },
+          { question: 'How much of the mouse mechanism survives in humans?', note: 'Human long-term food aversion is usually studied indirectly through behavior, imaging, or natural history rather than causal circuit manipulation.' },
+          { question: 'Can the memory be rewritten?', note: 'Extinction and reconsolidation may erase the original trace, or they may create a competing safety trace. Distinguishing these models matters for intervention.' }
+        ],
+        sources: [
+          { label: 'Zimmerman et al. Nature (2025) - delayed postingestive feedback', url: 'https://doi.org/10.1038/s41586-025-08828-z' },
+          { label: 'Chen et al. Neuron (2018) - parabrachial CGRP neurons', url: 'https://doi.org/10.1016/j.neuron.2018.09.032' },
+          { label: 'Lavi et al. Cell Reports (2018) - cortico-amygdala coding', url: 'https://doi.org/10.1016/j.celrep.2018.06.053' },
+          { label: 'Abe et al. Molecular Brain (2020) - retrieval allocation', url: 'https://doi.org/10.1186/s13041-020-00646-w' },
+          { label: 'Houweling & Brecht. Nature (2008) - single-neuron stimulation', url: 'https://doi.org/10.1038/nature06447' },
+          { label: 'Packer et al. Nature Methods (2015) - all-optical circuit control', url: 'https://doi.org/10.1038/nmeth.3217' },
+          { label: 'Carrillo-Reid et al. Cell (2019) - holographic ensemble recall', url: 'https://doi.org/10.1016/j.cell.2019.05.045' }
+        ]
       },
       {
         title: 'How does a code seen once become a memory within seconds?',
         eyebrow: 'Memory 02 / Working memory',
-        evidence: 'Working memory is best understood as a distributed temporary state: persistent and burst-like activity, early sensory-cortex representations, network dynamics, and possibly rapid reversible synaptic changes can all contribute.',
-        frontier: 'Does genuinely activity-silent storage exist in the normal human brain, and how does a visual string become a sequence that can be silently rehearsed as language?',
-        source: 'Dake & Curtis, Nature Communications (2025)',
-        url: 'https://doi.org/10.1038/s41467-025-57882-8'
+        status: 'Distributed temporary-state models are strong; the role of truly silent synaptic storage remains debated.',
+        origin: 'A verification code, door number, or temporary password can be seen once and entered seconds later. The stimulus has disappeared, yet the information is immediately available. It seems too fast to require new anatomical synapses, so where does the code exist during those seconds?',
+        thesis: 'The best current answer is not one storage mechanism but a distributed temporary state combining persistent or burst-like activity, sensory-cortex representations, network dynamics, attention control, phonological recoding, and possibly rapid reversible synaptic changes.',
+        evidence: [
+          { certainty: 'Classical model', title: 'Persistent activity keeps information online', text: 'Delay-period recordings in primate prefrontal cortex and thalamus established the intuitive model that recurrent neural activity continues after the stimulus disappears.' },
+          { certainty: 'Human causal evidence', title: 'Early visual cortex is part of storage', text: 'Remembered orientations can be decoded from human V1-V4 after the image vanishes. In 2025, TMS applied to V1 during maintenance degraded visual-memory precision in a location-specific manner.' },
+          { certainty: 'Dynamic alternative', title: 'Working memory can be burst-like', text: 'Primate recordings reveal transient gamma and beta bursts rather than uniformly sustained firing. Information may be periodically reactivated or move among population states.' },
+          { certainty: 'Contested mechanism', title: 'Activity-silent working memory', text: 'TMS and EEG-pinging studies suggest unattended items may survive in latent, rapidly reactivatable network or synaptic states. Reanalysis, however, finds residual decodable activity, so silence may sometimes reflect limited measurement sensitivity.' },
+          { certainty: 'My working model', title: 'A code may exist in several formats at once', text: 'Visual cortex may retain fine shape information while frontoparietal networks control order, priority, and resistance to distraction. Digits may also be recoded into a phonological sequence that can be silently rehearsed. Seconds-long storage likely uses physiology and reversible efficacy changes, not new dendritic spines.' }
+        ],
+        frontiers: [
+          { question: 'How many copies of the same information exist?', note: 'V1, parietal cortex, and prefrontal cortex may store different aspects - visual detail, priority, order, or task rules - rather than redundant copies.' },
+          { question: 'Does genuinely activity-silent storage occur in normal human cognition?', note: 'The field still needs measurements sensitive enough to separate true silence from sparse or hidden electrical activity.' },
+          { question: 'Can rapid synaptic plasticity be measured and manipulated directly?', note: 'Most human evidence infers a synaptic state from EEG, fMRI, or TMS rather than observing the underlying synapses.' },
+          { question: 'How does a visual string become an inner spoken sequence?', note: 'The real-time interface between visual and phonological working memory lacks a cellular-level account.' },
+          { question: 'Why do people differ in code capacity?', note: 'Capacity may reflect storage limits, attentional control, interference resistance, or encoding strategy rather than one fixed number of slots.' }
+        ],
+        sources: [
+          { label: 'Fuster & Alexander. Science (1971) - delay-period activity', url: 'https://doi.org/10.1126/science.173.3997.652' },
+          { label: 'Harrison & Tong. Nature (2009) - decoding visual working memory', url: 'https://doi.org/10.1038/nature07832' },
+          { label: 'Rose et al. Science (2016) - TMS reactivation of latent memory', url: 'https://doi.org/10.1126/science.aah7011' },
+          { label: 'Wolff et al. Nature Neuroscience (2017) - dynamic hidden states', url: 'https://doi.org/10.1038/nn.4546' },
+          { label: 'Lundqvist et al. Neuron (2016) - gamma and beta bursts', url: 'https://doi.org/10.1016/j.neuron.2016.02.028' },
+          { label: 'Barbosa et al. PLOS Biology (2021) - active versus silent memory', url: 'https://doi.org/10.1371/journal.pbio.3001436' },
+          { label: 'Dake & Curtis. Nature Communications (2025) - causal role of V1', url: 'https://doi.org/10.1038/s41467-025-57882-8' }
+        ]
       },
       {
         title: 'Why can a dream place high-school friends inside a university scene?',
         eyebrow: 'Memory 03 / Dream recombination',
-        evidence: 'Dreams usually recombine fragments from several waking memories rather than replaying one event. People, places, emotions, and current concerns can be sampled from different times and assembled into a new scene.',
-        frontier: 'What selects one memory fragment over another, and does recombination merely accompany consolidation or causally create new associations that alter later memory, emotion, or decisions?',
-        source: 'Wamsley, PLOS ONE (2022)',
-        url: 'https://doi.org/10.1371/journal.pone.0264574'
+        status: 'Recombination is well documented; its selection rules and functional value remain largely unresolved.',
+        origin: 'Dreams often combine people, places, and events from incompatible periods of life. While awake, memories carry source labels such as high school, university, or a particular year. Why do those temporal boundaries loosen during sleep?',
+        thesis: 'Dreams are not literal replay. They recombine fragments from several waking memories, possibly according to emotion, semantic similarity, current concerns, and weakened source monitoring. Whether this recombination actively improves memory or merely accompanies consolidation is still uncertain.',
+        evidence: [
+          { certainty: 'Content evidence', title: 'Dreams draw from multiple time points', text: 'Systematic dream diaries show that a single dream can incorporate mundane, remote, and recent sources. Large analyses likewise find multiple waking sources and fragments of anticipated future events within newly constructed scenes.' },
+          { certainty: 'Neural representation', title: 'Dream imagery reuses perceptual systems', text: 'fMRI patterns learned from waking object viewing can predict categories later reported during sleep-onset imagery. REM and NREM dream reports also correlate with local activity in posterior cortical regions.' },
+          { certainty: 'Compatible mechanism', title: 'Fragments can be reactivated independently', text: 'People, places, actions, and emotional states need not be retrieved as an intact episode. Separately reactivated components can be assembled by a scene-generating system.' },
+          { certainty: 'Working hypotheses', title: 'Shared cues and weakened source monitoring', text: 'Memories from different years may coactivate because they share friendship, competition, loss, or another concern. Reduced executive reality checking may then allow an impossible combination to feel coherent.' },
+          { certainty: 'Functional debate', title: 'Consolidation, simulation, or by-product?', text: 'Dreaming about a learned maze correlates with better next-day performance, and dream recombination resembles constructive future simulation. Correlation does not show that dream content itself caused the benefit.' }
+        ],
+        frontiers: [
+          { question: 'Why is one person or episode selected rather than another?', note: 'Recency, emotional intensity, semantic overlap, and unfinished goals are plausible selectors, but their weights are unknown.' },
+          { question: 'How is temporal source encoded?', note: 'We do not know whether time labels disappear, weaken, or are actively ignored by the dreaming brain.' },
+          { question: 'Where does dream absurdity come from?', note: 'Possible causes include weaker prefrontal monitoring, looser constraints between memory fragments, or the neuromodulatory environment of sleep.' },
+          { question: 'Do REM and NREM recombine memories differently?', note: 'Both stages support dreams, but their network dynamics and neurochemistry differ markedly.' },
+          { question: 'Can recombination create associations that alter waking behavior?', note: 'Effects on creativity, emotion, and decision-making are plausible but lack a strong causal chain.' },
+          { question: 'Can targeted memory reactivation control which fragments enter a dream?', note: 'Cueing a selected memory during sleep could turn dream research from description toward causal intervention.' }
+        ],
+        sources: [
+          { label: 'Horikawa et al. Science (2013) - decoding sleep imagery', url: 'https://doi.org/10.1126/science.1234330' },
+          { label: 'Siclari et al. Nature Neuroscience (2017) - neural correlates of dreaming', url: 'https://doi.org/10.1038/nn.4545' },
+          { label: 'Vallat et al. PLOS ONE (2017) - memory sources of dreams', url: 'https://doi.org/10.1371/journal.pone.0185262' },
+          { label: 'Wamsley. PLOS ONE (2022) - constructive episodic simulation', url: 'https://doi.org/10.1371/journal.pone.0264574' },
+          { label: 'Wamsley & Stickgold. Journal of Sleep Research (2019) - task dreaming and consolidation', url: 'https://doi.org/10.1111/jsr.12749' }
+        ]
       },
       {
         title: 'Are some people simply born with better memory?',
         eyebrow: 'Memory 04 / Individual differences',
-        evidence: 'There is no single memory ability. Performance differs across working, episodic, spatial, and semantic systems, with large studies pointing to network organization and strategy as well as regional structure.',
-        frontier: 'Which neural features predict performance before learning, which are consequences of training, and is the deepest advantage capacity itself or the speed and stability of plasticity?',
-        source: 'Geissmann et al., Nature Communications (2023)',
-        url: 'https://doi.org/10.1038/s41467-023-41380-w'
+        status: 'Stable individual differences are measurable; nature, training, and strategy remain difficult to separate.',
+        origin: 'People often say that someone simply has a good memory. But memory is not one ability: a person can excel at space, digits, or semantic knowledge while struggling with another system. If sleep, attention, experience, and strategy are controlled, what stable neural differences remain?',
+        thesis: 'Individual differences have reliable physiological and network correlates, but there is no single memory organ or universal memory score. Stronger performance can reflect capacity, network coordination, strategy, experience-dependent plasticity, or the ability to change efficiently with learning.',
+        evidence: [
+          { certainty: 'Physiological marker', title: 'Working-memory capacity can be predicted', text: 'An EEG signal that tracks the number of maintained visual objects saturates near each person\'s capacity limit and predicts individual visual short-term-memory performance.' },
+          { certainty: 'Large-sample network evidence', title: 'Differences extend beyond the hippocampus', text: 'In 1,498 healthy adults, episodic-memory performance related to encoding responses in hippocampal, orbitofrontal, posterior cingulate, and precuneus regions, together with multiple functional networks.' },
+          { certainty: 'Important distinction', title: 'Task involvement is not the same as individual difference', text: 'A region can participate in successful memory for nearly everyone without explaining why one person performs better than another. The neural basis of memory and the neural basis of variation are not identical questions.' },
+          { certainty: 'Longitudinal evidence', title: 'Brain structure is shaped by experience', text: 'London taxi-driver studies linked posterior hippocampal structure to navigation expertise. Longitudinal follow-up showed selective gray-matter increase in trainees who mastered the road network, warning against labeling every structural difference as inborn.' },
+          { certainty: 'Levels I want to connect', title: 'From macrostructure to plasticity', text: 'Useful targets include hippocampal subfields and white matter, network connectivity, cellular and synaptic organization, encoding strategy, and plasticity itself - the speed, stability, and interference resistance of learning-induced change.' }
+        ],
+        frontiers: [
+          { question: 'Is there a domain-general memory ability?', note: 'Memory may instead comprise several partly independent systems with different limits and neural architectures.' },
+          { question: 'Which neural features predict performance before training?', note: 'Large longitudinal cohorts are needed to separate predisposition from the biological consequence of practice.' },
+          { question: 'Can human differences be traced to cells and synapses?', note: 'Most human evidence remains at MRI, EEG/MEG, or rare invasive-recording scales.' },
+          { question: 'How much do genetics, sleep, stress, exercise, and education contribute?', note: 'These factors affect both the state on a test day and the long-term organization of memory networks.' },
+          { question: 'Can training improve ability rather than one practiced task?', note: 'Generalization to untrained tasks remains one of the central unresolved problems in cognitive training.' }
+        ],
+        sources: [
+          { label: 'Vogel & Machizawa. Nature (2004) - individual working-memory capacity', url: 'https://doi.org/10.1038/nature02447' },
+          { label: 'Geissmann et al. Nature Communications (2023) - episodic-memory differences', url: 'https://doi.org/10.1038/s41467-023-41380-w' },
+          { label: 'Maguire et al. PNAS (2000) - taxi-driver hippocampi', url: 'https://doi.org/10.1073/pnas.070039597' },
+          { label: 'Woollett & Maguire. Current Biology (2011) - longitudinal structural change', url: 'https://doi.org/10.1016/j.cub.2011.11.018' }
+        ]
       }
     ],
     emotion: [
       {
         title: 'Why do some people wake up irritable rather than merely sleepy?',
         eyebrow: 'Emotion 01 / Sleep inertia',
-        evidence: 'Waking is a transition, not an instant switch. Thalamic and cingulo-opercular alertness networks recover over time, while insufficient sleep can heighten negative emotional reactivity and weaken prefrontal regulation.',
-        frontier: 'Why does the same transition produce simple fatigue in one person and anger in another? The first 1, 5, 15, and 30 minutes after waking need joint measurement of brain state, autonomic signals, and emotion.',
-        source: 'Chen et al., Communications Biology (2026)',
-        url: 'https://doi.org/10.1038/s42003-026-09839-w'
+        status: 'Alertness recovery is increasingly mapped; the transition from low alertness to irritability is still weakly explained.',
+        origin: '"Morning irritability" mixes sleepiness, slowed reactions, dislike of interruption, negative affect, and a greater tendency to respond sharply. The closest scientific construct is sleep inertia, but sleep inertia explains an incomplete waking state - not anger by itself.',
+        thesis: 'Waking is a network transition rather than an instant switch. Alertness and executive-control systems recover over minutes, while sleep pressure, circadian timing, and emotional reactivity differ across people. Irritability may emerge when environmental demands arrive before regulatory control has fully recovered.',
+        evidence: [
+          { certainty: '2026 network evidence', title: 'The awake brain comes online gradually', text: 'Simultaneous EEG-fMRI shows that thalamic and cingulo-opercular systems supporting tonic alertness are initially reduced after nocturnal awakening and recover over time. Thalamic recovery relates to prior sleep structure and task performance.' },
+          { certainty: 'Behavioral interpretation', title: 'External demands can outrun internal recovery', text: 'Being abruptly awakened and immediately required to decide, speak, or move creates a mismatch: the environment expects full wakefulness while parts of the control network are still leaving sleep.' },
+          { certainty: 'Boundary condition', title: 'Sleep loss biases emotional regulation', text: 'Whole-night sleep deprivation heightens human amygdala responses to negative stimuli and weakens prefrontal coupling. This does not directly map the first minutes after waking, but it identifies a state in which sleep inertia could amplify emotional imbalance.' },
+          { certainty: 'Individual variation', title: 'How we wake depends on modifiable factors', text: 'Longitudinal data from 833 twins and unrelated adults link next-morning alertness to the preceding night\'s sleep and to daytime behavior. Questionnaire work also separates emotional sleep inertia from purely cognitive slowing.' },
+          { certainty: 'Four-layer model', title: 'Inertia, pressure, circadian phase, regulation', text: 'A useful working model combines incomplete thalamic-control-network recovery, sleep quantity and stage, mismatch between biological clock and forced wake time, and temporarily weakened regulation of negative responses.' }
+        ],
+        frontiers: [
+          { question: 'Why does one person feel tired while another becomes angry?', note: 'Brain state should be recorded together with subjective irritability, hostility, autonomic arousal, and behavior rather than cognition alone.' },
+          { question: 'How quickly do emotional and control systems recover?', note: 'The first 1, 5, 15, and 30 minutes after waking need time-resolved measurement of amygdala, prefrontal, thalamic, and autonomic dynamics.' },
+          { question: 'Does the sleep stage of awakening change the type of negative emotion?', note: 'Waking from N3, REM, or light sleep may change more than reaction speed, but emotional outcomes are poorly resolved.' },
+          { question: 'How do chronic sleep problems and circadian misalignment interact?', note: 'Insomnia, anxiety, depression, sleep restriction, and forced early waking often co-occur and require longitudinal or interventional separation.' },
+          { question: 'Can gentler awakening reduce irritability independently of alertness?', note: 'Light, graded sound, spontaneous waking, or phase adjustment could reveal whether emotional recovery is separable from cognitive recovery.' },
+          { question: 'Is there a stable neural vulnerability to negative waking affect?', note: 'Noradrenergic tone, cortisol, autonomic state, and prefrontal-amygdala regulation are plausible contributors, but no single mechanism is established.' }
+        ],
+        sources: [
+          { label: 'Chen et al. Communications Biology (2026) - thalamic recovery during sleep inertia', url: 'https://doi.org/10.1038/s42003-026-09839-w' },
+          { label: 'Vallat et al. Nature Communications (2022) - determinants of morning alertness', url: 'https://doi.org/10.1038/s41467-022-34503-2' },
+          { label: 'Yoo et al. Current Biology (2007) - prefrontal-amygdala disconnection after sleep loss', url: 'https://doi.org/10.1016/j.cub.2007.08.007' },
+          { label: 'Carciofo. Chronobiology International (2023) - emotional sleep inertia', url: 'https://doi.org/10.1080/07420528.2023.2187211' }
+        ]
       }
     ]
   };
 
   let activeCognitionTopic = 'memory';
   let activeCognitionQuestion = 0;
+  let activeCognitionSection = 'question';
   let lastInterestMapTrigger = null;
 
   function makeNotebookIcon() {
@@ -1753,7 +1879,11 @@
     panel.innerHTML = `
       <div class="cognition-map-shell">
         <div class="map-intro cognition-intro">
-          <p>Five questions from my own experience, organized so that the question appears first and the evidence unfolds only when selected.</p>
+          <p>Five questions from my own experience. Choose a question, then move through its origin, evidence chain, unresolved frontier, and key papers without opening everything at once.</p>
+          <details class="cognition-common-thread">
+            <summary>Across all five questions: the common thread</summary>
+            <p>Across seconds, years, dreams, individual differences, and the first minutes after waking, I am interested in how a distributed brain selects information, assigns unequal weight to particular cells or states, and converts transient activity into later behavior. The next step is not only to observe a population, but to ask whether changing one node, a small ensemble, or a brief network state is sufficient to change memory or emotion.</p>
+          </details>
         </div>
         <div class="cognition-topic-tabs" role="tablist" aria-label="Cognition themes">
           <button type="button" class="cognition-topic-tab active" data-cognition-topic="memory">Memory <span>4 questions</span></button>
@@ -1775,6 +1905,7 @@
   function setCognitionTopic(topic) {
     activeCognitionTopic = topic;
     activeCognitionQuestion = 0;
+    activeCognitionSection = 'question';
     document.querySelectorAll('.cognition-topic-tab').forEach(tab => {
       tab.classList.toggle('active', tab.dataset.cognitionTopic === topic);
     });
@@ -1783,7 +1914,70 @@
 
   function selectCognitionQuestion(index) {
     activeCognitionQuestion = index;
+    activeCognitionSection = 'question';
     updateCognitionView();
+  }
+
+  function setCognitionSection(section) {
+    activeCognitionSection = section;
+    updateCognitionView();
+  }
+
+  function renderCognitionSection(item) {
+    if (activeCognitionSection === 'evidence') {
+      return `
+        <div class="cognition-evidence-ladder">
+          ${item.evidence.map((step, index) => `
+            <section class="cognition-evidence-step">
+              <span class="evidence-step-number">${String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <span class="evidence-certainty">${step.certainty}</span>
+                <h4>${step.title}</h4>
+                <p>${step.text}</p>
+              </div>
+            </section>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    if (activeCognitionSection === 'frontier') {
+      return `
+        <div class="cognition-frontier-list">
+          ${item.frontiers.map((frontier, index) => `
+            <details ${index === 0 ? 'open' : ''}>
+              <summary><span>${String(index + 1).padStart(2, '0')}</span>${frontier.question}</summary>
+              <p>${frontier.note}</p>
+            </details>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    if (activeCognitionSection === 'papers') {
+      return `
+        <div class="cognition-source-list">
+          ${item.sources.map((source, index) => `
+            <a href="${source.url}" target="_blank" rel="noopener">
+              <span>${String(index + 1).padStart(2, '0')}</span>
+              <strong>${source.label}</strong>
+              <span aria-hidden="true">&#8599;</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    return `
+      <div class="cognition-question-origin">
+        <span>Where my question starts</span>
+        <p>${item.origin}</p>
+        <div class="cognition-thesis-band">
+          <span>My current synthesis</span>
+          <p>${item.thesis}</p>
+        </div>
+      </div>
+    `;
   }
 
   function updateCognitionView() {
@@ -1803,17 +1997,14 @@
     detail.innerHTML = `
       <span class="interest-map-eyebrow">${item.eyebrow}</span>
       <h3>${item.title}</h3>
-      <div class="cognition-evidence-grid">
-        <section>
-          <span>Where evidence stands</span>
-          <p>${item.evidence}</p>
-        </section>
-        <section>
-          <span>What I still want to know</span>
-          <p>${item.frontier}</p>
-        </section>
+      <p class="cognition-status">${item.status}</p>
+      <div class="cognition-detail-tabs" role="tablist" aria-label="Layers of this question">
+        <button type="button" class="${activeCognitionSection === 'question' ? 'active' : ''}" onclick="setCognitionSection('question')">The Question</button>
+        <button type="button" class="${activeCognitionSection === 'evidence' ? 'active' : ''}" onclick="setCognitionSection('evidence')">Evidence Chain</button>
+        <button type="button" class="${activeCognitionSection === 'frontier' ? 'active' : ''}" onclick="setCognitionSection('frontier')">Open Frontier</button>
+        <button type="button" class="${activeCognitionSection === 'papers' ? 'active' : ''}" onclick="setCognitionSection('papers')">Key Papers</button>
       </div>
-      <a class="cognition-source" href="${item.url}" target="_blank" rel="noopener">${item.source}</a>
+      <div class="cognition-section-content">${renderCognitionSection(item)}</div>
     `;
   }
 
@@ -1977,6 +2168,11 @@
     }
   }
 
+  const mapHashOnLoad = window.location.hash === '#torpor-map' || window.location.hash === '#cognition-map';
+  if (mapHashOnLoad && 'scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     renderResearchMaps();
 
@@ -1989,9 +2185,17 @@
     const sections = document.querySelectorAll('section[id]');
 
     if (window.location.hash === '#torpor-map') {
-      openInterestMap('torpor', { updateHash: false });
+      openInterestMap('torpor', { updateHash: false, scroll: false });
     } else if (window.location.hash === '#cognition-map') {
-      openInterestMap('cognition', { updateHash: false });
+      openInterestMap('cognition', { updateHash: false, scroll: false });
+    }
+
+    if (mapHashOnLoad) {
+      requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: 'auto' }));
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+        if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+      }, 120);
     }
 
     document.addEventListener('click', event => {
