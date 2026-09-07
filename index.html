@@ -6,6 +6,7 @@
   <title>Yan Wang | Personal Website</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reading-room.css">
+  <link rel="stylesheet" href="instrument-embed.css">
 </head>
 <body>
 
@@ -16,6 +17,7 @@
       <a href="#journey">Education</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
+      <a href="#funding">Funding</a>
        <a href="#activities">Activities</a>
       <a href="#skills">Skills</a>
       <a href="#awards">Awards</a>
@@ -390,7 +392,7 @@
         </button>
 
         <div class="research-publication">
-          <span class="publication-label">SfN 2026 · Abstract submitted</span>
+          <span class="publication-label">SfN 2026 · Abstract accepted</span>
           <p><a href="#publications">View the abstract citation</a></p>
         </div>
 
@@ -686,13 +688,33 @@
         </details>
       </article>
       <article class="publication-card">
-        <div class="publication-meta"><span>Conference abstract · 2026</span><span class="submission-status">Submitted</span></div>
+        <div class="publication-meta"><span>Conference abstract · 2026</span><span class="submission-status">Accepted</span></div>
         <h3>Distributed INS-1 signaling through the candidate noncanonical receptor NTR-1 tunes the ASER-AIY axis to drive high-salt ethanol avoidance in <em>Caenorhabditis elegans</em></h3>
         <p class="publication-authors"><strong>Wang, Y.</strong>, Zhang, J., Huang, X., Ruan, Y., &amp; Yu, Y.</p>
-        <p class="publication-venue">Abstract submitted to <em>Neuroscience 2026</em>, Society for Neuroscience.</p>
+        <p class="publication-venue">Abstract accepted for <em>Neuroscience 2026</em>, Society for Neuroscience.</p>
         <a class="text-link" href="#ins1-research">About the project <span aria-hidden="true">&#8599;</span></a>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="section" id="funding">
+  <div class="container">
+    <h2 class="section-title">Funding</h2>
+    <article class="publication-card funding-card">
+      <div class="publication-meta"><span>Unitree Robotics · 天才少年计划</span><span class="submission-status">Application under review</span></div>
+      <h3>Multimodal monitoring of reversible hypometabolic states</h3>
+      <p class="publication-venue">Project proposal · September 2026</p>
+      <p>I am applying for support to build a cage-based system that records surface temperature, movement, and the surrounding temperature and humidity. The first step is to make the cameras and sensors work reliably together on an empty-cage test rig. Later, I hope to compare these signals with independent measurements of metabolism.</p>
+      <p>This is an early engineering project within my longer-term interest in human hibernation and long-duration spaceflight. The proposed system would monitor and flag changes; automatic control is a later step.</p>
+      <div id="instrument-showcase">
+        <div class="instrument-preview">
+          <img src="instrument/assets/hero.webp" width="1800" height="1350" loading="lazy" alt="Proposed cage-monitoring rig with two overhead cameras, external recording electronics and separate backup power.">
+          <div class="instrument-caption"><p class="instrument-eyebrow">Concept model · Empty-cage test setup</p><h4>Explore the proposed setup</h4><p>A 3D layout of the cameras, sensors and recording hardware in my funding proposal. The mounting layout still needs bench testing.</p><div class="instrument-actions"><button type="button" data-load-model>Load 3D model</button><a href="instrument/" target="_blank" rel="noopener">Open full viewer ↗</a></div></div>
+        </div>
+        <div class="instrument-live" hidden><div class="instrument-livebar"><span>Proposed monitoring rig · Simulated replay</span><a href="instrument/" target="_blank" rel="noopener">Open full viewer ↗</a><button type="button" data-close-model>Close model</button></div></div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -2913,5 +2935,6 @@ if (lifeSlides.length) {
   });
 </script>
 <script src="reading-room.js"></script>
+<script src="instrument-embed.js" defer></script>
 </body>
 </html>
