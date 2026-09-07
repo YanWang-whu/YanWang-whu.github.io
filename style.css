@@ -4062,3 +4062,19 @@ footer.is-visible {
     transition: none;
   }
 }
+
+/* Research and publication additions, September 2026. */
+.project-summary { margin: 0; padding: 0 26px 22px; color: #51627d; font-size: 16px; max-width: 85ch; }
+.publication-list { display: grid; gap: 20px; }
+.publication-card { background: #fff; border: 1px solid #dce4ef; border-left: 4px solid #294172; border-radius: 12px; padding: 28px 32px; }
+.publication-card h3 { margin: 16px 0 12px; font-size: 21px; line-height: 1.45; color: #24324a; font-weight: 650; }
+.publication-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-size: 14px; color: #51627d; }
+.submission-status { border: 1px solid #b8c9de; border-radius: 100px; padding: 2px 10px; color: #294172; background: #f1f5fa; }
+.publication-authors, .publication-venue { margin: 8px 0; font-size: 16px; }
+.publication-card a { color: #294f83; text-underline-offset: 3px; }
+.publication-authors sup { font-size: .72em; padding-left: 2px; }
+.publication-affiliations { margin-top: 18px; padding-top: 14px; border-top: 1px solid #e2e8f0; color: #51627d; font-size: 14px; }
+.publication-affiliations summary { cursor: pointer; width: fit-content; }
+.publication-affiliations li { padding-left: 4px; margin: 8px 0; }
+.text-link { display: inline-block; margin-top: 12px; font-weight: 600; }
+@media (max-width: 640px) { .publication-card { padding: 22px 20px; } .publication-card h3 { font-size: 19px; } .project-summary { padding: 0 20px 20px; } }

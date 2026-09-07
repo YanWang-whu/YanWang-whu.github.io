@@ -14,6 +14,7 @@
     <div class="nav-links">
       <a href="#journey">Education</a>
       <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
        <a href="#activities">Activities</a>
       <a href="#skills">Skills</a>
       <a href="#awards">Awards</a>
@@ -560,7 +561,7 @@
        <div class="edu-divider"></div>
    <div class="edu-header highschool">
                 <h3 class="edu-school">Yale University, USA</h3>
-          <div class="edu-time">Aug. 2026–Present</div>
+          <div class="edu-time">July 2026–Present</div>
         </div>
         <p class="edu-program">
          Visiting Undergraduate Researcher, Scherzer Lab, Adams Center for Parkinson’s Disease Research
@@ -615,7 +616,39 @@
 
     <div class="research-list">
 
-          <div class="research-card">
+      <div class="research-card" id="scherzer-research">
+        <button type="button" class="research-header" onclick="toggleActivity(this)" aria-expanded="false">
+          <div class="research-left">
+            <span class="research-name">PM20D1 and PM20D1-AS1 in Parkinson’s disease</span>
+            <span class="research-location">Clemens Scherzer Lab · Yale School of Medicine · New Haven, USA</span>
+          </div>
+          <div class="research-right">
+            <span class="research-date-inline">July 2026 – Present</span>
+            <span class="research-arrow" aria-hidden="true">&#9662;</span>
+          </div>
+        </button>
+        <p class="project-summary">Visiting undergraduate researcher. I combine public RNA-seq analysis with primer design and qPCR to study this gene and its antisense RNA.</p>
+        <div class="research-content">
+          <div class="research-inner">
+            <div class="research-section">
+              <div class="research-subtitle">The question</div>
+              <p class="research-text">I am studying how PM20D1 and the long noncoding RNA PM20D1-AS1 are expressed in Parkinson’s disease. Much of my work focuses on a practical question: when a gene has several transcripts, which ones can we actually distinguish in the available data and in our experiments?</p>
+            </div>
+            <div class="research-section">
+              <div class="research-subtitle">What I do</div>
+              <p class="research-text">For PM20D1-AS1, I mapped transcript annotations, compared expression across normal tissues, and examined public Parkinson’s brain datasets by donor and cell type. I also looked at patterns across disease stages. I keep transcripts that the data cannot resolve separate from those with no detected expression.</p>
+              <p class="research-text">At the bench, I work on primer mapping and qPCR checks, including dilution series and reverse-transcription controls. For PM20D1, I am checking which public datasets have the read coverage and splice-junction evidence needed for transcript-level questions.</p>
+            </div>
+            <div class="research-section">
+              <div class="research-subtitle">What I am working out</div>
+              <p class="research-text">The analyses are still in progress. A pattern across donors is a starting point for follow-up, and does not by itself tell us what an RNA does. This project has made me more careful about matching the question to what an assay can measure, especially when computational and qPCR results appear to disagree.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+          <div class="research-card" id="ins1-research">
         <button class="research-header" onclick="toggleActivity(this)">
           <div class="research-left">
             <span class="research-name">
@@ -633,12 +666,8 @@
         </button>
 
         <div class="research-publication">
-          <span class="publication-label">Scientific Abstract</span>
-          <p>
-            <strong>Wang, Y.*</strong>, Zhang, J., Huang, X., &amp; Yu, Y.
-            <span class="publication-title">Distributed INS-1 signaling through the candidate noncanonical receptor NTR-1 tunes the ASER-AIY axis to drive high-salt ethanol avoidance in <em>Caenorhabditis elegans</em>.</span>
-            <em>Neuroscience 2026, Society for Neuroscience</em>.
-          </p>
+          <span class="publication-label">SfN 2026 · Abstract submitted</span>
+          <p><a href="#publications">View the abstract citation</a></p>
         </div>
 
         <div class="research-content">
@@ -913,6 +942,36 @@
   </div>
 </section>
   
+<section class="section" id="publications">
+  <div class="container">
+    <h2 class="section-title">Publications &amp; Conferences</h2>
+    <div class="publication-list">
+      <article class="publication-card">
+        <div class="publication-meta"><span>Review manuscript</span><span class="submission-status">Submitted</span></div>
+        <h3>Mitochondrial dysfunction and α-synuclein pathology in Parkinson's disease: A bidirectional pathogenic loop and therapeutic opportunities</h3>
+        <p class="publication-authors"><strong>Yan Wang</strong><sup>1,2,3,4</sup>, Lauren Miller<sup>1,2</sup>, Maria Estrada<sup>1,2</sup>, Dunhui Li<sup>1,2</sup></p>
+        <p class="publication-venue">Submitted to <a href="https://www.frontiersin.org/journals/molecular-neuroscience" target="_blank" rel="noopener"><em>Frontiers in Molecular Neuroscience</em></a>.</p>
+        <details class="publication-affiliations">
+          <summary>Author affiliations</summary>
+          <ol>
+            <li>Stephen &amp; Denise Adams Center for Parkinson's Disease Research, Yale School of Medicine, New Haven, CT 06510, USA</li>
+            <li>Department of Neurology, Yale School of Medicine, New Haven, CT 06510, USA</li>
+            <li>College of Life Sciences, Wuhan University, Wuhan, Hubei 430072, China</li>
+            <li>Hongyi Honor College, Wuhan University, Wuhan, Hubei 430072, China</li>
+          </ol>
+        </details>
+      </article>
+      <article class="publication-card">
+        <div class="publication-meta"><span>Conference abstract · 2026</span><span class="submission-status">Submitted</span></div>
+        <h3>Distributed INS-1 signaling through the candidate noncanonical receptor NTR-1 tunes the ASER-AIY axis to drive high-salt ethanol avoidance in <em>Caenorhabditis elegans</em></h3>
+        <p class="publication-authors"><strong>Wang, Y.</strong>, Zhang, J., Huang, X., Ruan, Y., &amp; Yu, Y.</p>
+        <p class="publication-venue">Abstract submitted to <em>Neuroscience 2026</em>, Society for Neuroscience.</p>
+        <a class="text-link" href="#ins1-research">About the project <span aria-hidden="true">&#8599;</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
  <section class="section" id="activities">
   <div class="container">
     <button class="section-fold-header section-fold-plain" onclick="toggleSectionFold(this)">
