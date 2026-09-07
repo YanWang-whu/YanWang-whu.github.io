@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reading-room.css">
   <link rel="stylesheet" href="instrument-embed.css">
+  <link rel="stylesheet" href="portfolio-refresh.css">
 </head>
 <body>
 
@@ -35,7 +36,7 @@
         Hi, I’m <span class="accent">Yan Wang</span>
       </h1>
       <p>
-        An undergraduate student from <strong>Wuhan University</strong>, majoring in Biology. 
+        An undergraduate student from <strong>Wuhan University</strong>, majoring in Biology.
         I used to work in <strong>WHU-iGEM</strong>. I am currently working in <strong>Prof. Yanxun Yu</strong>'s lab, and I am also a <strong>visiting undergraduate researcher</strong> in the <strong>Clemens Scherzer Lab</strong> at <strong>Yale University</strong>.
         I plan to pursue a <strong>PhD</strong> in the future.
       </p>
@@ -81,17 +82,13 @@
     <div class="hero-side-card card scroll-reveal-card" id="what-drives">
       <span class="interest-map-eyebrow">Research Direction</span>
       <h3>What Drives Me</h3>
-      <p>
-        My previous research involves <strong><em>C. elegans</em></strong>, <strong>neuroscience</strong>, <strong>synthetic biology</strong>, <strong>Parkinson's disease</strong>, and <strong>biochemistry</strong>.
-        My future research interests include, but are not limited to, <strong>neuroscience</strong>. More specifically, I am interested in <strong>higher-order neurocognitive functions</strong> such as learning, memory, and consciousness,
-        as well as cutting-edge directions such as <strong>artificial induction of torpor/hibernation</strong>.
-      </p>
+      <p>My previous research spans <strong>molecular biology</strong>, <strong>neuroscience</strong>, and <strong>synthetic biology</strong>. I have been drawn to the life sciences since I was young: to understanding higher brain functions and their molecular basis, and to future technologies such as deliberately changing metabolic states. I believe research in molecular biology, neuroscience, and translational medicine can help us understand how life works and turn that knowledge into new ways to treat disease. I want to take part in this effort to explain the nature of life and help shape our future.</p>
       <div class="tag-list">
         <span class="tag">Neuroscience</span>
-        <span class="tag">Synthetic Biology</span>
+        <span class="tag">Translational Medicine</span>
         <span class="tag"><em>C. elegans</em></span>
         <span class="tag">Parkinson's Disease</span>
-        <span class="tag">Biochemistry</span>
+        <span class="tag">Molecular Biology</span>
         <span class="tag">Torpor/Hibernation</span>
         <span class="tag">Learning, memory and consciousness</span>
       </div>
@@ -133,7 +130,8 @@
               <span>Area 2</span>
               My cryobiology visit
             </button>
-          </div>
+          <button type="button" class="map-area-tab" data-area-tab="my-attempt" onclick="switchTorporArea('my-attempt')" aria-pressed="false"><span>Area 3</span>My attempt</button>
+</div>
 
           <div class="torpor-area-panel active" data-torpor-area="neural-route">
             <div class="map-region primary-route">
@@ -154,7 +152,7 @@
               <div class="map-interaction-guide" aria-label="Roadmap interaction guide">
                 <span><i class="guide-paper-dot" aria-hidden="true"></i>Choose a paper to read the source</span>
                 <span><i class="guide-note-icon" aria-hidden="true"></i>Open the notebook for my reading note</span>
-                <span><i class="guide-link-mark" aria-hidden="true">&#8599;</i>Use the reading list on a small screen</span>
+
               </div>
 
               <div class="roadmap-scroll" tabindex="0" aria-label="Torpor papers by year and question"><div class="roadmap-grid torpor-grid-v3"></div></div>
@@ -172,32 +170,32 @@
               </p>
 
               <div class="cryo-company-grid" aria-label="Human cryopreservation organizations">
-                <article class="cryo-card alcor-card" tabindex="0">
-                  <div class="cryo-logo">AL</div>
-                  <h4>Alcor Life Extension Foundation</h4>
-                  <p>Arizona-based cryonics organization focused on whole-body and neuro cryopreservation.</p>
-                  <span class="cryo-card-tooltip">A long-running public cryonics reference point for patient-care framing, protocols, and long-term storage.</span>
-                </article>
-                <article class="cryo-card ci-card" tabindex="0">
-                  <div class="cryo-logo">CI</div>
-                  <h4>Cryonics Institute</h4>
-                  <p>Michigan-based organization offering cryonic suspension and long-term patient storage.</p>
-                  <span class="cryo-card-tooltip">A major nonprofit comparison case for lower-cost cryonics models and member-centered operations.</span>
-                </article>
-                <article class="cryo-card tb-card" tabindex="0">
-                  <div class="cryo-logo">TB</div>
-                  <h4>Tomorrow Bio</h4>
-                  <p>European cryonics provider emphasizing standby, stabilization, and transport logistics.</p>
-                  <span class="cryo-card-tooltip">Highlights the practical chain between death declaration, rapid response, perfusion, cooling, and storage.</span>
-                </article>
-                <article class="cryo-card yinfeng-card" tabindex="0">
+<article class="cryo-card yinfeng-card" tabindex="0">
                   <div class="cryo-logo">YF</div>
                   <h4>Shandong Yinfeng Life Science Research Institute</h4>
                   <p>Chinese institute working on low-temperature preservation, organ cryobiology, and body donation-linked research.</p>
                   <button type="button" class="visit-toggle" onclick="toggleVisitPanel(event)">My Visit</button>
                   <span class="cryo-card-tooltip">Press My Visit to see my field note from the institute visit and the photo I took there.</span>
                 </article>
-              </div>
+<article class="cryo-card alcor-card" tabindex="0">
+                  <div class="cryo-logo">AL</div>
+                  <h4>Alcor Life Extension Foundation</h4>
+                  <p>Arizona-based cryonics organization focused on whole-body and neuro cryopreservation.</p>
+                  <span class="cryo-card-tooltip">A long-running public cryonics reference point for patient-care framing, protocols, and long-term storage.</span>
+                </article>
+<article class="cryo-card ci-card" tabindex="0">
+                  <div class="cryo-logo">CI</div>
+                  <h4>Cryonics Institute</h4>
+                  <p>Michigan-based organization offering cryonic suspension and long-term patient storage.</p>
+                  <span class="cryo-card-tooltip">A major nonprofit comparison case for lower-cost cryonics models and member-centered operations.</span>
+                </article>
+<article class="cryo-card tb-card" tabindex="0">
+                  <div class="cryo-logo">TB</div>
+                  <h4>Tomorrow Bio</h4>
+                  <p>European cryonics provider emphasizing standby, stabilization, and transport logistics.</p>
+                  <span class="cryo-card-tooltip">Highlights the practical chain between death declaration, rapid response, perfusion, cooling, and storage.</span>
+                </article>
+</div>
 
               <div class="visit-panel" id="yinfeng-visit-panel">
                 <div class="visit-photo-wrap">
@@ -222,7 +220,14 @@
               </div>
             </div>
           </div>
+        <div class="torpor-area-panel" data-torpor-area="my-attempt"><div class="map-region my-attempt-route"><div class="map-region-header"><span class="map-region-kicker">Area 3</span><h3>My attempt</h3></div><p class="attempt-intro">I made a model of a system for monitoring metabolic states; with no hibernation lab nearby, this may be the first small step I can take toward studying induced torpor, and I am applying to Unitree for funding to turn the idea into a working setup.</p><div id="interest-instrument-showcase" class="instrument-showcase" data-model-src="instrument/?embed=1">
+        <div class="instrument-preview">
+          <img src="instrument/assets/hero.webp" width="1800" height="1350" loading="lazy" alt="Proposed cage-monitoring rig with two overhead cameras, external recording electronics and separate backup power.">
+          <div class="instrument-caption"><p class="instrument-eyebrow">Concept model · Empty-cage test setup</p><h4>Explore the proposed setup</h4><p>A 3D layout of the cameras, sensors and recording hardware in my funding proposal. The mounting layout still needs bench testing.</p><div class="instrument-actions"><button type="button" data-load-model>Load 3D model</button><a href="instrument/" target="_blank" rel="noopener">Open full viewer ↗</a></div></div>
         </div>
+        <div class="instrument-live" hidden><div class="instrument-livebar"><span>Proposed monitoring rig · Simulated replay</span><a href="instrument/" target="_blank" rel="noopener">Open full viewer ↗</a><button type="button" data-close-model>Close model</button></div></div>
+      </div></div></div>
+</div>
       </div>
 
       <div class="interest-map-panel" data-interest-panel="cognition">
@@ -254,14 +259,14 @@
           <span class="tooltip-term">
   <strong>Hongyi Honor Class</strong>
   <span class="tooltip-box">
-    The <strong>Hongyi Honor Class</strong> is one of the most selective programs at Wuhan University, admitting students with <strong>top entrance scores</strong>. 
+    The <strong>Hongyi Honor Class</strong> is one of the most selective programs at Wuhan University, admitting students with <strong>top entrance scores</strong>.
     It provides <strong>interdisciplinary</strong> training for innovative and high-achieving students, and all major courses are taught <strong>in English</strong>.
   </span>
 </span>, College of Life Sciences<br>
           ShanghaiRanking China #8 · U.S. News Global #85
         </p>
         <div class="stats-grid">
-         
+
           <div class="stat-block">
             <div class="stat-label">GPA (3.91 / 4.00)</div>
             <div class="progress-track"><div class="progress-fill gpa-fill"></div></div>
@@ -271,19 +276,19 @@
             <div class="progress-track"><div class="progress-fill rank-fill"></div></div>
           </div>
         </div>
-       
+
         <div class="course-section">
           <h4 class="course-title">Core Courses</h4>
           <div class="course-grid">
             <div class="course-chip">Cell Biology <span>95</span></div>
             <div class="course-chip">Molecular Biology <span>96</span></div>
             <div class="course-chip">Genetics <span>96</span></div>
-            <div class="course-chip">Biochemistry <span>95</span></div>
+            <div class="course-chip">Biochemistry2 <span>95</span></div>
             <div class="course-chip">Neurobiology <span>91</span></div>
             <div class="course-chip">Gene Engineering <span>93</span></div>
           </div>
         </div>
-        
+
        <div class="edu-divider"></div>
    <div class="edu-header highschool">
                 <h3 class="edu-school">Yale University, USA</h3>
@@ -301,8 +306,8 @@
           National College Entrance Examination (Gaokao), Biology: 100/100
         </p>
       </div>
- 
-   
+
+
       <div class="edu-card progress-card">
         <div class="edu-header">
           <h3 class="edu-school">Language</h3>
@@ -328,10 +333,10 @@
           </div>
         </div>
         <div class="lang-note">
-          I have research experience in the Yu-Yanxun & Youngnam Jin joint lab, where all group meetings, Journal Club discussions, and academic communications are conducted in English, which guarantees my academic English proficiency.
+          In the joint lab of Prof. Yanxun Yu and Prof. Youngnam Jin, I took part in group meetings, journal clubs, and research discussions in English. I am now training in a lab at Yale, and I expect a year in this environment to make me more comfortable with everyday academic work in English.
         </div>
       </div>
-     
+
     </div>
   </div>
 </section>
@@ -342,8 +347,8 @@
 
     <div class="research-list">
 
-      <div class="research-card" id="scherzer-research">
-        <button type="button" class="research-header" onclick="toggleActivity(this)" aria-expanded="false">
+<div class="research-card" id="scherzer-research">
+        <button type="button" class="research-header" id="scherzer-research-heading" aria-expanded="false" aria-controls="scherzer-research-content" onclick="toggleActivity(this)" >
           <div class="research-left">
             <span class="research-name">PM20D1 and PM20D1-AS1 in Parkinson’s disease</span>
             <span class="research-location">Clemens Scherzer Lab · Yale School of Medicine · New Haven, USA</span>
@@ -353,29 +358,20 @@
             <span class="research-arrow" aria-hidden="true">&#9662;</span>
           </div>
         </button>
-        <p class="project-summary">Visiting undergraduate researcher. I combine public RNA-seq analysis with primer design and qPCR to study this gene and its antisense RNA.</p>
-        <div class="research-content">
+        <div class="research-content" id="scherzer-research-content" role="region" aria-labelledby="scherzer-research-heading" tabindex="0" inert>
           <div class="research-inner">
-            <div class="research-section">
-              <div class="research-subtitle">The question</div>
-              <p class="research-text">I am studying how PM20D1 and the long noncoding RNA PM20D1-AS1 are expressed in Parkinson’s disease. Much of my work focuses on a practical question: when a gene has several transcripts, which ones can we actually distinguish in the available data and in our experiments?</p>
-            </div>
-            <div class="research-section">
-              <div class="research-subtitle">What I do</div>
-              <p class="research-text">For PM20D1-AS1, I mapped transcript annotations, compared expression across normal tissues, and examined public Parkinson’s brain datasets by donor and cell type. I also looked at patterns across disease stages. I keep transcripts that the data cannot resolve separate from those with no detected expression.</p>
-              <p class="research-text">At the bench, I work on primer mapping and qPCR checks, including dilution series and reverse-transcription controls. For PM20D1, I am checking which public datasets have the read coverage and splice-junction evidence needed for transcript-level questions.</p>
-            </div>
-            <div class="research-section">
-              <div class="research-subtitle">What I am working out</div>
-              <p class="research-text">The analyses are still in progress. A pattern across donors is a starting point for follow-up, and does not by itself tell us what an RNA does. This project has made me more careful about matching the question to what an assay can measure, especially when computational and qPCR results appear to disagree.</p>
-            </div>
-          </div>
+<div class="research-section"><div class="research-subtitle">Background</div>
+<p class="research-text">The Scherzer Lab leads the Yale Harvard Biomarkers Study, one of the largest longitudinal biobanks for Parkinson’s disease. Analyses by our computational team pointed to PM20D1 and PM20D1-AS1 as candidates for further study. PM20D1 is a secreted N-acyl amino acid synthase/hydrolase; PM20D1-AS1 is a long noncoding RNA. We use molecular biology, neuroscience approaches, and human induced pluripotent stem cell (hiPSC) models to investigate their roles in Parkinson’s disease.</p></div>
+<div class="research-section"><div class="research-subtitle">What I am doing</div>
+<p class="research-text">We are using antisense oligonucleotides (ASOs) and gene-editing approaches to test how PM20D1 affects mitochondrial function and the cellular redox environment. For PM20D1-AS1, we are investigating its effects on PM20D1 expression, where it is located in the cell, and which other molecules it may interact with.</p>
+<p class="research-text">Since arriving at Yale, I have also taught myself sequencing-data analysis alongside my lab work. I compared 22 annotated PM20D1-AS1 transcripts in public datasets. My preliminary analyses suggest higher relative proportions of a few transcripts in astrocytes and oligodendrocytes from people with Parkinson’s disease. I am checking how reliably the data distinguish these transcripts and whether the patterns hold up in further analyses. These observations may help us choose which transcripts to study experimentally and ask more specific questions about this RNA’s possible role in disease.</p></div>
+<p class="research-text research-update">I have only recently joined the lab, so I will keep this section updated as the project develops.</p>
+</div>
         </div>
       </div>
 
-
-          <div class="research-card" id="ins1-research">
-        <button class="research-header" onclick="toggleActivity(this)">
+<div class="research-card" id="ins1-research">
+        <button class="research-header" id="ins1-research-heading" aria-expanded="false" aria-controls="ins1-research-content" onclick="toggleActivity(this)">
           <div class="research-left">
             <span class="research-name">
               Distributed INS-1 Signaling Through the Candidate Noncanonical Receptor NTR-1 Tunes the ASER-AIY Axis to Drive High-Salt Ethanol Avoidance in <em>C. elegans</em>
@@ -396,8 +392,10 @@
           <p><a href="#publications">View the abstract citation</a></p>
         </div>
 
-        <div class="research-content">
+        <div class="research-content" id="ins1-research-content" role="region" aria-labelledby="ins1-research-heading" tabindex="0" inert>
           <div class="research-inner">
+<p class="research-lead"><strong>With my mentors’ trust and support, I took responsibility for moving this project forward independently. I learned a range of worm and neuroscience techniques, but more importantly, how to stay focused on a scientific question and work through the difficulties along the way.</strong></p>
+
             <div class="research-section">
               <div class="research-subtitle">Scientific Context and Central Question</div>
               <p class="research-text">
@@ -454,13 +452,128 @@
                 More importantly, I learned to let results reshape the question. What began as a behavioral phenotype became a progressively testable model linking <strong>distributed peptide release, sensory-range tuning, downstream circuit state, and a candidate receptor</strong>. This process taught me how to integrate incomplete observations into a mechanistic framework that can be challenged by the next experiment.
               </p>
             </div>
-          </div>
+          <div class="research-figures" aria-label="Project figures"><figure><a href="research-images/ins1-working-model.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Working model of INS-1 signaling in the ASER–AIY circuit. Dashed pathways and question marks indicate hypotheses."><img src="research-images/ins1-working-model.png" width="2124" height="1059" loading="lazy" decoding="async" alt="Working model of INS-1 signaling in the ASER–AIY circuit. Dashed pathways and question marks indicate hypotheses."></a><figcaption>Working model of INS-1 signaling in the ASER–AIY circuit. Dashed pathways and question marks indicate hypotheses. <span>Open image for a closer look ↗</span></figcaption></figure><figure><a href="research-images/ins1-behavior-and-model.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Ethanol diffusion modeling, behavioral assays, and a working model of INS-1 signaling."><img src="research-images/ins1-behavior-and-model.png" width="1962" height="808" loading="lazy" decoding="async" alt="Ethanol diffusion modeling, behavioral assays, and a working model of INS-1 signaling."></a><figcaption>Ethanol diffusion modeling, behavioral assays, and a working model of INS-1 signaling. <span>Open image for a closer look ↗</span></figcaption></figure><figure><a href="research-images/ins1-calcium-responses.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Calcium responses in ASER and AIY, with a proposed circuit model."><img src="research-images/ins1-calcium-responses.png" width="1930" height="864" loading="lazy" decoding="async" alt="Calcium responses in ASER and AIY, with a proposed circuit model."></a><figcaption>Calcium responses in ASER and AIY, with a proposed circuit model. <span>Open image for a closer look ↗</span></figcaption></figure></div></div>
         </div>
       </div>
 
+<div class="research-card" id="logic-research">
+        <button class="research-header" id="logic-research-heading" aria-expanded="false" aria-controls="logic-research-content" onclick="toggleActivity(this)">
+          <div class="research-left">
+            <span class="research-name">
+  LOGIC – Lasting Optimized Genetic Input Calculator
+  <a href="https://2025.igem.wiki/whu-china/" target="_blank" class="wiki-link">wiki<sub>↗</sub></a>
+</span>
+            <span class="research-location">
+              College of Life Sciences, Wuhan University · Project for iGEM Competition · Wuhan, China
+            </span>
+          </div>
 
-      <div class="research-card">
-        <button class="research-header" onclick="toggleActivity(this)">
+          <div class="research-right">
+            <span class="research-date-inline">Dec. 2024 – Oct. 2025</span>
+            <span class="research-arrow">&#9662;</span>
+          </div>
+        </button>
+
+        <div class="research-publication research-achievement research-medal">
+          <img class="achievement-medal-icon" src="life/igem-gold-medal-icon.png" alt="Gold science competition medal">
+          <div class="achievement-copy">
+            <span class="publication-label">2025 iGEM Gold Medal</span>
+            <p>Awarded a <strong>Gold Medal</strong> at the 2025 International Genetically Engineered Machine (iGEM) Competition.</p>
+          </div>
+        </div>
+
+        <div class="research-content" id="logic-research-content" role="region" aria-labelledby="logic-research-heading" tabindex="0" inert>
+          <div class="research-inner">
+<p class="research-lead"><strong>LOGIC began with a fanciful idea. Inspired by the “human computer” in the science-fiction novel <em>The Three-Body Problem</em>, I wondered whether a microbial population could carry out collective computation. I proposed LOGIC, and it was selected as our official project. It taught me how to turn an original idea into a testable scientific question.</strong></p>
+
+           <div class="research-section">
+  <div class="research-subtitle">Background</div>
+  <p class="research-text">
+        Bio-computing is a promising field with potential applications in bio-security, environmental monitoring, and personalized medicine.
+    However, there has always been a significant gap between successfully constructing logic gates and actually achieving computation.
+    Previous designs were always limited to within a single cell, constrained by available orthogonal components and cellular metabolic pressures,
+    making it difficult to construct complex adders.
+     </p>
+
+  <p class="research-text">
+       Fedorec, A. J. H. et al. developed a new method to build logic gates at the colony level.
+    Using simple gene circuits such as high-pass and band-pass filters, along with spatial diffusion of inducers on solid media,
+    colonies can generate outputs of classical logic gates like AND, OR, and XOR.
+    This approach not only uses simple circuits but also allows easy tuning of logic functions by adjusting physical parameters.
+     </p>
+
+      <p class="research-text">
+      Building on this, we creatively developed a toolkit for constructing logic gates by combining orthogonal quorum sensing and light-controlled degradation.
+      Using this toolkit, we built a <strong>reproducible binary adder</strong>, showcasing the most intuitive aspect of biological computation.
+     </p>
+</div>
+
+<div class="research-section">
+  <div class="research-subtitle">Research</div>
+
+  <p class="research-text">
+    We constructed fluorescent reporters from six different quorum-sensing systems and tested their orthogonality,
+    obtaining <strong>two sets of three orthogonal systems</strong> each to support inputs, outputs, and carry signals for the adder.
+  </p>
+
+  <p class="research-text">
+     For each quorum-sensing system, we measured the diffusion–response curves on solid media and built high-pass and band-pass circuits,
+    allowing engineered cells to perform <strong>basic logic gates like AND, OR, and XOR</strong>.
+    We further <strong>designed and implemented cascaded logic gate experiments</strong> to simulate multi-input logic, serial calculation and addition computation.
+  </p>
+
+  <p class="research-text">
+    To enable repeated operation, we inserted light-sensitive domains into the AHL-degrading enzyme AiiA for light-controlled degradation and
+    developed light-inducible fluorescent proteins.
+    This involved functional validation of the enzyme, molecular dynamics simulations of AiiA, and functional validation of the protein degradation tag.
+  </p>
+
+  <p class="research-text">
+     For accurate and automated quantification of fluorescent colonies,
+    we developed a <strong>colony quantification program</strong>. We also modeled wet-lab data for different quorum-sensing systems,
+    creating <strong>simulation software</strong> to predict system responses to AHLs, and an educational platform to simulate colonies forming an adder.
+  </p>
+  <p class="research-text">
+       The resulting tools, including <em>orthogonal AHL biosensors and diffusion–response mapping</em>, <em>logic gate modules</em>,
+    <em>light-induced degradation</em>, <em>modeling methods for spatial computation</em>, <em>visualization and debugging software</em>,
+    and <em>hardware for easier colony localization</em>,
+    were integrated into the <strong>LOGIC toolbox</strong> to provide a foundation for future contributions to the iGEM community.
+  </p>
+</div>
+
+<div class="research-section">
+  <div class="research-subtitle">My Participation</div>
+
+  <p class="research-text">
+       During the project proposal phase, I <strong>independently proposed the LOGIC design concept</strong>,
+    which uses multiple quorum-sensing systems and spatial diffusion to implement logic inputs and addition computation.
+    I also drew the <strong>early modular blueprint</strong> for the project.
+  </p>
+
+  <p class="research-text">
+        In the lab, I was a <strong>core wet-lab member</strong> involved in establishing the technical approach, designing experiments, developing tools,
+    and visualizing results. My specific contributions include screening orthogonal systems, validating logic gates,
+    <strong>implementing multi-input and cascaded logic gates</strong>, quantifying and visualizing all logic-related data, and integrating the LOGIC toolbox.
+  </p>
+
+  <p class="research-text">
+        During project selection, both <strong>LOGIC and CLEANSE, which I designed, were chosen from over 20 proposals to enter the final four</strong>.
+    In LOGIC, I applied interdisciplinary thinking, combining the orthogonality concept and quorum-sensing systems I had just learned in microbiology to build spatial diffusion logic gates,
+    using bacterial communication as “wires,” and applied programming knowledge to design colonies performing binary computation.
+  </p>
+
+  <p class="research-text">
+       For LOGIC experimental results, we needed to quantify fluorescence for different colonies (logic gates) under varying inducer concentrations, distances, and durations. To handle this large dataset,
+    I learned ImageJ macros and developed batch-processing scripts to quickly and accurately identify,
+    select, and quantify colonies, allowing us to process <strong>over 6,000 colonies and more than 20,000 quantifications</strong>.
+  </p>
+</div>
+          <div class="research-figures" aria-label="Project figures"><figure><a href="research-images/logic-design.png" target="_blank" rel="noopener" aria-label="Open full-size figure: LOGIC design: diffusion-based inputs, genetic logic gates, and collective computation."><img src="research-images/logic-design.png" width="1880" height="650" loading="lazy" decoding="async" alt="LOGIC design: diffusion-based inputs, genetic logic gates, and collective computation."></a><figcaption>LOGIC design: diffusion-based inputs, genetic logic gates, and collective computation. <span>Open image for a closer look ↗</span></figcaption></figure><figure><a href="research-images/logic-gates.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Biosensor characterization, diffusion–response measurements, and logic-gate experiments."><img src="research-images/logic-gates.png" width="1870" height="848" loading="lazy" decoding="async" alt="Biosensor characterization, diffusion–response measurements, and logic-gate experiments."></a><figcaption>Biosensor characterization, diffusion–response measurements, and logic-gate experiments. <span>Open image for a closer look ↗</span></figcaption></figure><figure><a href="research-images/logic-project-overview.png" target="_blank" rel="noopener" aria-label="Open full-size figure: Project overview: cascaded gates, light-induced degradation, analysis tools, and my iGEM participation certificate."><img src="research-images/logic-project-overview.png" width="1928" height="888" loading="lazy" decoding="async" alt="Project overview: cascaded gates, light-induced degradation, analysis tools, and my iGEM participation certificate."></a><figcaption>Project overview: cascaded gates, light-induced degradation, analysis tools, and my iGEM participation certificate. <span>Open image for a closer look ↗</span></figcaption></figure></div></div>
+        </div>
+      </div>
+
+<div class="research-card" id="postit-research">
+        <button class="research-header" id="postit-research-heading" aria-expanded="false" aria-controls="postit-research-content" onclick="toggleActivity(this)">
           <div class="research-left">
             <span class="research-name">
               Performance Optimization of the Non-Diffusive Proximity Tagging System POST-IT Based on Directed Evolution
@@ -486,17 +599,19 @@
           </div>
         </div>
 
-        <div class="research-content">
+        <div class="research-content" id="postit-research-content" role="region" aria-labelledby="postit-research-heading" tabindex="0" inert>
           <div class="research-inner">
+<p class="research-lead"><strong>This project was my first experience applying for research funding. I learned how to write a proposal, and our application received particularly positive comments from the reviewers.</strong></p>
+
             <div class="research-section">
   <div class="research-subtitle">Background</div>
   <p class="research-text">
-        Identifying target proteins of small-molecule drugs is important for understanding their mechanisms, discovering new targets, and guiding drug optimization. 
+        Identifying target proteins of small-molecule drugs is important for understanding their mechanisms, discovering new targets, and guiding drug optimization.
     Proximity labeling methods link the drug to an enzyme as a bait to label nearby proteins. Existing methods such as APEX2 and TurboID have their limitations.
   </p>
     <p class="research-text">
-       Our lab previously developed POST-IT (Pup-On-target for Small molecule Target Identification Technology), based on a prokaryotic ubiquitin-like system. 
-      In this system, the small molecule is linked via HaloTag, and the enzyme <strong>PafA</strong> attaches a small protein (<strong>SBP–Pup</strong>) to nearby proteins. It can be used in living cells under mild conditions, 
+       Our lab previously developed POST-IT (Pup-On-target for Small molecule Target Identification Technology), based on a prokaryotic ubiquitin-like system.
+      In this system, the small molecule is linked via HaloTag, and the enzyme <strong>PafA</strong> attaches a small protein (<strong>SBP–Pup</strong>) to nearby proteins. It can be used in living cells under mild conditions,
       is highly orthogonal to eukaryotic systems, and shows low diffusion. However, it still has some limitations, such as relatively slow labeling in cells and high substrate demand.
   </p>
 </div>
@@ -505,7 +620,7 @@
   <div class="research-subtitle">Research</div>
 
   <p class="research-text">
-    To address these limitations, we focused on the PafA enzyme and used yeast surface display combined with error-prone PCR to build a mutant library. 
+    To address these limitations, we focused on the PafA enzyme and used yeast surface display combined with error-prone PCR to build a mutant library.
     Through directed evolution, we aimed to obtain PafA variants that require less time and lower substrate concentration to reach effective labeling.
   </p>
 
@@ -540,8 +655,8 @@
   </p>
 
   <p class="research-text">
-       What impressed me most during this project was actually “failure.” When we first took over, our priority was to prepare enough protein. 
-    While PafA purification went smoothly, the small protein SBP–Pup failed to be expressed at a usable level after five attempts. We tried different columns, IPTG gradient induction, and Western blot to troubleshoot. 
+       What impressed me most during this project was actually “failure.” When we first took over, our priority was to prepare enough protein.
+    While PafA purification went smoothly, the small protein SBP–Pup failed to be expressed at a usable level after five attempts. We tried different columns, IPTG gradient induction, and Western blot to troubleshoot.
     In the end, we switched to ArcticExpress cells carrying cold-shock chaperones and <strong>successfully expressed Pup at low temperature</strong>.
     We think the issue was due to its small size, as high expression may lead to inclusion body formation. This experience gave me a much deeper understanding of how to debug experiments in practice.
   </p>
@@ -549,125 +664,10 @@
           </div>
         </div>
       </div>
-
-      <div class="research-card">
-        <button class="research-header" onclick="toggleActivity(this)">
-          <div class="research-left">
-            <span class="research-name">
-  LOGIC – Lasting Optimized Genetic Input Calculator
-  <a href="https://2025.igem.wiki/whu-china/" target="_blank" class="wiki-link">wiki<sub>↗</sub></a>
-</span>
-            <span class="research-location">
-              College of Life Sciences, Wuhan University · Project for iGEM Competition · Wuhan, China
-            </span>
-          </div>
-
-          <div class="research-right">
-            <span class="research-date-inline">Dec. 2024 – Oct. 2025</span>
-            <span class="research-arrow">&#9662;</span>
-          </div>
-        </button>
-
-        <div class="research-publication research-achievement research-medal">
-          <img class="achievement-medal-icon" src="life/igem-gold-medal-icon.png" alt="Gold science competition medal">
-          <div class="achievement-copy">
-            <span class="publication-label">2025 iGEM Gold Medal</span>
-            <p>Awarded a <strong>Gold Medal</strong> at the 2025 International Genetically Engineered Machine (iGEM) Competition.</p>
-          </div>
-        </div>
-
-        <div class="research-content">
-          <div class="research-inner">
-           <div class="research-section">
-  <div class="research-subtitle">Background</div>
-  <p class="research-text">
-        Bio-computing is a promising field with potential applications in bio-security, environmental monitoring, and personalized medicine. 
-    However, there has always been a significant gap between successfully constructing logic gates and actually achieving computation. 
-    Previous designs were always limited to within a single cell, constrained by available orthogonal components and cellular metabolic pressures, 
-    making it difficult to construct complex adders.
-     </p>
-
-  <p class="research-text">
-       Fedorec, A. J. H. et al. developed a new method to build logic gates at the colony level. 
-    Using simple gene circuits such as high-pass and band-pass filters, along with spatial diffusion of inducers on solid media, 
-    colonies can generate outputs of classical logic gates like AND, OR, and XOR. 
-    This approach not only uses simple circuits but also allows easy tuning of logic functions by adjusting physical parameters.
-     </p>
-
-      <p class="research-text">
-      Building on this, we creatively developed a toolkit for constructing logic gates by combining orthogonal quorum sensing and light-controlled degradation. 
-      Using this toolkit, we built a <strong>reproducible binary adder</strong>, showcasing the most intuitive aspect of biological computation.
-     </p>
 </div>
-          
-<div class="research-section">
-  <div class="research-subtitle">Research</div>
-
-  <p class="research-text">
-    We constructed fluorescent reporters from six different quorum-sensing systems and tested their orthogonality, 
-    obtaining <strong>two sets of three orthogonal systems</strong> each to support inputs, outputs, and carry signals for the adder.
-  </p>
-
-  <p class="research-text">
-     For each quorum-sensing system, we measured the diffusion–response curves on solid media and built high-pass and band-pass circuits, 
-    allowing engineered cells to perform <strong>basic logic gates like AND, OR, and XOR</strong>.
-    We further <strong>designed and implemented cascaded logic gate experiments</strong> to simulate multi-input logic, serial calculation and addition computation.
-  </p>
-
-  <p class="research-text">
-    To enable repeated operation, we inserted light-sensitive domains into the AHL-degrading enzyme AiiA for light-controlled degradation and 
-    developed light-inducible fluorescent proteins. 
-    This involved functional validation of the enzyme, molecular dynamics simulations of AiiA, and functional validation of the protein degradation tag.
-  </p>
-
-  <p class="research-text">
-     For accurate and automated quantification of fluorescent colonies, 
-    we developed a <strong>colony quantification program</strong>. We also modeled wet-lab data for different quorum-sensing systems,
-    creating <strong>simulation software</strong> to predict system responses to AHLs, and an educational platform to simulate colonies forming an adder.
-  </p>
-  <p class="research-text">
-       The resulting tools, including <em>orthogonal AHL biosensors and diffusion–response mapping</em>, <em>logic gate modules</em>, 
-    <em>light-induced degradation</em>, <em>modeling methods for spatial computation</em>, <em>visualization and debugging software</em>, 
-    and <em>hardware for easier colony localization</em>, 
-    were integrated into the <strong>LOGIC toolbox</strong> to provide a foundation for future contributions to the iGEM community.
-  </p>
-</div>
-
-<div class="research-section">
-  <div class="research-subtitle">My Participation</div>
-
-  <p class="research-text">
-       During the project proposal phase, I <strong>independently proposed the LOGIC design concept</strong>,
-    which uses multiple quorum-sensing systems and spatial diffusion to implement logic inputs and addition computation. 
-    I also drew the <strong>early modular blueprint</strong> for the project.
-  </p>
-
-  <p class="research-text">
-        In the lab, I was a <strong>core wet-lab member</strong> involved in establishing the technical approach, designing experiments, developing tools,
-    and visualizing results. My specific contributions include screening orthogonal systems, validating logic gates, 
-    <strong>implementing multi-input and cascaded logic gates</strong>, quantifying and visualizing all logic-related data, and integrating the LOGIC toolbox.
-  </p>
-
-  <p class="research-text">
-        During project selection, both <strong>LOGIC and CLEANSE, which I designed, were chosen from over 20 proposals to enter the final four</strong>.
-    In LOGIC, I applied interdisciplinary thinking, combining the orthogonality concept and quorum-sensing systems I had just learned in microbiology to build spatial diffusion logic gates, 
-    using bacterial communication as “wires,” and applied programming knowledge to design colonies performing binary computation.
-  </p>
-  
-  <p class="research-text">
-       For LOGIC experimental results, we needed to quantify fluorescence for different colonies (logic gates) under varying inducer concentrations, distances, and durations. To handle this large dataset, 
-    I learned ImageJ macros and developed batch-processing scripts to quickly and accurately identify, 
-    select, and quantify colonies, allowing us to process <strong>over 6,000 colonies and more than 20,000 quantifications</strong>.
-  </p>
-</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
   </div>
 </section>
-  
+
 <section class="section" id="publications">
   <div class="container">
     <h2 class="section-title">Publications &amp; Conferences</h2>
@@ -707,7 +707,7 @@
       <p class="publication-venue">Project proposal · September 2026</p>
       <p>I am applying for support to build a cage-based system that records surface temperature, movement, and the surrounding temperature and humidity. The first step is to make the cameras and sensors work reliably together on an empty-cage test rig. Later, I hope to compare these signals with independent measurements of metabolism.</p>
       <p>This is an early engineering project within my longer-term interest in human hibernation and long-duration spaceflight. The proposed system would monitor and flag changes; automatic control is a later step.</p>
-      <div id="instrument-showcase">
+      <div id="instrument-showcase" class="instrument-showcase">
         <div class="instrument-preview">
           <img src="instrument/assets/hero.webp" width="1800" height="1350" loading="lazy" alt="Proposed cage-monitoring rig with two overhead cameras, external recording electronics and separate backup power.">
           <div class="instrument-caption"><p class="instrument-eyebrow">Concept model · Empty-cage test setup</p><h4>Explore the proposed setup</h4><p>A 3D layout of the cameras, sensors and recording hardware in my funding proposal. The mounting layout still needs bench testing.</p><div class="instrument-actions"><button type="button" data-load-model>Load 3D model</button><a href="instrument/" target="_blank" rel="noopener">Open full viewer ↗</a></div></div>
@@ -727,7 +727,7 @@
     </button>
       <div class="section-fold-content">
     <div class="activities-list">
-     
+
       <div class="activity-card">
         <button class="activity-header" onclick="toggleActivity(this)">
 
@@ -814,7 +814,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="activity-card">
         <button class="activity-header" onclick="toggleActivity(this)">
 
@@ -843,7 +843,7 @@
           </div>
         </div>
       </div>
-     
+
     </div>
     </div>
   </div>
@@ -853,31 +853,12 @@
     <h2 class="section-title">Skills</h2>
 
     <div class="card skills-card">
-
-      <p class="skill-item">
-        <strong>Microbial and model organism handling:</strong>
-        <span>
-          E. coli, yeast, and <em>C. elegans</em>.
-        </span>
-      </p>
-
-      <p class="skill-item">
-        <strong>Experimental skills:</strong>
-        <span>
-          Molecular cloning, protein expression and purification, Western blot, FACS, and routine biochemical assays; 
-          mammalian cell culture; microinjection, calcium imaging, optogenetic manipulation, and behavioral assays in <em>C. elegans</em>.
-        </span>
-      </p>
-
-      <p class="skill-item">
-        <strong>Computer skills:</strong>
-        <span>
-          C, HTML, CSS; basic structural biology tools (AlphaFold and PyMOL); Familiar with basic single-cell RNA-seq data analysis workflows in R; 
-          data analysis and data visualization.
-        </span>
-      </p>
-
-    </div>
+<p class="skill-item"><strong>Cells and model organisms:</strong> <span>Mammalian cell culture, including human induced pluripotent stem cells (hiPSCs); <em>E. coli</em>, yeast, and <em>C. elegans</em> handling.</span></p>
+<p class="skill-item"><strong>Molecular and RNA methods:</strong> <span>Molecular cloning, primer design, RNA extraction, subcellular fractionation, RNAscope, RNA pull-down, and RT-qPCR; protein expression and purification, SDS-PAGE, Western blot, co-immunoprecipitation, FACS, and biochemical assays.</span></p>
+<p class="skill-item"><strong>Worm genetics and neuroscience:</strong> <span><em>C. elegans</em> crosses, strain construction and genetic manipulation, microinjection, calcium imaging, optogenetic manipulation, neuronal ablation, and chemotaxis and other behavioral assays.</span></p>
+<p class="skill-item"><strong>Bioinformatics and image analysis:</strong> <span>Bulk and single-cell/single-nucleus RNA-seq analysis, transcript annotation and expression analysis in R; ImageJ macros for batch image quantification; data analysis and visualization.</span></p>
+<p class="skill-item"><strong>Computational tools:</strong> <span>C, HTML and CSS; basic structural analysis with AlphaFold and PyMOL, and molecular dynamics simulations.</span></p>
+</div>
   </div>
 </section>
   <section class="section" id="awards">
@@ -885,103 +866,81 @@
     <h2 class="section-title">Honors & Awards</h2>
 
     <div class="card awards-card">
-
-      <div class="award-row">
+<div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>1. iGEM Gold Medal</strong></span>
+          <span class="award-title"><span class="award-number">1.</span> <strong>iGEM Gold Medal</strong></span>
           <span class="award-date">Nov. 2025</span>
         </div>
         <div class="award-desc">
           See <strong>LOGIC</strong> in Research section. As the <strong>prototype designer</strong>, I proposed the core concept and system architecture, and served as a <strong>core member</strong> responsible for wet-lab experiments, data analysis, and final presentation.
         </div>
       </div>
-
-      <div class="award-row">
-        <div class="award-main">
-          <span class="award-title"><strong>2.</strong> SynBio Challenges Regular Track – <strong>Gold Award</strong></span>
-          <span class="award-date">Aug. 2025</span>
-        </div>
-        <div class="award-desc">
+<div class="award-row"><div class="award-main"><span class="award-title"><span class="award-number">2.</span> <strong>Gold Prize</strong>, Regular Track, SynBio (International Competition)</span><span class="award-date">2025 &amp; 2026</span></div><div class="award-desc">
           An international synthetic biology competition organized by the <strong>Chinese Society of Biotechnology</strong>. Participated as a <strong>core member</strong> in the project “Dynamic Industrial Factory with Functional Elongation and Regeneration.”
-        </div>
-      </div>
-
-      <div class="award-row">
+        </div></div>
+<div class="award-row"><div class="award-main"><span class="award-title"><span class="award-number">3.</span> <strong>Gold Prize</strong>, Synthetic Cell Track, SynBio Challenges · <strong>Team Captain</strong></span><span class="award-date">Aug. 2026</span></div></div>
+<div class="award-row"><div class="award-main"><span class="award-title"><span class="award-number">4.</span> <strong>Gold Prize</strong>, Protein Design Track, SynBio Challenges · <strong>Team Captain</strong></span><span class="award-date">Aug. 2026</span></div></div>
+<div class="award-row"><div class="award-main"><span class="award-title"><span class="award-number">5.</span> <strong>Gold Prize</strong>, Bacterial Game Track, SynBio Challenges · <strong>Team Captain</strong></span><span class="award-date">Aug. 2026</span></div></div>
+<div class="award-row"><div class="award-main"><span class="award-title"><span class="award-number">6.</span> Top Ten Student Innovators, Hongyi Honors College</span><span class="award-date">Sep. 2026</span></div></div>
+<div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>3.</strong> SynBio Challenges Synthetic Cell Track – <strong>Silver Award</strong></span>
-          <span class="award-date">Aug. 2025</span>
-        </div>
-        <div class="award-desc">
-          As one of the <strong>core members</strong> designed the 5'UTR sequence to enhance expression.
-        </div>
-      </div>
-
-      <div class="award-row">
-        <div class="award-main">
-          <span class="award-title"><strong>4.</strong> Westlake University <strong>Rising Star Award</strong></span>
+          <span class="award-title"><span class="award-number">7.</span>  Westlake University <strong>Rising Star Award</strong></span>
           <span class="award-date">Aug. 2026</span>
         </div>
         <div class="award-desc">
           <strong>RMB 30,000 award.</strong> Selected among the <strong>top three finalists from more than 300 candidates</strong>.
         </div>
       </div>
-
-      <div class="award-row">
+<div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>5.</strong> Liu Daoyu Creative Learning Scholarship</span>
+          <span class="award-title"><span class="award-number">8.</span>  Liu Daoyu Creative Learning Scholarship</span>
           <span class="award-date">Jan. 2026</span>
         </div>
         <div class="award-desc">
           <strong>RMB 8,000 scholarship.</strong> Awarded to only <strong>36</strong> students across the entire university.
         </div>
       </div>
-
-      <div class="award-row">
+<div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>6.</strong> Hongyi Honors College’s Annual Top Ten Scientific and Technological Advances Award</span>
+          <span class="award-title"><span class="award-number">9.</span>  Hongyi Honors College’s Annual Top Ten Scientific and Technological Advances Award</span>
           <span class="award-date">Oct. 2025</span>
         </div>
       </div>
-
-      <div class="award-row">
+<div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>7.</strong> First-Class Outstanding Freshman Scholarship</span>
+          <span class="award-title"><span class="award-number">10.</span>  First-Class Outstanding Freshman Scholarship</span>
           <span class="award-date">Sep. 2023</span>
         </div>
       </div>
-
-      <div class="award-row">
+<div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>8.</strong> Outstanding Student Scholarship (Top 5%) – Two Years</span>
+          <span class="award-title"><span class="award-number">11.</span>  Outstanding Student Scholarship (Top 5%) – Two Years</span>
         </div>
       </div>
-
-      <div class="award-row">
+<div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>9.</strong> Outstanding Student (Top 5%) – Two Years</span>
+          <span class="award-title"><span class="award-number">12.</span>  Outstanding Student (Top 5%) – Two Years</span>
         </div>
       </div>
-
-      <div class="award-row">
+<div class="award-row">
         <div class="award-main">
-          <span class="award-title"><strong>10.</strong> Outstanding Student Leader – Two Years</span>
+          <span class="award-title"><span class="award-number">13.</span>  Outstanding Student Leader – Two Years</span>
         </div>
       </div>
-
-    </div>
+</div>
   </div>
 </section>
 
 <section class="section" id="resume-contact">
   <div class="container cv-contact-grid">
-    
+
     <div class="resume-side">
       <h2 class="section-title">Resume</h2>
       <div class="card resume-card">
         <iframe src="Yan Wang_CV.pdf#zoom=80" class="resume-frame"></iframe>
       </div>
     </div>
-    
+
     <div class="contact-side">
   <div class="contact-box">
     <h2 class="section-title reveal-line">Let’s Connect</h2>
@@ -1000,7 +959,10 @@
     </p>
     <p class="contact-text reveal-line">You can also call me at</p>
     <p class="contact-text reveal-line">
-      <span class="contact-phone">+86 15611527502</span>
+      <a class="contact-phone contact-link" href="tel:+12036768734">+1 203 676 8734</a>
+    </p>
+    <p class="contact-text reveal-line">
+      <a class="contact-phone contact-link" href="tel:+8615611527502">+86 156 1152 7502</a>
     </p>
   </div>
 </div>
@@ -1075,7 +1037,7 @@
     </div>
   </div>
 </section>
-  
+
 <footer>
   <div class="container">
     © 2026 Yan Wang
@@ -1087,15 +1049,16 @@
 
  <script>
   const torporQuestions = [
-    'How do hibernators enter torpor?',
-    'What maintains torpor and its timing?',
-    'How is whole-body homeostasis protected?',
-    'Which neural or metabolic switches matter?',
-    'How can the state be measured and controlled?',
-    'Can torpor be induced?',
-    'What protective effects emerge?',
-    'What changes across species?'
-  ];
+  "How do hibernators enter torpor?",
+  "What maintains torpor and its timing?",
+  "How is whole-body homeostasis protected?",
+  "Which neural or metabolic switches matter?",
+  "How can the state be measured and controlled?",
+  "Can torpor be induced?",
+  "What protective effects emerge?",
+  "What changes across species?",
+  "Applications of induced torpor"
+];
 
   const torporAuthors = [
     {
@@ -1174,7 +1137,6 @@
     "title": "GABAergic projections from the suprachiasmatic nucleus to the preoptic area regulate the timing of torpor in mice",
     "citation": "Rahaman, S. M., Miyazaki, S., Tsai, C.-T. et al. Nature Communications 17, 6761 (2026).",
     "insight": "SCN output organizes the timing of fasting-induced torpor; activating SCN-to-POA GABAergic projections suppresses torpor.",
-    "note": "I like the distinction between deciding when torpor can happen and actually lowering metabolism. The SCN-to-POA pathway gives that distinction an anatomical basis. It also makes time of day an experimental variable I would keep fixed when comparing induction methods. These experiments used female mice, so I would not assume the same timing rules apply across sex or to seasonal hibernators.",
     "species": "Female mice",
     "intervention": "Manipulation of SCN GABAergic and Avp projections to the POA.",
     "caveat": "These experiments distinguish the timing of torpor from the mechanisms that lower metabolism.",
@@ -1206,7 +1168,6 @@
     "title": "A Preoptic Neurocircuit That Modulates Metabolic Flexibility",
     "citation": "Roessler et al. bioRxiv (2026).",
     "insight": "Activation shifts fuel use toward fatty acids and reduces skeletal-muscle glucose use, partly through corticosterone.",
-    "note": "The fuel switch interests me as much as the temperature drop. If these neurons reduce glucose use in muscle, which tissues keep access to glucose, and how quickly does that balance recover after stimulation stops? The corticosterone result suggests that the brain can change muscle metabolism without a direct neural connection. I would keep the acute response separate from claims about long-term metabolic health. This is still a preprint.",
     "species": "Mice; comparative anatomical observations do not establish primate function",
     "intervention": "Activation or silencing of torpor-associated avPOA glutamatergic/PACAP neurons.",
     "caveat": "Preprint. Acute, tissue-specific insulin resistance is not evidence of metabolic benefit or established primate function.",
@@ -1245,7 +1206,6 @@
     "title": "Photo-cross-linking-assisted deorphanization deciphers GPR50-L-LEN pairing in metabolism",
     "citation": "Wu et al. Nature Chemical Biology (2026).",
     "insight": "Identifies L-LEN as a GPR50 ligand and links the pathway to energy expenditure, thermogenesis and challenge-related torpor probability.",
-    "note": "Finding a ligand makes GPR50 much easier to study, but I would not jump straight from that result to a torpor drug. Losing this pathway makes torpor more likely under a challenge; that is different from showing that a drug can produce a controlled, reversible state. I am most interested in how the receptor changes communication between the brain and adipose tissue.",
     "species": "Mice; cell and tissue assays",
     "intervention": "Photo-cross-linking ligand discovery followed by GPR50/L-LEN pathway manipulation.",
     "caveat": "Molecular/metabolic context, not an established induction method. Loss of function increasing torpor is not equivalent to therapeutic receptor targeting.",
@@ -1283,7 +1243,6 @@
     "title": "Identification of a neural circuit that enables safe, long-term torpor in mice",
     "citation": "Tong et al. bioRxiv (2026).",
     "insight": "Reports weeks-long torpor-like states and fewer measured recovery abnormalities than broad preoptic activation.",
-    "note": "The comparison with broad preoptic activation is the part I would focus on. A low temperature trace could look successful while the animal recovers poorly. This preprint asks whether choosing a narrower cell population changes that outcome. I would want to see how recovery was measured, how long the animals were followed, and whether the result holds after repeated bouts, before treating prolonged induction as safe.",
     "species": "Mice",
     "intervention": "Sustained selective activation of GCN2-expressing preoptic neurons.",
     "caveat": "Preprint. No obvious deficits in selected assays do not establish general safety; cancer findings are model-specific.",
@@ -1308,7 +1267,7 @@
   },
   {
     "year": "2026",
-    "question": 6,
+    "question": 8,
     "team": "team-sunagawa",
     "label": "Nomura et al.",
     "source": "PubMed",
@@ -1316,7 +1275,6 @@
     "title": "Metabolic positron emission tomography imaging and tumor growth inhibition during the Q neuron-induced hibernation-like state in mice",
     "citation": "Nomura et al. Biochemical and Biophysical Research Communications (2026).",
     "insight": "Reports altered tracer distribution, reduced cardiac glucose uptake and reduced growth of implanted tumors during QIH.",
-    "note": "PET gives this paper a useful view of what happens outside the brain. I would be careful with the tracer results, though: a change in circulation can change the signal even when cellular demand is not the only cause. The tumor result raises another question for me: can growth suppression be separated from reduced food intake and temperature, and does it last after normal physiology returns?",
     "species": "Mice with Q-neuron-induced hypometabolism; subcutaneous tumor model",
     "intervention": "Q-neuron activation combined with metabolic PET and tumor-growth measurements.",
     "caveat": "Tracer distribution depends on circulation as well as tissue uptake; one tumor model does not establish cancer therapy.",
@@ -1350,7 +1308,6 @@
     "title": "Daily torpor in the Djungarian hamster (Phodopus sungorus) is orchestrated by the suprachiasmatic nucleus: evidence from immediate early gene mapping and nucleus-specific sequencing",
     "source": "PubMed",
     "insight": "Finds phase-dependent SCN activity and transcriptional changes during spontaneous daily torpor.",
-    "note": "Time-matched controls make this study particularly useful to me. Without them, a gene-expression difference during torpor could just reflect the clock. The hamster data also provide a comparison with mouse circuit experiments rather than assuming every species uses the same arrangement. I would treat the proposed SCN-PVN connection as a hypothesis to test with manipulation, especially because regional RNA sequencing mixes several cell types.",
     "species": "Djungarian hamsters",
     "intervention": "Short-photoperiod acclimation, matched torpor-phase sampling, c-Fos mapping and regional RNA sequencing.",
     "caveat": "Observational mapping and regional sequencing; proposed SCN-PVN pathway is not causally demonstrated by these assays.",
@@ -1370,6 +1327,74 @@
     "citation": "Haugg et al. Journal of Comparative Physiology B (2026)."
   },
   {
+    "year": "2026",
+    "question": 8,
+    "team": "team-other",
+    "label": "Lin et al. · Tanaka lab",
+    "source": "PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42594194/",
+    "title": "Artificial hibernation reveals synaptic engram architecture associated with memory retention",
+    "citation": "Lin, Y. J. et al. Science 393, eaee7004 (2026).",
+    "insight": "Memory and hippocampal representations persisted after extensive synaptic loss; a subset of contacts with multisynaptic boutons was retained.",
+    "note": [
+      "I used to think about induced hibernation mainly in terms of medical care and deep-space exploration. This study made me see another use: a research tool for asking other questions.",
+      "The synaptic loss and rebuilding across artificial hibernation also connect to my current work. I wonder whether induced hibernation could be used as a challenge to test recovery capacity. I would compare healthy animals with early-stage disease models: what changes during entry, what is preserved during hypometabolism, and where recovery goes wrong. If both groups show a similar initial degree of synaptic retraction, but the disease group cannot rebuild those connections, this might help answer a question I keep coming back to: at what point does neurodegeneration become irreversible?"
+    ],
+    "species": "Mice",
+    "intervention": "Q-neuron-induced artificial hibernation, memory tests, neural recordings and synaptic imaging across induction and recovery.",
+    "caveat": "The association between preserved synaptic architecture and memory does not establish causality. The study does not test recovery failure in neurodegenerative disease models.",
+    "topic": "Memory and recovery",
+    "doi": "10.1126/science.aee7004",
+    "pmid": "42594194",
+    "journal": "Science",
+    "status": "Peer-reviewed research",
+    "authors": [
+      "Yu-Ju Lin",
+      "Ai Takahashi-Nakazato",
+      "Karin Tsutsumi",
+      "Taiga Takahashi",
+      "Damien Mercier",
+      "Hiroto Ashitomi",
+      "Ming-Ching Chiang",
+      "Matthias G Haberl",
+      "Marco Uytiepo",
+      "Anton Maximov",
+      "Yu Makino",
+      "Tomomi Nemoto",
+      "Ryosuke Enoki",
+      "Arisa Hirano",
+      "Kohei Soga",
+      "Sasikarn Looprasertkul",
+      "Nobuhiko Ohno",
+      "Yoshiyuki Kubota",
+      "Takeshi Sakurai",
+      "Kazumasa Z Tanaka"
+    ],
+    "authorAliases": [
+      "Y J Lin",
+      "A Takahashi-Nakazato",
+      "K Tsutsumi",
+      "T Takahashi",
+      "D Mercier",
+      "H Ashitomi",
+      "M C Chiang",
+      "M Haberl",
+      "M Uytiepo",
+      "A Maximov",
+      "Y Makino",
+      "T Nemoto",
+      "R Enoki",
+      "A Hirano",
+      "K Soga",
+      "S Looprasertkul",
+      "N Ohno",
+      "Y Kubota",
+      "T Sakurai",
+      "K Z Tanaka"
+    ],
+    "dataUrl": "https://doi.org/10.5061/dryad.m0cfxpphz"
+  },
+  {
     "year": "2025",
     "question": 0,
     "team": "team-other",
@@ -1379,7 +1404,6 @@
     "title": "Brainstem catecholaminergic neurons induce torpor during fasting by orchestrating cardiovascular and thermoregulation changes",
     "citation": "Cheng et al. Nature Communications (2025).",
     "insight": "Coordinates reductions in heart rate, thermogenesis and energy expenditure in mice; heart-rate reduction precedes cooling.",
-    "note": "Heart rate falling before temperature is an important detail for me. It suggests that the cardiovascular change is not simply a consequence of cooling. The brainstem projections also make the response feel less like a single hypothalamic switch. I would like to know how these outputs stay coordinated during recovery. The ground-squirrel observations are interesting, but they do not yet show the same causal circuit there.",
     "species": "Mice; Daurian ground squirrels for comparative observations",
     "intervention": "Activation/inhibition of ventrolateral medullary catecholaminergic neurons and projection analysis.",
     "caveat": "Ground-squirrel activity before hibernation is supporting comparative evidence, not equivalent causal induction in that species.",
@@ -1414,7 +1438,6 @@
     "title": "Preoptic EP3R neurons constitute a two-way switch for fever and torpor",
     "citation": "Machado et al. Nature (2025).",
     "insight": "Identifies an EP3R population required for torpor and LPS fever, with prolonged responses to brief stimulation.",
-    "note": "What catches my attention is how long the response lasts after a brief stimulus. Intracellular signaling may help explain that persistence, which matters if the aim is to control both entry and exit. I would compare these EP3R cells with the populations marked by PACAP, QRFP and TRPM2 before calling them separate switches. Shared markers and overlapping populations could explain some differences between papers.",
     "species": "Mice",
     "intervention": "Chemogenetic and optogenetic manipulation of MnPO EP3R neurons.",
     "caveat": "Fever and torpor share a marked population; this does not make every thermoregulatory response physiologically equivalent.",
@@ -1450,7 +1473,6 @@
     "title": "A Miniaturized Implantable Telemetry Biosensor for the Long-Term Dual-Modality Monitoring of Core Temperature and Locomotor Activity",
     "citation": "Shi et al. Bioengineering (2025).",
     "insight": "Reports sustained temperature and activity monitoring and agreement with video-based locomotion measurements.",
-    "note": "A reliable temperature trace is easy to take for granted until different measurements disagree. I am interested in this sensor because it records movement and temperature together over long periods. For a torpor experiment, I would still pair it with oxygen consumption and cardiovascular measurements. An inactive, cold mouse is a useful observation, but those two signals alone would not tell me what state it is in.",
     "species": "Small laboratory animals, including mice",
     "intervention": "Implantable wireless temperature sensor and accelerometer; bench and in vivo validation.",
     "caveat": "Instrumentation paper, not torpor induction. Temperature and movement alone cannot establish metabolic suppression.",
@@ -1475,7 +1497,7 @@
   },
   {
     "year": "2025",
-    "question": 6,
+    "question": 8,
     "team": "team-hrvatin",
     "label": "Jayne et al.",
     "source": "PubMed",
@@ -1483,7 +1505,6 @@
     "title": "A torpor-like state in mice slows blood epigenetic aging and prolongs healthspan",
     "citation": "Jayne et al. Nature Aging (2025).",
     "insight": "Reports slower epigenetic aging and improved measured healthspan; blood-clock effects were linked to reduced body temperature.",
-    "note": "I find the attempt to separate temperature, food intake and metabolic rate more useful than the headline alone. These variables usually change together, so it is difficult to know which one matters. The blood-clock result points toward temperature under the tested conditions. I would still keep slower epigenetic aging separate from longer life, and look carefully at the functional measures and recovery after prolonged induction.",
     "species": "Mice",
     "intervention": "Prolonged induction of a preoptic-neuron-driven torpor-like state; comparison of temperature, calorie and metabolic effects.",
     "caveat": "Epigenetic clocks and healthspan measures do not by themselves establish lifespan extension or human benefit.",
@@ -1508,7 +1529,8 @@
       "Steve Horvath",
       "Eric C Griffith",
       "Sinisa Hrvatin"
-    ]
+    ],
+    "note": "The epigenetic effect was clearest in blood, while the cortex and kidney did not show consistent changes of the same kind. Does a slower blood clock mean slower aging, or does it mainly reflect slower cell turnover? Is low temperature an essential physical condition, or a signal that switches on an anti-aging program?"
   },
   {
     "year": "2024",
@@ -1520,7 +1542,6 @@
     "title": "Frequency-modulated timer regulates torpor-arousal cycles during hibernation in distinct small mammalian hibernators",
     "citation": "Gibo et al. npj Biological Timing and Sleep (2024).",
     "insight": "A frequency-modulated model reproduces torpor-arousal patterns with short and long timescales.",
-    "note": "The repeated arousals are one reason I do not think of hibernation as simply staying cold. This paper asks whether their timing can be described with a small set of rules. I would use the model to generate predictions about the next arousal, then test those predictions in new animals. A good fit is useful, but it does not identify the biological clock that produces the pattern.",
     "species": "Syrian hamsters and thirteen-lined ground squirrels",
     "intervention": "Model selection and analysis of longitudinal body-temperature records.",
     "caveat": "A fitted timer does not identify the molecular process that generates the rhythm.",
@@ -1548,7 +1569,6 @@
     "title": "Neural control of fluid homeostasis is engaged below 10°C in hibernation",
     "citation": "Junkins et al. Current Biology (2024).",
     "insight": "Antidiuretic neural and hormonal activity rises early during arousal, before body temperature reaches 10°C.",
-    "note": "I would have expected fluid control to become important after the animal had warmed up. Here it is already active below 10°C, while circulation is changing. That timing makes sense if the animal has to avoid losing water during arousal. For artificial torpor, this leaves me with a practical question: which protective responses can a non-hibernator already perform, and which would need additional support?",
     "species": "Thirteen-lined ground squirrels",
     "intervention": "Hormone measurements, SON neural recording, RNA sequencing and pituitary-release assays across arousal.",
     "caveat": "Natural-hibernator adaptation; not evidence that non-hibernators retain the same signaling capacity in deep cold.",
@@ -1576,7 +1596,6 @@
     "title": "Identification of hypothermia-inducing neurons in the preoptic area and activation of them by isoflurane anesthesia and central injection of adenosine",
     "source": "PubMed",
     "insight": "Finds partial overlap between torpor-tagged preoptic neurons and cells activated by anesthesia or adenosine treatment.",
-    "note": "I am interested in how much these cooling methods share, but I would be cautious about the overlap measured here. Neurons carrying an activity marker after two treatments may contribute to a shared response without making the whole states equivalent. The next test I would want is to inhibit the overlapping population during each treatment and ask which physiological changes are lost.",
     "species": "Mice",
     "intervention": "Torpor activity-tagging, DREADD reactivation and comparison with isoflurane or central adenosine agonism.",
     "caveat": "Overlap measured with activity markers does not make anesthesia, drug hypothermia and torpor the same state.",
@@ -1604,7 +1623,6 @@
     "title": "N6-cyclohexyladenosine is better than meperidine and buspirone at suppressing metabolism during TTM32 but does not improve outcome after cardiac arrest",
     "source": "PubMed",
     "insight": "Improves metabolic suppression and temperature management under the tested regimen but does not improve survival.",
-    "note": "I want this result next to the more positive protection studies. The treatment suppresses metabolism more effectively, yet survival does not improve. That is a useful reminder to decide what success means before choosing an induction method. I would compare circulation, injury severity and recovery in addition to temperature. A cleaner metabolic trace is valuable, but the animal's outcome is the question that ultimately matters.",
     "species": "Rats, including a cardiac-arrest model",
     "intervention": "CHA with peripheral adenosine blockade and atropine, compared with meperidine/buspirone during temperature management.",
     "caveat": "Preclinical negative outcome. Better control of temperature or metabolism is not sufficient evidence of therapeutic benefit.",
@@ -1632,7 +1650,6 @@
     "title": "Dorsomedial and preoptic hypothalamic circuits control torpor",
     "citation": "Yamaguchi et al. Current Biology (2023).",
     "insight": "POA Trpm2-positive and DMH Vgat-positive populations are necessary for torpor entry in the tested paradigm.",
-    "note": "This paper helps connect preoptic cell types to a wider circuit. The DMH result is worth comparing with Ambler's activity-tagging study, where inhibiting the tagged cells did not prevent entry. Those experiments do not necessarily target the same neurons. I would want to compare the labeled populations, timing and feeding conditions before treating the different results as a contradiction about the whole DMH.",
     "species": "Mice",
     "intervention": "Whole-brain mapping, cell-type-specific silencing and viral tracing.",
     "caveat": "Results apply to the targeted populations and manipulation, not every neuron in each anatomical region.",
@@ -1660,7 +1677,6 @@
     "title": "Induction of a torpor-like hypothermic and hypometabolic state in rodents by ultrasound",
     "citation": "Yang et al. Nature Metabolism (2023).",
     "insight": "Reports hypothermia and hypometabolism in mice, including prolonged feedback-controlled induction; rats showed a smaller cooling response.",
-    "note": "Ultrasound is appealing because it reaches a deep brain region without first introducing a receptor into its neurons. The feedback control is just as interesting to me as the initial cooling. I would compare oxygen consumption, heart rate and recovery with natural torpor, not only the temperature curve. The rat result is a useful first step, but it is much less complete than the mouse experiments.",
     "species": "Mice; rats in a separate hypothermia demonstration",
     "intervention": "Transcranial ultrasound aimed at the POA, with closed-loop temperature feedback in mice.",
     "caveat": "The mouse evidence is more extensive than the rat evidence. TRPM2 involvement does not establish a sole mechanism or human feasibility.",
@@ -1695,7 +1711,6 @@
     "title": "Primate preoptic neurons drive hypothermia and cold defense",
     "source": "PubMed",
     "insight": "Produces hypothermia accompanied by increased heart rate, muscle activity and cold-defense behavior.",
-    "note": "The monkeys cool down, but they also move more and show cold-defense responses. That difference from the rodent results is exactly why I would keep this paper on the map. Reaching a lower temperature is not the same as entering an energy-saving state. For a primate experiment, I would want direct metabolic measurements and evidence that the animal is not working harder to resist the cooling.",
     "species": "Macaques",
     "intervention": "Chemogenetic activation of excitatory preoptic neurons in anesthetized and freely moving animals.",
     "caveat": "Published online December 2022; 2023 issue. Hypothermia with active cold defense is not demonstrated torpor or coordinated hypometabolism.",
@@ -1728,7 +1743,6 @@
     "title": "Neurons in the Dorsomedial Hypothalamus Promote, Prolong, and Deepen Torpor in the Mouse",
     "citation": "Ambler et al. Journal of Neuroscience (2022).",
     "insight": "Reactivation promotes longer and deeper torpor in calorie-restricted mice; inhibition did not block entry.",
-    "note": "I would put this paper under control of torpor depth and duration. The tagged DMH neurons promote torpor in calorie-restricted mice, but their activation is not an unrestricted entry switch. That dependence on energy state is useful information, not a weakness to hide. It makes me ask what signal from fasting allows the same neural stimulation to have a different effect.",
     "species": "Female mice",
     "intervention": "Reactivation or inhibition of DMH neurons tagged during natural torpor.",
     "caveat": "Activation alone was not sufficient to establish entry in fed mice; supports a modulatory role under the tested conditions.",
@@ -1755,7 +1769,6 @@
     "title": "Quiescence-inducing neurons-induced hypometabolism ameliorates acute kidney injury in a mouse model mimicking cardiovascular surgery requiring circulatory arrest",
     "citation": "Kyo et al. JTCVS Open (2022).",
     "insight": "QIH partly reduced early kidney-injury biomarkers at normothermia; cooling improved histologic injury scores.",
-    "note": "The normothermic group is what makes this experiment interesting to me. It asks whether neural suppression of metabolism can help even when the animal is kept warm. Some early kidney-injury markers improved, while the histology still favored cooling. I would not compress those results into a single claim of protection. Longer follow-up and kidney function would help show how much the early changes matter.",
     "species": "Transgenic mice; descending-aortic cross-clamp ischemia model",
     "intervention": "Q-neuron-induced hypometabolism tested at normothermic and hypothermic conditions.",
     "caveat": "There were six animals per group. Changes in early injury markers and tissue histology need to be considered separately.",
@@ -1783,7 +1796,6 @@
     "title": "Transcriptional regulation of intermolecular Ca2+ signaling in hibernating ground squirrel cardiomyocytes: The myocardin-junctophilin axis",
     "citation": "Yang et al. PNAS (2021).",
     "insight": "Myocardin-associated upregulation of JPH2/CAV3 tightens calcium-signaling junctions and supports excitation-contraction coupling.",
-    "note": "A lower heart rate does not mean the heart can stop maintaining its internal structure. I like that this paper connects gene expression to the physical spacing of calcium-signaling machinery and then to cell function. It gives a concrete example of an adaptation that may matter during deep torpor. I would want to know how quickly that structure changes and whether a non-hibernating heart can adjust similarly.",
     "species": "Hibernating ground squirrels; isolated cardiomyocytes",
     "intervention": "Comparison across physiological states, gene-expression manipulation, electron microscopy and calcium recording.",
     "caveat": "Cellular adaptation in a natural hibernator, not whole-animal torpor induction or an established heart-failure treatment.",
@@ -1809,6 +1821,10 @@
       "Edward G Lakatta",
       "Zhen Chai",
       "Shi-Qiang Wang"
+    ],
+    "note": [
+      "This paper made me think about another problem we need to solve before induced hibernation can be put to use. Even if neural circuits let us lower body temperature and metabolic rate, can the heart, brain and other vital organs of a non-hibernating animal safely handle low temperatures, low oxygen, changes in perfusion and rewarming? Professor Shi-Qiang Wang and I discussed this at length, and we agreed that the heart is a bottleneck that needs to be addressed early.",
+      "Hibernating ground squirrels maintain contraction by coupling calcium signals more efficiently, with less calcium influx. Perhaps, before or alongside inducing hypometabolism, we need to give organs some of the protective adaptations of a hibernator. I think these mechanisms could help us understand hibernation and provide a basis for protecting peripheral organs during an induced hypometabolic state."
     ]
   },
   {
@@ -1821,7 +1837,6 @@
     "title": "TMEM16C is involved in thermoregulation and protects rodent pups from febrile seizures",
     "citation": "Wang et al. PNAS (2021).",
     "insight": "Loss of TMEM16C impairs temperature regulation and increases susceptibility to hyperthermia-induced seizures.",
-    "note": "I would keep this paper as background on temperature control rather than evidence for inducing torpor. The rate at which the pups heat up seems important alongside their final temperature. It also reminds me that changing a thermoregulatory molecule may affect excitability elsewhere. A candidate target for cooling would need to be evaluated for those effects, not only for how far it lowers body temperature.",
     "species": "Rat and mouse pups",
     "intervention": "Global or cell-specific Tmem16c deletion with heat exposure.",
     "caveat": "This study concerns fever and seizures in developing animals; it does not test torpor induction.",
@@ -1843,6 +1858,40 @@
     ]
   },
   {
+    "year": "2021",
+    "question": 8,
+    "team": "team-other",
+    "label": "de Veij Mestdagh et al.",
+    "source": "PubMed",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34326412/",
+    "title": "Torpor enhances synaptic strength and restores memory performance in a mouse model of Alzheimer's disease",
+    "citation": "de Veij Mestdagh, C. F. et al. Scientific Reports 11, 15486 (2021).",
+    "insight": "A single torpor–arousal sequence enhanced hippocampal plasticity and contextual fear memory, including memory performance in APP/PS1 mice.",
+    "species": "C57BL/6J and APP/PS1 mice",
+    "intervention": "Food restriction and fasting at a cool ambient temperature, followed by arousal and tests of synaptic physiology and memory.",
+    "caveat": "This daily-torpor paradigm did not reproduce the large dendritic retraction and synapse loss of seasonal hibernation. Enhanced plasticity was limited to early arousal; reversal of Alzheimer pathology was not shown.",
+    "topic": "Plasticity and memory",
+    "doi": "10.1038/s41598-021-94992-x",
+    "pmid": "34326412",
+    "journal": "Scientific Reports",
+    "status": "Peer-reviewed research",
+    "authors": [
+      "Christina F de Veij Mestdagh",
+      "Jaap A Timmerman",
+      "Frank Koopmans",
+      "Iryna Paliukhovich",
+      "Suzanne S M Miedema",
+      "Maaike Goris",
+      "Rolinka J van der Loo",
+      "Guido Krenning",
+      "Ka Wan Li",
+      "Huibert D Mansvelder",
+      "August B Smit",
+      "Robert H Henning",
+      "Ronald E van Kesteren"
+    ]
+  },
+  {
     "year": "2020",
     "question": 3,
     "team": "team-other",
@@ -1852,7 +1901,6 @@
     "title": "Estrogen-sensitive medial preoptic area neurons coordinate torpor in mice",
     "citation": "Zhang et al. Nature Communications (2020).",
     "insight": "Activation coordinates torpor-like changes; ablation weakens fasting torpor, with sex-dependent aspects.",
-    "note": "The combination of temperature, calorimetry, heart rate and brain activity makes the induced state easier to judge. I am also interested in the sex differences, especially because estrogen-sensitive neurons contribute in males as well. I would not use the marker name to assume a female-specific circuit. The next question for me is how hormonal state changes the threshold for entering torpor.",
     "species": "Female and male mice",
     "intervention": "Activation and ablation of estrogen-sensitive medial preoptic neurons; physiological monitoring.",
     "caveat": "Estrogen sensitivity does not imply a female-only mechanism. Different effects on initiation and thermoregulation require separate interpretation.",
@@ -1892,7 +1940,6 @@
     "title": "A discrete neuronal circuit induces a hibernation-like state in rodents",
     "citation": "Takahashi et al. Nature (2020).",
     "insight": "Induces prolonged hypothermia and hypometabolism while retaining metabolic regulation; recovery assays found no obvious abnormalities.",
-    "note": "For me, the important result is that metabolism remains regulated at the lower temperature. That is a stronger claim than simply making an animal cold. The recovery measurements also matter because entry is only half the problem. I would compare the induced state with natural torpor across several organs and ask which protective responses come with Q-neuron activation, rather than assuming that all of them do.",
     "species": "Mice and rats",
     "intervention": "Activation of hypothalamic QRFP-expressing Q neurons.",
     "caveat": "Q-neuron-induced state is hibernation-like; mice naturally use daily torpor and are not equivalent to rats or humans.",
@@ -1927,7 +1974,6 @@
     "title": "Neurons that regulate mouse torpor",
     "citation": "Hrvatin et al. Nature (2020).",
     "insight": "Torpor-active preoptic neurons can recreate core features in fed mice; inhibition disrupts natural torpor dynamics.",
-    "note": "The activity-tagging strategy is what I find most convincing here: start with neurons used during the animal's own torpor, then test what happens when they are reactivated. The inhibition experiments add a separate test of their normal role. I would still ask how much of the tagged population is specific to torpor and how it overlaps with nearby neurons controlling sleep, temperature and feeding.",
     "species": "Mice",
     "intervention": "Activity-dependent tagging, neuronal reactivation, recordings and inhibition of preoptic Adcyap1-positive neurons.",
     "caveat": "A defined experimental entry point into mouse torpor, not proof of a universal mammalian torpor switch.",
@@ -1961,7 +2007,6 @@
     "title": "Neural control of fasting-induced torpor in mice",
     "citation": "Hitrec et al. Scientific Reports (2019).",
     "insight": "Identifies a candidate torpor-associated DMH-to-raphe pallidus projection.",
-    "note": "This is a useful starting point for the later manipulation studies. It finds neurons active at torpor onset and asks which ones can reach a major thermoregulatory output region. I would treat the DMH-to-raphe projection as a candidate from this evidence. The experiment I would want next is projection-specific inhibition during entry, with metabolism measured alongside temperature, to test whether the connection is actually required.",
     "species": "Mice",
     "intervention": "c-Fos mapping at torpor onset and retrograde tracing from raphe pallidus.",
     "caveat": "Activity and anatomy nominate a pathway; this study does not itself establish that the projection causes torpor entry.",
@@ -1995,7 +2040,6 @@
     "title": "Osmolyte Depletion and Thirst Suppression Allow Hibernators to Survive for Months without Water",
     "citation": "Feng et al. Current Biology (2019).",
     "insight": "Extracellular osmolytes fall in torpor; thirst stays suppressed during arousal while water-conserving responses return.",
-    "note": "The separation between thirst and water retention is the part I find surprising. During arousal, the squirrels can conserve water without being driven to leave the burrow and drink. The osmotic challenge suggests that the thirst circuit still works. This makes me think that prolonged torpor requires coordinated choices about behavior and fluid balance, not just a reduction in energy use.",
     "species": "Thirteen-lined ground squirrels",
     "intervention": "Hydration, osmolyte and hormone measurements, with an osmotic challenge.",
     "caveat": "Does not mean water is never lost, or that drinking and renal conservation are controlled by a single switch.",
@@ -2022,7 +2066,6 @@
     "title": "Thermoregulation via Temperature-Dependent PGD2 Production in Mouse Preoptic Area",
     "citation": "Wang et al. Neuron (2019).",
     "insight": "Links temperature-sensitive Ptgds neurons to PGD2/DP1-mediated negative feedback that lowers body temperature.",
-    "note": "I like the route from a physiological property to a molecular marker: record temperature sensitivity, profile the same kind of cells, then test the pathway. PGD2 provides a possible local feedback signal between neurons. I would keep this result separate from fasting-induced torpor for now. The question is whether the same pathway helps change the defended state, or mainly corrects an increase in temperature.",
     "species": "Mice",
     "intervention": "Single-cell profiling with patch-clamp recording, chemogenetic manipulation and prostaglandin assays.",
     "caveat": "Heat-defense feedback does not by itself show how fasting-induced torpor starts.",
@@ -2053,7 +2096,6 @@
     "title": "Hypothermia in mouse is caused by adenosine A1 and A3 receptor agonists and AMP via three distinct mechanisms",
     "source": "PubMed",
     "insight": "Separates three routes to regulated hypothermia and shows that some nominally A1-selective drugs also engage A3 pathways.",
-    "note": "This is a paper I would use to check an attractive drug result before interpreting it. A compound described as A1-selective can recruit another receptor when given systemically, so dose and route change the biological question. The knockout mice also make a useful distinction: inducing hypothermia through a receptor does not prove that natural fasting torpor requires that receptor. I would keep both kinds of evidence visible.",
     "species": "Wild-type and receptor-knockout mice",
     "intervention": "Systemic or central A1/A3 agonists and AMP; receptor knockout comparisons.",
     "caveat": "A1/A3 receptor knockout did not abolish fasting torpor; pharmacological cooling and endogenous necessity cannot be equated.",
@@ -2086,7 +2128,6 @@
     "title": "Hypometabolism during Daily Torpor in Mice is Dominated by Reduction in the Sensitivity of the Thermoregulatory System",
     "citation": "Sunagawa, G. A. & Takahashi, M. Scientific Reports (2016).",
     "insight": "Daily torpor strongly reduces thermoregulatory sensitivity, with a smaller change in the estimated temperature threshold.",
-    "note": "This paper makes me pay attention to ambient temperature when comparing experiments. Two mice could reach different body temperatures even if the change in their thermoregulatory control is similar. I find the distinction between sensitivity and temperature threshold useful for that reason. I would like to apply the same analysis to induced states, while checking whether the model still fits outside natural daily torpor.",
     "species": "Mice",
     "intervention": "Continuous metabolic measurements across ambient temperatures and model-based torpor detection.",
     "caveat": "Model parameters depend on assumptions and do not mean daily mouse torpor equals deep seasonal hibernation.",
@@ -2098,7 +2139,8 @@
     "authors": [
       "Genshiro A Sunagawa",
       "Masayo Takahashi"
-    ]
+    ],
+    "note": "The four conditions in this paper are a concise summary of what an animal needs to enter hypometabolism. I think they could serve as basic principles for attempts to induce hibernation in non-hibernating animals."
   },
   {
     "team": "team-other",
@@ -2109,7 +2151,6 @@
     "title": "The TRPM2 channel is a hypothalamic heat sensor that limits fever and can drive hypothermia",
     "source": "PubMed",
     "insight": "Identifies a heat-sensitive channel that limits fever and a neuronal population capable of bidirectional temperature control.",
-    "note": "TRPM2 is useful to keep in mind when reading the later ultrasound and torpor papers. Here the starting question is how the brain detects excessive heat. I would distinguish the channel's sensory role from what happens when every cell carrying that marker is artificially activated. Those are different experiments, and a strong cooling response does not by itself explain how natural torpor begins.",
     "species": "Mice",
     "intervention": "Trpm2 loss of function and chemogenetic activation/inhibition of TRPM2-expressing hypothalamic neurons.",
     "caveat": "Shows thermoregulation and induced hypothermia; does not establish that channel gating alone triggers natural torpor.",
@@ -2139,7 +2180,6 @@
     "title": "Warm-Sensitive Neurons that Control Body Temperature",
     "source": "PubMed",
     "insight": "Warm-responsive neurons coordinate heat loss, reduced heat production and cold-seeking through distinct projections.",
-    "note": "The behavior is important here: the stimulated mice seek colder places while their bodies also reduce heat production. That coordination is more informative than a temperature drop on its own. I would compare these warm-responsive PACAP cells carefully with the torpor-associated PACAP population described later. Sharing a marker is a useful clue, but location, projections and the conditions that recruit the cells still matter.",
     "species": "Mice",
     "intervention": "Activity-dependent molecular profiling, optical recording and stimulation of preoptic BDNF/PACAP neurons.",
     "caveat": "A heat-defense circuit study; PACAP expression overlaps later torpor work without establishing identical cell populations.",
@@ -2169,7 +2209,6 @@
     "title": "Central activation of the A1 adenosine receptor (A1AR) induces a hypothermic, torpor-like state in the rat",
     "citation": "Tupone et al. Journal of Neuroscience (2013).",
     "insight": "Suppresses thermogenesis and produces deep hypothermia, bradycardia and reduced EEG activity; animals recover with rewarming.",
-    "note": "The rat experiments matter because rats do not normally use daily torpor like mice. Suppressing both brown-fat and shivering thermogenesis explains how the animal can cool without immediately fighting the change. I would pay particular attention to the cardiovascular recordings, including the skipped beats. A method that reduces energy demand still has to preserve circulation, and rewarming deserves as much attention as induction.",
     "species": "Rats",
     "intervention": "Central A1 adenosine receptor agonism with brainstem localization experiments in cool conditions.",
     "caveat": "Invasive central dosing and cool ambient conditions; skipped beats and transient bradycardias were observed. Not a human induction protocol.",
@@ -2182,7 +2221,8 @@
       "Domenico Tupone",
       "Christopher J Madden",
       "Shaun F Morrison"
-    ]
+    ],
+    "note": "This was an early demonstration of a torpor-like state in a non-hibernating animal. One detail I find interesting is that in warmed, anesthetized rats, the drug did not significantly lower core temperature. I wonder whether suppressing heat production alone is enough, or whether a future approach will also need to promote heat loss more actively. I would also like to understand where the NTS sits relative to the POA circuits identified more recently, and how these regions work together during torpor."
   },
   {
     "team": "team-other",
@@ -2193,7 +2233,6 @@
     "title": "The inhibition of neurons in the central nervous pathways for thermoregulatory cold defense induces a suspended animation state in the rat",
     "source": "PubMed",
     "insight": "Produces deep hypothermia with reduced heart rate and EEG power; animals recover and show increased NREM delta power.",
-    "note": "This paper approaches the problem from the output side: prevent the brain from turning on cold defense, then let the animal cool. I find that useful to compare with activating preoptic neurons. The recovery sleep response also suggests that the brain does not simply resume where it left off. I would want to distinguish the effects of medullary inhibition, low temperature and the effort of rewarming.",
     "species": "Male rats",
     "intervention": "Repeated muscimol microinjections inhibiting rostral ventromedial medullary cold-defense pathways at 15°C.",
     "caveat": "Invasive pharmacological suppression with external cool conditions, not evidence of natural hibernation in rats or general safety.",
@@ -2223,7 +2262,6 @@
     "title": "Season primes the brain in an arctic hibernator to facilitate entrance into torpor mediated by adenosine A(1) receptors",
     "source": "PubMed",
     "insight": "A1 agonism induced torpor in 6/6 animals mid-season, 2/6 early-season and 0/6 off-season; antagonism reversed entry.",
-    "note": "The same agonist has very different effects depending on the season. That is the main reason I would include this paper before discussing adenosine as an induction target. The receptor is only part of the story; the animal's physiological state changes what stimulation can do. I would like to know which seasonal changes make the circuit responsive, and whether those changes can be separated from the rest of hibernation.",
     "species": "Arctic ground squirrels",
     "intervention": "Intracerebroventricular adenosine agonists/antagonists tested across seasons.",
     "caveat": "Small, season-dependent experiment in a natural hibernator. Cannot transfer the response directly to mice, rats or humans.",
@@ -2405,7 +2443,7 @@
     panel.innerHTML = `
       <div class="cognition-map-shell">
         <div class="map-intro cognition-intro">
-          <p>Five questions from my own experience. Choose a question, then move through its origin, evidence chain, unresolved frontier, and key papers without opening everything at once.</p>
+          <p>Five questions from my own experience.</p>
           <details class="cognition-common-thread">
             <summary>Across all five questions: the common thread</summary>
             <p>Across seconds, years, dreams, individual differences, and the first minutes after waking, I am interested in how a distributed brain selects information, assigns unequal weight to particular cells or states, and converts transient activity into later behavior. The next step is not only to observe a population, but to ask whether changing one node, a small ensemble, or a brief network state is sufficient to change memory or emotion.</p>
@@ -2935,6 +2973,7 @@ if (lifeSlides.length) {
   });
 </script>
 <script src="reading-room.js"></script>
+<script src="portfolio-interactions.js" defer></script>
 <script src="instrument-embed.js" defer></script>
 </body>
 </html>

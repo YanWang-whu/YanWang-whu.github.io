@@ -1,0 +1,28 @@
+/* The existing portfolio layout, with readable long-form research panels. */
+.research-card { position: relative; }
+.research-card .research-content { height: 0; max-height: none; overflow: hidden; transition: none; }
+.research-card.active .research-content { height: var(--research-panel-height, 65vh); overflow-y: auto; overscroll-behavior-y: contain; scrollbar-gutter: stable; scrollbar-color: #879bb5 #eef2f7; }
+.research-content:focus-visible { outline: 3px solid #7c99bc; outline-offset: -3px; }
+.research-inner { padding-top: 22px; }
+.research-lead { margin: 0 0 26px; font-size: 18px; line-height: 1.8; color: #2f436e; }
+.research-lead strong { font-weight: 650; }
+.research-figures { display: grid; gap: 26px; margin: 32px 0 12px; }
+.research-figures figure { margin: 0; padding: 14px; background: #f5f8fb; border: 1px solid #dce4ec; border-radius: 14px; }
+.research-figures a { display: block; border-radius: 5px; overflow: hidden; cursor: zoom-in; }
+.research-figures a:focus-visible { outline: 3px solid #537ba4; outline-offset: 4px; }
+.research-figures img { display: block; width: 100%; height: auto; background: #fff; }
+.research-figures figcaption { color: #52647a; font-size: 13px; line-height: 1.7; margin-top: 12px; }
+.research-figures figcaption span { display: block; color: #355780; margin-top: 4px; }
+.research-update { padding-top: 16px; border-top: 1px solid #dce4ec; color: #62758a; }
+.attempt-intro { max-width: 850px; line-height: 1.8; color: #4b6077; }
+.award-number { font-weight: 600; color: #6d8097; margin-right: 4px; }
+.map-area-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+#what-drives > p { line-height: 1.8; }
+@media(max-width:760px) {
+  .map-area-tabs { grid-template-columns: 1fr; }
+  .research-card.active .research-name { font-size: 18px; line-height: 1.4; }
+  .research-card.active .research-location { font-size: 13px; line-height: 1.5; }
+  .research-lead { font-size: 17px; }
+  .research-figures figure { padding: 8px; }
+  .research-inner { padding-left: 18px; padding-right: 18px; }
+}
