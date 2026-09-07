@@ -66,7 +66,7 @@ function filteredTorporPapers() {
   const query = torporQuery.toLocaleLowerCase().trim();
   return torporPapers.map((paper,index) => ({...paper,index})).filter(paper =>
     (torporCategory === 'all' || String(paper.question) === torporCategory) &&
-    (!query || [paper.title,paper.citation,paper.label,paper.species,paper.insight,paper.year,paper.authors?.join(' '),paper.correspondingAuthor,torporAuthors.filter(author=>author.team===paper.team).map(author=>author.name).join(' ')].join(' ').toLocaleLowerCase().includes(query))
+    (!query || [paper.title,paper.citation,paper.label,paper.species,paper.insight,paper.year].join(' ').toLocaleLowerCase().includes(query))
   );
 }
 

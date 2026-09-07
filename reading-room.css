@@ -22,10 +22,9 @@
 .torpor-grid-v3 .roadmap-question { font-size: 14px; }
 .torpor-grid-v3 .paper-entry { display: flex; align-items: flex-start; gap: 6px; }
 .torpor-grid-v3 .paper-note-button { display: flex; align-items: center; justify-content: center; width: 34px; height: 40px; min-width: 34px; flex: 0 0 34px; font-size: 24px; color: #294172; border: 1px solid #b8c7d9; background: #fff; border-radius: 6px; cursor: pointer; }
-.torpor-grid-v3 .paper-node { display: grid; grid-template-columns: 8px minmax(0,1fr); gap: 6px 8px; align-items: start; flex: 1; min-width: 0; max-width: 100%; padding: 10px 8px; box-shadow: 0 3px 10px #20354f08; }
-.torpor-grid-v3 .paper-node-dot { margin-top: 5px; }
-.torpor-grid-v3 .paper-node-label { font-size: 13px; font-weight: 600; white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.4; word-break: normal; overflow-wrap: normal; }
-.torpor-grid-v3 .paper-link-cue { grid-column: 2; justify-self: start; margin: 0; font-size: 11px; font-weight: 600; }
+.torpor-grid-v3 .paper-node { min-width: 0; max-width: 100%; }
+.torpor-grid-v3 .paper-node-label { font-size: 13px; white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.4; }
+.torpor-grid-v3 .paper-link-cue { font-size: 12px; }
 .legend-chip.author-chip { font-size: 14px; font-weight: 650; min-height: 44px; }
 .reading-dialog { width: min(740px, calc(100vw - 28px)); max-height: calc(100dvh - 32px); padding: 0; margin: auto; border: 1px solid #c4d2e2; border-radius: 16px; color: #263a54; box-shadow: 0 28px 100px #102c5050; background: #fff; overflow: auto; }
 .reading-dialog::backdrop { background: #17283c80; backdrop-filter: blur(3px); }
