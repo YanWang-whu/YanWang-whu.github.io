@@ -21,7 +21,7 @@ function showInfo(p,index){$('component-role').textContent=p.role;$('component-t
 showInfo(parts[0],0);
 let renderer,scene,camera,controls,model,calibration,activeModel,selection,selectionBox,ground,fieldGroup,dimensionGroup;
 let running=false,visible=true,framePending=false,explode=0,lidRaised=false,fields=false,dimensions=false,calibrating=false;
-let tween=null,lastFrame=performance.now(),time=0,quality='clear',lastState='',selectionKey='Cage',renderCount=0;
+let tween=null,lastFrame=performance.now(),time=0,quality='clear',lastState='',selectionKey='Cage',renderCount=0,renderDirty=true,cameraInspection=false;
 let coverage=false,coveragePoints,coverageResult;
 const homes=new Map(),dimensionLabels=[],viewport=$('viewport'),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const loader=new GLTFLoader(),mouse=new THREE.Vector2(),raycaster=new THREE.Raycaster();
@@ -31,15 +31,20 @@ function controlsEnabled(value){document.querySelectorAll('.model-tools button,.
 controlsEnabled(false);
 function failure(message){$('loading').hidden=false;$('loading').classList.add('error');$('loading').textContent=message;$('poster').hidden=false;controlsEnabled(false);window.instrumentDiagnostics={...(window.instrumentDiagnostics||{}),error:message};}
 function setupModel(root){root.traverse(o=>{homes.set(o,o.position.clone());if(o.isMesh){o.castShadow=true;o.receiveShadow=true;const mats=Array.isArray(o.material)?o.material:[o.material];for(const m of mats){if(m.transmission>0){o.castShadow=false;m.envMapIntensity=1.15;}else m.envMapIntensity=.8;}}});}
-function requestRender(){if(!framePending&&!document.hidden&&(visible||running)&&(renderer||running)){framePending=true;requestAnimationFrame(frame);}}
-function frame(now){framePending=false;const dt=Math.min((now-lastFrame)/1000,.05);lastFrame=now;
-  if(tween){const t=Math.min((now-tween.start)/tween.duration,1),e=t*t*(3-2*t);camera.position.lerpVectors(tween.from,tween.to,e);controls.target.lerpVectors(tween.targetFrom,tween.targetTo,e);if(t>=1)tween=null;}
+// Replay can schedule its DOM updates without dirtying an unchanged 3D scene.
+function requestRender(mark3D=true){if(mark3D!==false)renderDirty=true;if(!framePending&&!document.hidden&&(visible||running)&&(renderer||running)){framePending=true;requestAnimationFrame(frame);}}
+// Camera inspection may look upward at a lens, while the eye stays above the bench.
+function limitOrbit(){if(!controls||!camera)return;const distance=camera.position.distanceTo(controls.target),clearance=controls.target.y-.008;controls.maxPolarAngle=cameraInspection?Math.min(Math.PI*.66,Math.acos(THREE.MathUtils.clamp(-clearance/Math.max(distance,.001),-1,1))):Math.PI*.49;}
+function frame(now){framePending=false;if(document.hidden){lastFrame=now;return;}const dt=Math.min((now-lastFrame)/1000,.05);lastFrame=now;
+  if(tween){const t=Math.min((now-tween.start)/tween.duration,1),e=t*t*(3-2*t);camera.position.lerpVectors(tween.from,tween.to,e);controls.target.lerpVectors(tween.targetFrom,tween.targetTo,e);renderDirty=true;if(t>=1)tween=null;}
+  limitOrbit();
   const damping=controls?.update();
+  if(cameraInspection&&camera.position.y<.008-1e-8){camera.position.y=.008;limitOrbit();controls.update();renderDirty=true;}
   if(running){time=Math.min(120,time+dt*5);updateSignals();if(time>=120)setPlaying(false);}
   dimensionLabels.forEach(({el,point})=>{const p=point.clone().project(camera);el.style.left=`${(p.x+1)*viewport.clientWidth/2}px`;el.style.top=`${(-p.y+1)*viewport.clientHeight/2}px`;el.hidden=!dimensions||calibrating||explode>.005||p.z>1||p.z< -1;});
-  if(visible&&renderer&&scene&&camera){renderer.render(scene,camera);renderCount++;}
-  window.instrumentDiagnostics={ready:!!model,error:model?null:window.instrumentDiagnostics?.error,renderCount,meshes:renderer?.info.memory.geometries,drawCalls:renderer?.info.render.calls,triangles:renderer?.info.render.triangles,modelVisible:!!activeModel?.visible,calibration:calibrating,explode,lidRaised,fields,dimensions,coverage:coverage?coverageResult:null,selected:selectionKey,simulated:true,time,quality,pixelRatio:renderer?.getPixelRatio(),canvas:renderer?[renderer.domElement.width,renderer.domElement.height]:null};
-  if(tween||damping||running)requestRender();
+  if(visible&&renderer&&scene&&camera&&renderDirty){renderer.render(scene,camera);renderDirty=false;renderCount++;}
+  window.instrumentDiagnostics={ready:!!model,error:model?null:window.instrumentDiagnostics?.error,renderCount,renderDirty,cameraInspection,cameraPosition:camera?.position.toArray(),cameraTarget:controls?.target.toArray(),maxPolarAngle:controls?.maxPolarAngle,meshes:renderer?.info.memory.geometries,drawCalls:renderer?.info.render.calls,triangles:renderer?.info.render.triangles,modelVisible:!!activeModel?.visible,calibration:calibrating,explode,lidRaised,fields,dimensions,coverage:coverage?coverageResult:null,selected:selectionKey,simulated:true,time,quality,pixelRatio:renderer?.getPixelRatio(),canvas:renderer?[renderer.domElement.width,renderer.domElement.height]:null};
+  if(tween||damping||running)requestRender(false);
 }
 function resize(){if(!renderer)return;const w=viewport.clientWidth,h=viewport.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();requestRender();}
 function bounds(root=activeModel){return new THREE.Box3().setFromObject(root);}
@@ -48,17 +53,19 @@ function goView(view='perspective',targetObject=null){if(!model)return;const box
   let distance=radius/Math.sin(limitingFov/2);
   if(view==='detail'&&!targetObject){const part=find(activeModel,selectionKey)||activeModel;return goView('detail',part);}
   distance=Math.max(distance,.11);
-  const direction=({front:new THREE.Vector3(0,.22,1),top:new THREE.Vector3(0,1,.0001),detail:new THREE.Vector3(1,.75,1.3)})[view]||new THREE.Vector3(1.15,.82,1.6);
+  cameraInspection=view==='detail'&&!calibrating&&['Thermal camera','Activity camera'].some(id=>targetObject===find(model,id));
+  controls.maxPolarAngle=cameraInspection?Math.PI*.66:Math.PI*.49;
+  const direction=({front:new THREE.Vector3(0,.22,1),top:new THREE.Vector3(0,1,.0001),detail:cameraInspection?new THREE.Vector3(1,-.65,1.3):new THREE.Vector3(1,.75,1.3)})[view]||new THREE.Vector3(1.15,.82,1.6);
   direction.normalize();const right=new THREE.Vector3(0,1,0).cross(direction).normalize(),up=direction.clone().cross(right).normalize();
   const tanV=Math.tan(THREE.MathUtils.degToRad(camera.fov/2)),tanH=tanV*camera.aspect;distance=.055;
   const fitPoints=[];(targetObject||activeModel).traverse(o=>{if(!o.isMesh)return;let parent=o;while(parent){if(!parent.visible)return;parent=parent.parent;}o.geometry.computeBoundingBox();const b=o.geometry.boundingBox;for(const x of[b.min.x,b.max.x])for(const y of[b.min.y,b.max.y])for(const z of[b.min.z,b.max.z])fitPoints.push(new THREE.Vector3(x,y,z).applyMatrix4(o.matrixWorld));});
   const xs=fitPoints.map(p=>p.clone().sub(center).dot(right)),ys=fitPoints.map(p=>p.clone().sub(center).dot(up));center.addScaledVector(right,(Math.min(...xs)+Math.max(...xs))/2).addScaledVector(up,(Math.min(...ys)+Math.max(...ys))/2);
   for(const point of fitPoints){const p=point.clone().sub(center),depth=p.dot(direction);distance=Math.max(distance,depth+Math.abs(p.dot(right))/tanH*1.12,depth+Math.abs(p.dot(up))/tanV*1.25);}
-  const destination=center.clone().addScaledVector(direction,distance);
+  const destination=center.clone().addScaledVector(direction,distance);if(cameraInspection)destination.y=Math.max(.008,destination.y);
   tween={start:performance.now(),duration:reduced?1:550,from:camera.position.clone(),to:destination,targetFrom:controls.target.clone(),targetTo:center};
   document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===view)));requestRender();
 }
-function selectPart(id,zoom=false){selectionKey=id;const index=parts.findIndex(p=>p.id===id);if(index>=0){$('component-select').value=id;showInfo(parts[index],index);}selection=find(model,id);if(selectionBox){selectionBox.visible=!!selection&&!calibrating;if(selection)selectionBox.setFromObject(selection);}
+function selectPart(id,zoom=false){selectionKey=id;if(!['Thermal camera','Activity camera'].includes(id)){cameraInspection=false;if(controls)controls.maxPolarAngle=Math.PI*.49;}const index=parts.findIndex(p=>p.id===id);if(index>=0){$('component-select').value=id;showInfo(parts[index],index);}selection=find(model,id);if(selectionBox){selectionBox.visible=!!selection&&!calibrating;if(selection)selectionBox.setFromObject(selection);}
   if(zoom)goView('detail',selection);requestRender();
 }
 function offsetObject(obj,v){if(!obj)return;const local=v.clone().transformDirection(obj.parent.matrixWorld.clone().invert()).multiplyScalar(v.length());obj.position.copy(homes.get(obj)).add(local);}
@@ -131,12 +138,12 @@ function signals(t){const smooth=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2
 let plotWidth=680;const sx=t=>35+t/120*(plotWidth-59),sy=t=>149-(t-20)/16*128;
 function drawGrid(){plotWidth=Math.max(220,$('trace').clientWidth);$('trace').setAttribute('viewBox',`0 0 ${plotWidth} 180`);const grid=$('trace-grid');grid.innerHTML='';for(const value of[20,24,28,32,36])grid.innerHTML+=`<line x1="35" x2="${plotWidth-24}" y1="${sy(value)}" y2="${sy(value)}" stroke="#e6ebea" stroke-width="1"/><text x="24" y="${sy(value)+3}" text-anchor="end" fill="#7a8b8d" font-size="10">${value}</text>`;for(const t of(plotWidth<400?[0,60,120]:[0,30,60,90,120]))grid.innerHTML+=`<text x="${sx(t)}" y="171" text-anchor="middle" fill="#7a8b8d" font-size="10">${t} min</text>`;
   const traceD=Array.from({length:241},(_,i)=>`${i?'L':'M'}${sx(i/2).toFixed(2)},${sy(signals(i/2).surface).toFixed(2)}`).join(' ');$('trace-path').setAttribute('d',traceD);updateSignals();}
-function setPlaying(value){running=value;$('play').textContent=value?'Pause replay':'Play replay';$('play').setAttribute('aria-pressed',String(value));lastFrame=performance.now();if(value)requestRender();}
+function setPlaying(value){running=value;$('play').textContent=value?'Pause replay':'Play replay';$('play').setAttribute('aria-pressed',String(value));lastFrame=performance.now();if(value)requestRender(false);}
 function updateSignals(){const s=signals(time),fault=quality!=='clear';$('time').value=time;$('time-label').textContent=`${Math.floor(time)}:${String(Math.floor(time%1*60)).padStart(2,'0')} / 120 min`;
   $('surface').innerHTML=fault?'—':`${s.surface.toFixed(1)} <small>°C</small>`;$('activity').textContent=quality==='dropout'?'—':s.activity.toFixed(2);$('ambient').innerHTML=`${s.ambient.toFixed(1)} <small>°C</small>`;$('humidity').innerHTML=`${s.humidity.toFixed(0)} <small>%</small>`;
   const phase=fault?'UNKNOWN':time<18?'NORMAL':time<45?'WATCH':time<85?'PROBABLE_TORPOR':'RECOVERY';if(phase!==lastState){$('state').textContent=phase;lastState=phase;}$('state').classList.toggle('unknown',fault);
   $('signal-note').textContent=quality==='occlusion'?'Thermal values are withheld when the view is obstructed. The phase is UNKNOWN; a missing value is not evidence of cooling.':quality==='dropout'?'Both camera readouts are withheld. Ambient sensing remains available, but the phase is UNKNOWN.':'Illustrative phase labels follow the scripted sequence; they are not a validated classifier.';
   const count=Math.floor(time*2);$('trace-progress').setAttribute('d',fault?'':Array.from({length:count+1},(_,i)=>`${i?'L':'M'}${sx(i/2)},${sy(signals(i/2).surface)}`).join(' '));$('trace-path').style.visibility=fault?'hidden':'visible';for(const id of['trace-cursor','trace-dot']){const el=$(id);el.setAttribute(id==='trace-dot'?'cx':'x1',sx(time));if(id==='trace-cursor')el.setAttribute('x2',sx(time));else{el.setAttribute('cy',sy(s.surface));el.style.opacity=fault?0:1;}}
-  requestRender();}
+  requestRender(false);}
 $('play').addEventListener('click',()=>{if(time>=120)time=0;setPlaying(!running);});$('time').addEventListener('input',e=>{time=Number(e.target.value);setPlaying(false);updateSignals();});$('fault').addEventListener('change',e=>{quality=e.target.value;updateSignals();});
 new ResizeObserver(drawGrid).observe($('trace'));drawGrid();init();
