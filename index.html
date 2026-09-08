@@ -199,7 +199,7 @@
 
               <div class="visit-panel" id="yinfeng-visit-panel">
                 <div class="visit-photo-wrap">
-                  <img src="life/yinfeng-visit.jpg" alt="Yan Wang visiting Shandong Yinfeng Life Science Research Institute">
+                  <img loading="lazy" decoding="async" src="life/yinfeng-visit.jpg" width="1534" height="1279" alt="Yan Wang visiting Shandong Yinfeng Life Science Research Institute">
                 </div>
                 <div class="visit-note">
                   <span class="interest-map-eyebrow">My Visit</span>
@@ -475,7 +475,7 @@
         </button>
 
         <div class="research-publication research-achievement research-medal">
-          <img class="achievement-medal-icon" src="life/igem-gold-medal-icon.png" alt="Gold science competition medal">
+          <img loading="lazy" class="achievement-medal-icon" src="life/igem-gold-medal-icon.png" alt="Gold science competition medal">
           <div class="achievement-copy">
             <span class="publication-label">2025 iGEM Gold Medal</span>
             <p>Awarded a <strong>Gold Medal</strong> at the 2025 International Genetically Engineered Machine (iGEM) Competition.</p>
@@ -948,7 +948,7 @@
     <div class="resume-side">
       <h2 class="section-title">Resume</h2>
       <div class="card resume-card">
-        <iframe src="Yan Wang_CV.pdf?v=20260907-2#zoom=80" class="resume-frame" title="Yan Wang’s CV"></iframe>
+        <iframe loading="lazy" src="Yan Wang_CV.pdf?v=20260907-2#zoom=80" class="resume-frame" title="Yan Wang’s CV"></iframe>
       </div>
     </div>
 
@@ -993,8 +993,8 @@
 
           <div class="life-slide">
             <div class="life-image-shell">
-              <div class="life-image-blur" style="background-image: url('life/life1.jpg');"></div>
-              <img src="life/life1.jpg" alt="Life moment 1" class="life-image-main">
+              <div class="life-image-blur" data-background="life/life1.jpg"></div>
+              <img loading="lazy" decoding="async" src="life/life1.jpg" alt="Life moment 1" class="life-image-main">
             </div>
             <p class="life-caption">
               Moment · Certificate of Charitable Support 1st Anniversary Presented by UNICEF 😊.
@@ -1003,8 +1003,8 @@
 
           <div class="life-slide">
             <div class="life-image-shell">
-              <div class="life-image-blur" style="background-image: url('life/life2.jpg');"></div>
-              <img src="life/life2.jpg" alt="Life moment 2" class="life-image-main">
+              <div class="life-image-blur" data-background="life/life2.jpg"></div>
+              <img loading="lazy" decoding="async" src="life/life2.jpg" alt="Life moment 2" class="life-image-main">
             </div>
             <p class="life-caption">
               Moment · Beyond the lab, I am a photographer who captures landscapes.
@@ -1013,8 +1013,8 @@
 
           <div class="life-slide">
             <div class="life-image-shell">
-              <div class="life-image-blur" style="background-image: url('life/life3.jpg');"></div>
-              <img src="life/life3.jpg" alt="Life moment 3" class="life-image-main">
+              <div class="life-image-blur" data-background="life/life3.jpg"></div>
+              <img loading="lazy" decoding="async" src="life/life3.jpg" alt="Life moment 3" class="life-image-main">
             </div>
             <p class="life-caption">
               Moment · I'm also trying to paint with microorganisms, using the petri dish as my canvas.
@@ -1023,8 +1023,8 @@
 
           <div class="life-slide">
             <div class="life-image-shell">
-              <div class="life-image-blur" style="background-image: url('life/life4.jpg');"></div>
-              <img src="life/life4.jpg" alt="Life moment 4" class="life-image-main">
+              <div class="life-image-blur" data-background="life/life4.jpg"></div>
+              <img loading="lazy" decoding="async" src="life/life4.jpg" alt="Life moment 4" class="life-image-main">
             </div>
             <p class="life-caption">
               Moment · Representation of the team at the iGEM competition in Paris, France.
@@ -1033,8 +1033,8 @@
 
           <div class="life-slide">
             <div class="life-image-shell">
-              <div class="life-image-blur" style="background-image: url('life/life5.jpg');"></div>
-              <img src="life/life5.jpg" alt="Life moment 5" class="life-image-main">
+              <div class="life-image-blur" data-background="life/life5.jpg"></div>
+              <img loading="lazy" decoding="async" src="life/life5.jpg" alt="Life moment 5" class="life-image-main">
             </div>
             <p class="life-caption">
               Moment · Beyond the lab, I'm a filmmaker.
@@ -1067,7 +1067,7 @@
   "How can the state be measured and controlled?",
   "Can torpor be induced?",
   "What protective effects emerge?",
-  "What changes across species?",
+  "What about higher animals?",
   "Applications of induced torpor"
 ];
 
@@ -1742,7 +1742,8 @@
       "Hong Wang",
       "Ji Dai"
     ],
-    "citation": "Zhang et al. The Innovation (2023). Published online December 2022."
+    "citation": "Zhang et al. The Innovation (2023). Published online December 2022.",
+    "note": "This is one of the few attempts to induce a hibernation-like state in non-human primates, and I found it very impressive. The animals countered the drop in body temperature with a faster heart rate, more movement, and other cold-defense responses, which limited the cooling effect. To me, this is another reminder that peripheral regulation matters when we try to induce torpor in non-hibernating animals. Unfortunately, I have not seen further torpor studies from this team."
   },
   {
     "year": "2022",
@@ -2899,20 +2900,35 @@ function goToPrevLifeSlide() {
   updateLifeCarousel();
 }
 
+let lifeInView = false;
+let lifeHovered = false;
+let lifePauseUntil = 0;
+const lifeReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 function startLifeAutoplay() {
   clearInterval(lifeAutoPlay);
-  lifeAutoPlay = setInterval(() => {
-    goToNextLifeSlide();
-  }, 3200);
+  clearTimeout(lifeResumeTimeout);
+  lifeAutoPlay = null;
+  lifeResumeTimeout = null;
+  if (!lifeInView || document.hidden || lifeHovered || lifeReducedMotion.matches) return;
+  const remainingPause = lifePauseUntil - Date.now();
+  if (remainingPause > 0) {
+    lifeResumeTimeout = setTimeout(startLifeAutoplay, remainingPause);
+    return;
+  }
+  lifeAutoPlay = setInterval(goToNextLifeSlide, 3200);
 }
 
 function pauseAndResumeLifeAutoplay(delay = 5000) {
-  clearInterval(lifeAutoPlay);
-  clearTimeout(lifeResumeTimeout);
+  lifePauseUntil = Math.max(lifePauseUntil, Date.now() + delay);
+  startLifeAutoplay();
+}
 
-  lifeResumeTimeout = setTimeout(() => {
-    startLifeAutoplay();
-  }, delay);
+function loadLifeBackgrounds() {
+  lifeCarousel.querySelectorAll('[data-background]').forEach(element => {
+    element.style.backgroundImage = 'url(' + JSON.stringify(element.dataset.background) + ')';
+    delete element.dataset.background;
+  });
 }
 
 if (lifeSlides.length) {
@@ -2923,9 +2939,26 @@ if (lifeSlides.length) {
       if (lifeCarousel) {
         lifeCarousel.classList.add('is-ready');
       }
-      setTimeout(() => {
+      if ('IntersectionObserver' in window) {
+        const mediaObserver = new IntersectionObserver(entries => {
+          if (entries.some(entry => entry.isIntersecting)) {
+            loadLifeBackgrounds();
+            mediaObserver.disconnect();
+          }
+        }, {rootMargin: '600px'});
+        mediaObserver.observe(lifeCarousel);
+        const playbackObserver = new IntersectionObserver(entries => {
+          lifeInView = entries.some(entry => entry.isIntersecting);
+          startLifeAutoplay();
+        }, {threshold: 0});
+        playbackObserver.observe(lifeCarousel);
+      } else {
+        loadLifeBackgrounds();
+        lifeInView = true;
         startLifeAutoplay();
-      }, 800);
+      }
+      document.addEventListener('visibilitychange', startLifeAutoplay);
+      lifeReducedMotion.addEventListener('change', startLifeAutoplay);
     });
   });
 
@@ -2943,19 +2976,13 @@ if (lifeSlides.length) {
     });
   }
 
-  lifeSlides.forEach(slide => {
-    slide.addEventListener('mouseenter', () => {
-      if (slide.classList.contains('is-center')) {
-        clearInterval(lifeAutoPlay);
-        clearTimeout(lifeResumeTimeout);
-      }
-    });
-
-    slide.addEventListener('mouseleave', () => {
-      if (slide.classList.contains('is-center')) {
-        pauseAndResumeLifeAutoplay(1200);
-      }
-    });
+  lifeCarousel.addEventListener('mouseenter', () => {
+    lifeHovered = true;
+    startLifeAutoplay();
+  });
+  lifeCarousel.addEventListener('mouseleave', () => {
+    lifeHovered = false;
+    pauseAndResumeLifeAutoplay(1200);
   });
 }
 
