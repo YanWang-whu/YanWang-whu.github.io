@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="instrument-embed.css">
   <link rel="stylesheet" href="portfolio-refresh.css?v=20260907-2">
   <link rel="stylesheet" href="acknowledgements.css?v=20260909">
+  <link rel="stylesheet" href="spatial-embed.css?v=20260910">
 </head>
 <body>
 
@@ -83,7 +84,7 @@
     <div class="hero-side-card card scroll-reveal-card" id="what-drives">
       <span class="interest-map-eyebrow">Research Direction</span>
       <h3>What Drives Me</h3>
-      <p>My previous research spans <strong>molecular biology</strong>, <strong>neuroscience</strong>, and <strong>synthetic biology</strong>. I have been drawn to the life sciences since I was young: to understanding higher brain functions and their molecular basis, and to future technologies such as deliberately changing metabolic states. I believe research in molecular biology, neuroscience, and translational medicine can help us understand how life works and turn that knowledge into new ways to treat disease. I want to take part in this effort to explain the nature of life and help shape our future.</p>
+      <p>My previous research spans <strong>molecular biology</strong>, <strong>neuroscience</strong>, and <strong>synthetic biology</strong>. I have been drawn to the life sciences since I was young, from understanding the basic principles behind biological functions, behavior, and cognition to exploring future technologies such as deliberately changing metabolic states. I believe research in the life sciences, including molecular biology, neuroscience, and translational medicine, can help us understand how life works and turn that knowledge into new ways to extend healthy life, support space exploration, and treat disease. I want to take part in this effort to explain the nature of life and help shape our future.</p>
       <div class="tag-list">
         <span class="tag">Neuroscience</span>
         <span class="tag">Translational Medicine</span>
@@ -131,7 +132,7 @@
               <span>Area 2</span>
               My cryobiology visit
             </button>
-          <button type="button" class="map-area-tab" data-area-tab="my-attempt" onclick="switchTorporArea('my-attempt')" aria-pressed="false"><span>Area 3</span>My attempt</button>
+          <button type="button" class="map-area-tab" data-area-tab="my-attempt" onclick="switchTorporArea('my-attempt')" aria-pressed="false"><span>Area 3</span>My attempts</button>
 </div>
 
           <div class="torpor-area-panel active" data-torpor-area="neural-route">
@@ -221,13 +222,16 @@
               </div>
             </div>
           </div>
-        <div class="torpor-area-panel" data-torpor-area="my-attempt"><div class="map-region my-attempt-route"><div class="map-region-header"><span class="map-region-kicker">Area 3</span><h3>My attempt</h3></div><p class="attempt-intro">I made a model of a system for monitoring metabolic states; with no hibernation lab nearby, this may be the first small step I can take toward studying induced torpor, and I am applying to Unitree for funding to turn the idea into a working setup.</p><div id="interest-instrument-showcase" class="instrument-showcase" data-model-src="instrument/?embed=1">
+        <div class="torpor-area-panel" data-torpor-area="my-attempt"><div class="map-region my-attempt-route"><div class="map-region-header"><span class="map-region-kicker">Area 3</span><h3>My attempts</h3></div><div class="attempt-projects"><article class="attempt-project"><h4 class="attempt-title">A metabolic-state monitoring system</h4><p class="attempt-intro">I made a model of a system for monitoring metabolic states; with no hibernation lab nearby, this may be the first small step I can take toward studying induced torpor, and I am applying to Unitree for funding to turn the idea into a working setup.</p><div id="interest-instrument-showcase" class="instrument-showcase" data-model-src="instrument/?embed=1">
         <div class="instrument-preview">
           <img src="instrument/assets/hero.webp" width="1800" height="1350" loading="lazy" alt="Proposed cage-monitoring rig with two overhead cameras, external recording electronics and separate backup power.">
           <div class="instrument-caption"><p class="instrument-eyebrow">Concept model · Empty-cage test setup</p><h4>Explore the proposed setup</h4><p>A 3D layout of the cameras, sensors and recording hardware in my funding proposal. The mounting layout still needs bench testing.</p><div class="instrument-actions"><button type="button" data-load-model>Load 3D model</button><a href="instrument/" target="_blank" rel="noopener">Open full viewer ↗</a></div></div>
         </div>
         <div class="instrument-live" hidden><div class="instrument-livebar"><span>Proposed monitoring rig · Simulated replay</span><a href="instrument/" target="_blank" rel="noopener">Open full viewer ↗</a><button type="button" data-close-model>Close model</button></div></div>
-      </div></div></div>
+      </div></article><article class="attempt-project"><h4 class="attempt-title">A cross-species spatial comparison</h4><p class="attempt-intro">I wanted to explore which mouse preoptic populations share the markers used in hypometabolism studies, and where candidate counterparts might be found in primates. Using public RNA and spatial data, I compared mouse neurons with marmoset candidates. <a href="#spatial-research">Read about the project ↗</a></p><div class="spatial-showcase">
+ <div class="spatial-preview"><img src="spatial/preview.jpg" width="1200" height="810" loading="lazy" decoding="async" alt="Side-by-side spatial views of mouse preoptic neurons and candidate marmoset counterparts."><div class="spatial-caption"><p class="spatial-eyebrow">Mouse × marmoset · Public spatial data</p><h4>Explore the spatial comparison</h4><p>Follow a mouse type to its candidate counterpart. Switch between official marmoset coordinates and the 47-section reconstruction.</p><div class="spatial-actions"><button type="button" data-load-spatial>Load spatial models</button><a href="spatial/" target="_blank" rel="noopener">Open full viewer ↗</a></div></div></div>
+ <div class="spatial-live" hidden><div class="spatial-livebar"><span>Mouse &amp; marmoset · Spatial comparison</span><a href="spatial/" target="_blank" rel="noopener">Open full viewer ↗</a><button type="button" data-close-spatial>Close models</button></div></div>
+ </div></article></div></div></div>
 </div>
       </div>
 
@@ -672,6 +676,20 @@
 </div>
           </div>
         </div>
+      </div>
+
+      <div class="research-card" id="spatial-research">
+        <button type="button" class="research-header" id="spatial-research-heading" aria-expanded="false" aria-controls="spatial-research-content" onclick="toggleActivity(this)">
+          <div class="research-left"><span class="research-name">Cross-species spatial transcriptomics: searching for candidate hypometabolism neurons</span></div>
+          <div class="research-right"><span class="research-arrow" aria-hidden="true">&#9662;</span></div>
+        </button>
+        <div class="research-content" id="spatial-research-content" role="region" aria-labelledby="spatial-research-heading" tabindex="0" inert><div class="research-inner">
+          <p class="research-text">Induced hypometabolism has possible applications in organ protection and long-duration spaceflight. I started this project out of personal interest, using published work and public single-cell and spatial transcriptomic data. Several published studies have induced hypometabolism or torpor-like states in mice through different approaches such as ultrasound stimulation and chemogenetic manipulation. These studies use somewhat different markers to identify the relevant preoptic neurons, which made me wonder how much the populations they target actually overlap. I compared the mouse populations using these markers, then looked for candidate counterparts in marmoset RNA data and mapped them in the spatial dataset. The views below bring together the measured mouse cells and two ways of viewing the marmoset candidates.</p>
+          <div class="spatial-showcase">
+ <div class="spatial-preview"><img src="spatial/preview.jpg" width="1200" height="810" loading="lazy" decoding="async" alt="Side-by-side spatial views of mouse preoptic neurons and candidate marmoset counterparts."><div class="spatial-caption"><p class="spatial-eyebrow">Mouse × marmoset · Public spatial data</p><h4>Explore the spatial comparison</h4><p>Follow a mouse type to its candidate counterpart. Switch between official marmoset coordinates and the 47-section reconstruction.</p><div class="spatial-actions"><button type="button" data-load-spatial>Load spatial models</button><a href="spatial/" target="_blank" rel="noopener">Open full viewer ↗</a></div></div></div>
+ <div class="spatial-live" hidden><div class="spatial-livebar"><span>Mouse &amp; marmoset · Spatial comparison</span><a href="spatial/" target="_blank" rel="noopener">Open full viewer ↗</a><button type="button" data-close-spatial>Close models</button></div></div>
+ </div>
+        </div></div>
       </div>
 </div>
   </div>
@@ -3087,5 +3105,6 @@ if (lifeSlides.length) {
 <script src="reading-room.js"></script>
 <script src="portfolio-interactions.js?v=20260907-2" defer></script>
 <script src="instrument-embed.js" defer></script>
+<script src="spatial-embed.js?v=20260910" defer></script>
 </body>
 </html>
